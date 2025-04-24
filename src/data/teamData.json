@@ -1,0 +1,346 @@
+{
+  "team": [
+    {
+      "id": "hyunji-kim",
+      "name": "Hyunji Kim (Hayley)",
+      "role": "CEO",
+      "funnyRole": "Mom",
+      "roleIcon": "👩🏻‍💼",
+      "image": "/images/team/hyun.png",
+      "bio": "Hayley's background is mainly in academia, but after realizing that her work in renewable energy research wasn't having the environmental impact she hoped for, she made a big change and transitioned from academia to business. To quickly learn about the business world, she joined a strategy consulting firm, gaining experience with different companies for a year. At the same time, she founded an e-commerce distributor company, closing an impressive 30 deals a day from her very first day. After conducting thorough research on e-commerce and the Thai mark market, Hayley gathered 15 Thai interns to find the best thai team memebers. Now, with her team in place, she is focused on making the ROUND8 service successful, help connecting South Korea and Thailand across various business sectors. She plans to expand her business to ASEAN countries and aims to develop deeper connections between ASEAN countries and the Republic of Korea, benefiting both regions. Thanks to her ambition, she frequently has meetings with diverse sectors in ASEAN and Korea. However, her Challenge thesedays is putting a makeup before meetings and her team memebr always asked her to apply lipsticks at least.",
+      "linkedin": "https://www.linkedin.com/in/hyunji-hayley-kim-0b87801b7/",
+      "academic": [
+        "City, University of London, Bachelor in Engineering with management and entrepreneurship 2019",
+        "Korea University lab Reseracher 2021",
+        "Korea Insititute of Science and Technology 2022",
+        "Seoul Nationl Unviersity, Master in Electrical and information engineering 2023",
+        "Startup, Consulting firm, Major corporate Strategy and planning team RA 2023",
+        "E-Commerce Distributor company CEO 2023",
+        "ALLROUNDERS Inc. Co-Founder & CEO 2024"
+      ],
+      "keywords": [
+        "humanity",
+        "networking master",
+        "planner",
+        "process oriented"
+      ],
+      "allroundersToYou": "A child I hope will make a positive impact on others",
+      "likes": [
+        "Listening to Rachel Yamagata and reading a book on a quiet beach",
+        "Driving alone",
+        "Traveling to visit friends around the world"
+      ],
+      "icons": {
+        "keywords": {
+          "humanity": "😊",
+          "networking master": "🔍",
+          "planner": "📝",
+          "process oriented": "🌱"
+        },
+        "academic": {
+          "2019": "🎓",
+          "2020": "🧪",
+          "2021": "🧪",
+          "2022": "🔬",
+          "2023": "📊",
+          "Present": "👑"
+        },
+        "likes": {
+          "beach": "🏖️",
+          "driving": "🚗",
+          "traveling": "✈️"
+        }
+      }
+    },
+    {
+      "id": "kyungsuk-yang",
+      "name": "Kyungsuk Yang (Ben)",
+      "role": "COO",
+      "funnyRole": "AI",
+      "roleIcon": "👨‍💼",
+      "image": "/images/team/yang.png",
+      "bio": "Ben started his entrepreneurial journey in 2006, founding businesses in education, trade, e-commerce, social media, IT security, promotion, and the metaverse. He has extensive experience launching and managing companies in Singapore, Malaysia, Vietnam, and the Philippines. His ventures achieved over 3 billion won (2.2 million USD) in annual sales in sectors like education and IT security, and his e-commerce business in Vietnam reached 5 billion won (3.5 million USD) in its first year. As the PM of the Zmap app, he led it to 1 million downloads in Korea. Ben prefers to count on numbers than count on human being, but he's recently working on improving his understanding of people with limited knowledge.",
+      "linkedin": "https://www.linkedin.com/in/yang-ben-790a7734a/",
+      "academic": [
+        "KEIYES EDU CEO 2008",
+        "Diamond holdings (Phillippines) Director 2011",
+        "KOI Co-founder 2012",
+        "Soongsil University, Management / Finanace / Law 2015",
+        "DALM CEO 2014",
+        "apc Director 2020",
+        "apc purple Director 2022",
+        "Englishground COO 2021",
+        "CREVERSE COO 2022",
+        "CREVERSE(Singapore) CEO 2022",
+        "EG Cunsultancy(Malayisia) 2021 ",
+        "ALLROUNDERS Inc. Co-founder & COO 2024 "
+      ],
+      "keywords": [
+        "logic",
+        "emotionless",
+        "number-holic",
+        "result-oriented"
+      ],
+      "allroundersToYou": "The last game",
+      "likes": [
+        "Making money while solving problems with a measure of personal progress",
+        "Traveling and discovering new things",
+        "Learning from books and gaining new perspectives on problem-solving"
+      ],
+      "icons": {
+        "keywords": {
+          "logic": "🧠",
+          "emotionless": "🤖",
+          "number-holic": "🔢",
+          "result-oriented": "🎯"
+        },
+        "academic": {
+          "2008": "🏫",
+          "2011": "🏢",
+          "2012": "🤝",
+          "2014": "📈",
+          "2015": "📚",
+          "2018": "💼",
+          "2020": "📊",
+          "2021": "🌐",
+          "2022": "🌍",
+          "2023": "🌏",
+          "2024": "👑"
+        },
+        "likes": {
+          "money": "💰",
+          "traveling": "🧳",
+          "learning": "📖"
+        }
+      }
+    },
+    {
+      "id": "jet",
+      "name": "Apichet Charlermwutinan (Jet)",
+      "role": "Planning Team",
+      "funnyRole": "Developer",
+      "roleIcon": "🧑🏻‍💼",
+      "image": "/images/team/jet.png",
+      "bio": "Apichet began his career in business development. As part of his role, he conducted feasibility analyses, contributing to successful investment projects in logistics and F&B, including the construction of cross-docks and barge vessels, as well as the acquisition of a master franchise agreement for Puradak Chicken, a Korean fried chicken brand currently operating four branches across Bangkok. His industry knowledge further expanded during his short stint as a management consultant, where he gained valuable experience in the education and IT services sectors. He consulted on an IT solution startup regarding the CoE framework and structure, which helped the company increase its projected revenue by 30% in the first year. Though he may not have been the brightest compared to others, his dedication and professionalism proves to be second to none.",
+      "linkedin": "https://www.linkedin.com/in/apichet-chalermwutinan-697a97246/",
+      "academic": [
+        "University of Reading, Economics and Finance 2022",
+        "Business Development, AGR Group Holding 2023",
+        "Bayes Business School, City, University of London, Management 2024",
+        "Bayes Management Consulting (United Kingdom) 2024",
+        "ALLROUNDERS Inc. founding member 2024"
+      ],
+      "keywords": [
+        "Obsessive Focus",
+        "Strategic Planning",
+        "Can-Do Mindset",
+        "Committed Professional"
+      ],
+      "allroundersToYou": "Skills and experiences cultivation",
+      "likes": [
+        "Sport Enthusiast",
+        "Global Financial Markets",
+        "Exploring the world"
+      ],
+      "icons": {
+        "keywords": {
+          "Obsessive Focus": "🔍",
+          "Strategic Planning": "📊",
+          "Can-Do Mindset": "💪",
+          "Committed Professional": "🤝"
+        },
+        "academic": {
+          "2022": "🎓",
+          "2023": "💼",
+          "2024": "📈",
+          "Present": "🚀"
+        },
+        "likes": {
+          "Sport": "🏀",
+          "Financial": "📈",
+          "Exploring": "🌎"
+        }
+      }
+    },
+    {
+      "id": "p",
+      "name": "Pichaya Saidoung (P)",
+      "role": "Business Team",
+      "funnyRole": "Mandatory Designer",
+      "roleIcon": "🧑🏻‍💼",
+      "image": "/images/team/p.png",
+      "bio": "Pichaya's background is in Applied Chemistry. However, after realizing his passion for business and problem-solving, he decided to step away from the traditional science career path. Driven by adaptability and resourcefulness, Pichaya transitioned into business development and marketing role at ALLROUNDERS, leveraging his scientific knowledge to bring innovative solutions to the table. His ability to think unconventionally allows him to approach challenges with a fresh perspective, and he is now focused on contributing to growth at ALLROUNDERS, seeking opportunities to connect business sectors across different regions. While he might seem laid-back at times, when a task needs to be done, he tackles it efficiently and effectively.",
+      "linkedin": "https://www.linkedin.com/in/pichaya-saidoung-4b2626300/",
+      "academic": [
+        "Hotel Manager 2016",
+        "Chulalongkorn University, BSc Applied Chemistry 2024",
+        "ALLROUNDERS Inc. founding member 2024"
+      ],
+      "keywords": [
+        "Adaptability",
+        "Creative problem-solving",
+        "Unconventional",
+        "Resourcefulness"
+      ],
+      "allroundersToYou": "First job & Hardest job",
+      "likes": [
+        "Learning from others stories and perspectives",
+        "Solving problems",
+        "Relaxing in a quite place with my dogs"
+      ],
+      "icons": {
+        "keywords": {
+          "Adaptability": "🦎",
+          "Creative problem-solving": "🧩",
+          "Unconventional": "🌈",
+          "Resourcefulness": "🛠️"
+        },
+        "academic": {
+          "2016": "🏨",
+          "2024": "🧪",
+          "Present": "🚀"
+        },
+        "likes": {
+          "Learning": "📚",
+          "Solving": "🔍",
+          "Relaxing": "🐕"
+        }
+      }
+    },
+    {
+      "id": "big",
+      "name": "Anucha Radinghin (Big)",
+      "role": "Rider",
+      "funnyRole": "Body Language Expert",
+      "roleIcon": "🛵",
+      "image": "/images/team/big.png",
+      "bio": "Despite Anucha's modest academic background, his professional career speaks for itself. He began as a junior featherweight boxer, representing his home district and winning 4 out of 7 matches before an injury ended his boxing career. Transitioning to the automotive industry, he specialized in engine performance and driver safety for racing cars, working with brands like Mitsubishi, Nissan, and Honda. His team competed nationwide in events such as Eco, Super Turbo, and Super Compact races. Notably, they secured 16th place in a 25-hour endurance race and achieved multiple top-three finishes with the renowned Honda City.",
+      "academic": [
+        "Muay Thai Boxer 2018",
+        "Automotive Mechanic 2023",
+        "Freelance rider 2024",
+        "ALLROUNDERS Inc. inhouse rider 2025"
+      ],
+      "keywords": [
+        "Respectful",
+        "Determined",
+        "Conceptualizer",
+        "Go-getter"
+      ],
+      "allroundersToYou": "Welcoming place to help inexperience newbies to grow",
+      "likes": [
+        "Automotive Racing",
+        "Boxing & exercise",
+        "Hardware Enthusiast"
+      ],
+      "icons": {
+        "keywords": {
+          "Respectful": "🙏",
+          "Determined": "💪",
+          "Conceptualizer": "💭",
+          "Go-getter": "🏁"
+        },
+        "academic": {
+          "2018": "🥊",
+          "2023": "🔧",
+          "2024": "🛵",
+          "2025": "🚀",
+          "Present": "🏆"
+        },
+        "likes": {
+          "Racing": "🏎️",
+          "Boxing": "🥊",
+          "Hardware": "💻"
+        }
+      }
+    },
+   
+    {
+      "id": "emily",
+      "name": "Emily Impens (Mimi)",
+      "role": "Marketing Intern",
+      "funnyRole": "The newbie",
+      "roleIcon": "🙋🏻‍♀️",
+      "image": "/images/team/emily.png",
+      "bio": "Emily's background is in Biomedical Science, but she is currently exploring digital marketing, a field beyond her expertise. She enjoys stepping out of her comfort zone, embracing new opportunities, and continuously learning and developing new skills. With an open mind about her career path, she's excited to see where life takes her.",
+      "linkedin": "https://www.linkedin.com/in/emily-impens-36b859282/",
+      "academic": [
+        "Mahidol University International College, Biomedical Sciences 2025",
+        "ALLROUNDERS Inc. Marketing Intern 2024"
+      ],
+      "keywords": [
+        "Empathetic",
+        "Mindful",
+        "Nature-lover",
+        "Inquisitive"
+      ],
+      "allroundersToYou": "A transitioning point in life",
+      "likes": [
+        "Being surrounded by nature",
+        "Reading and diving into a world of literature",
+        "A nice warm home-cooked meal"
+      ],
+      "icons": {
+        "keywords": {
+          "Empathetic": "💗",
+          "Mindful": "🧘‍♀️",
+          "Nature-lover": "🌿",
+          "Inquisitive": "🔎"
+        },
+        "academic": {
+          "2025": "🧬"
+        },
+        "likes": {
+          "nature": "🌳",
+          "Reading": "📚",
+          "meal": "🍲"
+        }
+      }
+    },
+    {
+      "id": "nichole",
+      "name": "Nann Wutt Yee Win (Nichole)",
+      "role": "IT Intern",
+      "funnyRole": "Web Designer",
+      "roleIcon": "💻",
+      "image": "/images/team/nichole.png",
+      "bio": "Nann Wutt Yee Win, or Nichole, is a curious tech explorer who's always open to new ideas, both in and out of the tech world. She loves learning, whether it's picking up a new coding language, diving into cybersecurity, understanding different viewpoints, or finding creative solutions to everyday challenges. With an adaptable mindset, Nann is always up for trying new things and growing through experiences. Whether she's diving into a new project or collaborating with a team, she approaches everything with an open mind and a passion to learn and improve!",
+      "linkedin": "https://www.linkedin.com/in/nann-wutt-yee-win/",
+      "academic": [
+        "Singapore Institute of Management, Information Technology 2022",
+        "University of Wollongong Australia, Computer Science(Cyber Security) 2024",
+        "ALLROUNDERS Inc. IT Intern 2024"
+      ],
+      "keywords": [
+        "Curious",
+        "Tech Explorer",
+        "Open-minded",
+        "Adaptable"
+      ],
+      "allroundersToYou": "A first step into the real world",
+      "likes": [
+        "Wandering new places",
+        "Chilling with cats",
+        "Spending time with loved ones"
+      ],
+      "icons": {
+        "keywords": {
+          "Curious": "🧐",
+          "Tech Explorer": "🚀",
+          "Open-minded": "🌐",
+          "Adaptable": "🦎"
+        },
+        "academic": {
+          "2022": "💻",
+          "2024": "🔒",
+          "Present": "✨"
+        },
+        "likes": {
+          "Wandering": "🧭",
+          "cats": "🐱",
+          "loved ones": "❤️"
+        }
+      }
+    }
+  ]
+}
