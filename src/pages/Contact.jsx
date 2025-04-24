@@ -1,19 +1,12 @@
 import React, { useEffect } from 'react';
-import { Box, Typography, Grid, Paper } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Typography } from '@mui/material';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../utils/translations';
 // Add this import
 import { db } from '../firebase/config';
 
-const ContactContainer = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(4),
-}));
 
-const InfoPaper = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(3),
-  height: '100%',
-}));
+
 
 const Contact = () => {
   const { language } = useLanguage();
