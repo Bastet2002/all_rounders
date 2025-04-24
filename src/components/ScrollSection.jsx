@@ -1,0 +1,569 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Box, Typography, Grid, IconButton } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+const SectionContainer = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  overflow: 'hidden',
+  height: '100vh',
+  [theme.breakpoints.down('sm')]: {
+    height: '100vh', // Maintain full height on mobile
+  }
+}));
+
+const HandwrittenTitle = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  top: '20px',
+  left: '0',
+  width: '100%',
+  textAlign: 'center',
+  zIndex: 10,
+  '& h2': {
+    fontFamily: "Roboto",
+    fontSize: '3.5rem',
+    color: '#00BCD4',
+    textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.5rem',
+    }
+  }
+}));
+
+const HorizontalWrapper = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'row',
+  width: 'fit-content',
+  height: '100vh',
+  [theme.breakpoints.down('sm')]: {
+    flexDirection: 'row', // Keep horizontal layout for mobile swipe
+    width: 'fit-content', // Let it expand based on content
+    height: '100vh',
+    transition: 'transform 0.5s ease',
+  },
+}));
+
+const Section = styled(Box)(({ theme, bgcolor }) => ({
+  width: '100vw',
+  height: '100vh',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: theme.spacing(4),
+  backgroundColor: bgcolor || '#f8f9fa',
+  position: 'relative',
+  overflow: 'hidden',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: '-10%',
+    right: '-5%',
+    width: '40%',
+    height: '70%',
+    borderRadius: '50%',
+    background: 'rgba(255,255,255,0.1)',
+    zIndex: 0,
+  },
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    bottom: '-10%',
+    left: '-5%',
+    width: '30%',
+    height: '60%',
+    borderRadius: '50%',
+    background: 'rgba(0,0,0,0.03)',
+    zIndex: 0,
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: '100vw', // Each section takes full width of viewport
+    padding: theme.spacing(3, 2),
+    minHeight: '100vh',
+  },
+}));
+
+const PhoneContainer = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  maxWidth: '300px',
+  zIndex: 2,
+  transform: 'perspective(1000px) rotateY(5deg)',
+  transition: 'transform 0.5s ease',
+  '&:hover': {
+    transform: 'perspective(1000px) rotateY(0deg)',
+  },
+  [theme.breakpoints.down('sm')]: {
+    maxWidth: '200px', // Smaller phone image on mobile
+  },
+}));
+
+const PhoneImage = styled('img')(({ theme }) => ({
+  width: '100%',
+  height: 'auto',
+  borderRadius: '24px',
+  boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+}));
+
+const ContentContainer = styled(Box)(({ theme }) => ({
+  maxWidth: '500px',
+  position: 'relative',
+  zIndex: 2,
+  padding: theme.spacing(4),
+  paddingTop: theme.spacing(7),
+  borderRadius: '16px',
+  background: 'rgba(255,255,255,0.8)',
+  backdropFilter: 'blur(10px)',
+  boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+  transform: 'translateY(0)',
+  transition: 'transform 0.3s ease',
+  '&:hover': {
+    transform: 'translateY(-5px)',
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(3),
+    paddingTop: theme.spacing(6),
+  },
+}));
+
+const AnimationTopOverlay = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  top: '-40px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  width: '100px',
+  height: '100px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  zIndex: 4,
+  background: 'white',
+  borderRadius: '50%',
+  boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+  [theme.breakpoints.down('sm')]: {
+    width: '80px',
+    height: '80px',
+    top: '-30px',
+  },
+}));
+
+const IconContainer = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  bottom: '-20px',
+  right: '-20px',
+  width: '80px',
+  height: '80px',
+  borderRadius: '50%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  background: 'white',
+  boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+  zIndex: 3,
+  [theme.breakpoints.down('sm')]: {
+    width: '60px',
+    height: '60px',
+    bottom: '-15px',
+    right: '-15px',
+  },
+}));
+
+const AnimationOverlay = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '80%',
+  height: '80%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  overflow: 'hidden',
+  zIndex: 3,
+}));
+
+const CurvedBackground = styled(Box)(({ theme, color }) => ({
+  position: 'absolute',
+  top: '10%',
+  right: '5%',
+  width: '40%',
+  height: '80%',
+  borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
+  background: color || 'rgba(0, 188, 212, 0.1)',
+  zIndex: 1,
+}));
+
+// Mobile navigation controls
+const NavigationControls = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  bottom: '30px',
+  left: '0',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  zIndex: 100,
+  gap: theme.spacing(2),
+}));
+
+const NavButton = styled(IconButton)(({ theme }) => ({
+  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  '&:hover': {
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+  },
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+}));
+
+const PaginationDots = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  gap: theme.spacing(1),
+}));
+
+const PaginationDot = styled(Box)(({ active, theme }) => ({
+  width: active ? '12px' : '8px',
+  height: active ? '12px' : '8px',
+  borderRadius: '50%',
+  backgroundColor: active ? '#00BCD4' : 'rgba(0, 0, 0, 0.2)',
+  transition: 'all 0.3s ease',
+}));
+
+const ScrollSection = ({ sections, title }) => {
+  const containerRef = useRef(null);
+  const wrapperRef = useRef(null);
+  const sectionRefs = useRef([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  // Function to navigate to previous section
+  const goToPrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  // Function to navigate to next section
+  const goToNext = () => {
+    if (currentIndex < sections.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  // Handle touch events for swipe
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      // Swipe left
+      goToNext();
+    }
+
+    if (touchEnd - touchStart > 75) {
+      // Swipe right
+      goToPrev();
+    }
+  };
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const mediaQuery = window.matchMedia("(max-width: 600px)");
+      setIsMobile(mediaQuery.matches);
+    };
+
+    // Initial check
+    checkMobile();
+
+    // Set up the horizontal scroll effect
+    const container = containerRef.current;
+    const wrapper = wrapperRef.current;
+    
+    // Only apply horizontal scroll on desktop
+    const mediaQuery = window.matchMedia("(min-width: 600px)");
+    
+    if (mediaQuery.matches) {
+      // Desktop version: GSAP horizontal scroll
+      gsap.set(container, {
+        height: '100vh',
+      });
+      
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          pin: true,
+          start: "top top",
+          end: () => "+=" + (sections.length * 100) + "%",
+          scrub: 0.8,
+          snap: {
+            snapTo: 1 / (sections.length - 1),
+            duration: { min: 0.2, max: 0.3 },
+            delay: 0.1,
+            ease: "power1.inOut"
+          },
+        }
+      });
+      
+      tl.to(wrapper, {
+        x: () => -(wrapper.scrollWidth - window.innerWidth),
+        ease: "none",
+      });
+      
+      gsap.set('.section-content', { opacity: 0, y: 30 });
+      gsap.set('.phone-container', { opacity: 0, x: -30 });
+      gsap.set('.icon-container', { opacity: 0, scale: 0.5 });
+      
+      sectionRefs.current.forEach((section, i) => {
+        const sectionTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            containerAnimation: tl,
+            start: "left center",
+            end: "right center",
+            toggleActions: "play none none reverse",
+          }
+        });
+        
+        sectionTl.to(section.querySelector('.phone-container'), {
+          opacity: 1, 
+          x: 0, 
+          duration: 0.6,
+          ease: "power2.out"
+        });
+        
+        sectionTl.to(section.querySelector('.section-content'), {
+          opacity: 1, 
+          y: 0, 
+          duration: 0.6,
+          ease: "power2.out"
+        }, "-=0.4");
+        
+        sectionTl.to(section.querySelector('.icon-container'), {
+          opacity: 1, 
+          scale: 1, 
+          duration: 0.5,
+          ease: "back.out(1.7)"
+        }, "-=0.3");
+      });
+    } else {
+      // Mobile version: Set up for swipe behavior
+      gsap.set(container, {
+        height: '100vh',
+      });
+      
+      // Make all sections visible initially on mobile
+      gsap.set('.section-content', { opacity: 1, y: 0 });
+      gsap.set('.phone-container', { opacity: 1, x: 0 });
+      gsap.set('.icon-container', { opacity: 1, scale: 1 });
+    }
+
+    // Event listener for resize
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      ScrollTrigger.getAll().forEach(st => st.kill());
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, [sections.length]);
+
+  // Effect to handle the swiping animation on mobile
+  useEffect(() => {
+    if (isMobile && wrapperRef.current) {
+      gsap.to(wrapperRef.current, {
+        x: -currentIndex * window.innerWidth,
+        duration: 0.2,
+        ease: "power2.out"
+      });
+    }
+  }, [currentIndex, isMobile]);
+
+  const addSectionRef = (el) => {
+    if (el && !sectionRefs.current.includes(el)) {
+      sectionRefs.current.push(el);
+    }
+  };
+
+  // Background colors for sections
+  const bgColors = [
+    'rgba(236, 242, 248, 0.8)',
+    'rgba(242, 236, 248, 0.8)',
+    'rgba(248, 242, 236, 0.8)',
+    'rgba(236, 248, 242, 0.8)',
+    'rgba(248, 236, 242, 0.8)',
+    'rgba(242, 248, 236, 0.8)',
+  ];
+
+  // Accent colors for curved backgrounds
+  const accentColors = [
+    'rgba(0, 188, 212, 0.1)',
+    'rgba(156, 39, 176, 0.1)',
+    'rgba(255, 152, 0, 0.1)',
+    'rgba(76, 175, 80, 0.1)',
+    'rgba(233, 30, 99, 0.1)',
+    'rgba(63, 81, 181, 0.1)',
+  ];
+
+  return (
+    <Box>
+      {title && (
+        <Typography 
+          variant="h3" 
+          sx={{ 
+            textAlign: 'center', 
+            fontWeight: 700, 
+            my: 4,
+            position: 'relative',
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: '-10px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '60px',
+              height: '3px',
+              backgroundColor: 'primary.main',
+            }
+          }}
+        >
+          {title}
+        </Typography>
+      )}
+      
+      <SectionContainer ref={containerRef}>
+        <HandwrittenTitle>
+          <Typography variant="h2">How ROUND8 Works?</Typography>
+        </HandwrittenTitle>
+        
+        <HorizontalWrapper 
+          ref={wrapperRef}
+          onTouchStart={isMobile ? handleTouchStart : null}
+          onTouchMove={isMobile ? handleTouchMove : null}
+          onTouchEnd={isMobile ? handleTouchEnd : null}
+        >
+          {sections.map((section, index) => (
+            <Section 
+              key={index} 
+              ref={addSectionRef}
+              bgcolor={bgColors[index % bgColors.length]}
+            >
+              <CurvedBackground color={accentColors[index % accentColors.length]} />
+              
+              <Grid 
+                container 
+                spacing={3} 
+                alignItems="center" 
+                justifyContent="center"
+                sx={{ maxWidth: '1200px', position: 'relative', zIndex: 2 }}
+              >
+                <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center' }}>
+                  <PhoneContainer className="phone-container">
+                    <PhoneImage 
+                      src={section.image} 
+                      alt={section.title} 
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = '/images/services/placeholder.png';
+                      }}
+                    />
+                  </PhoneContainer>
+                </Grid>
+                <Grid item xs={12} md={7}>
+                  <ContentContainer className="section-content">
+                    {section.animation && (
+                      <AnimationTopOverlay>
+                        <motion.img 
+                          src={section.animation} 
+                          alt="Animation"
+                          style={{ maxWidth: '80%', maxHeight: '80%' }}
+                          animate={{ 
+                            scale: [1, 1.05, 1],
+                            y: [0, -5, 0]
+                          }}
+                          transition={{ 
+                            duration: 3,
+                            repeat: Infinity,
+                            repeatType: "reverse"
+                          }}
+                        />
+                      </AnimationTopOverlay>
+                    )}
+                    <Typography variant="h4" fontWeight={600} sx={{ mb: 2 }}>
+                      {section.title}
+                    </Typography>
+                    <Typography variant="body1" sx={{ mb: 3 }}>
+                      {section.description}
+                    </Typography>
+                    
+                    {section.icon && (
+                      <IconContainer className="icon-container">
+                        <motion.img 
+                          src={section.icon} 
+                          alt="Icon" 
+                          style={{ width: '50px', height: '50px' }}
+                          animate={{ 
+                            rotate: [0, 10, 0, -10, 0],
+                          }}
+                          transition={{ 
+                            duration: 5,
+                            repeat: Infinity,
+                            repeatType: "reverse"
+                          }}
+                        />
+                      </IconContainer>
+                    )}
+                  </ContentContainer>
+                </Grid>
+              </Grid>
+            </Section>
+          ))}
+        </HorizontalWrapper>
+        
+        {/* Mobile navigation controls - only show on mobile */}
+        {isMobile && (
+          <NavigationControls>
+            <NavButton 
+              onClick={goToPrev} 
+              disabled={currentIndex === 0}
+              aria-label="Previous section"
+              size="small"
+            >
+              <ArrowBackIosNewIcon fontSize="small" />
+            </NavButton>
+            
+            <PaginationDots>
+              {sections.map((_, index) => (
+                <PaginationDot 
+                  key={index} 
+                  active={index === currentIndex}
+                  onClick={() => setCurrentIndex(index)}
+                />
+              ))}
+            </PaginationDots>
+            
+            <NavButton 
+              onClick={goToNext} 
+              disabled={currentIndex === sections.length - 1}
+              aria-label="Next section"
+              size="small"
+            >
+              <ArrowForwardIosIcon fontSize="small" />
+            </NavButton>
+          </NavigationControls>
+        )}
+      </SectionContainer>
+    </Box>
+  );
+};
+
+export default ScrollSection;
