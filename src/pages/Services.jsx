@@ -184,7 +184,7 @@ const Services = () => {
     {
       title: "Inspection",
       description: "Secure transactions with exterior inspection. Protecting buyers and ensuring quality, fraud-free products. Our inspection process verifies that what you see is what you get.",
-      image: "/images/services/inception.png",
+      image: "/images/services/delivery.png",
       animation: "/images/services/inception-animation.gif",
       icon: "/images/services/inception-icon.png"
     },
@@ -368,10 +368,10 @@ const Services = () => {
           style={{ width: '100%' }}
         >
           <ConnectCard>
-            <Typography variant="h3" fontWeight={700} sx={{ mb: 2, color: '#00BCD4' }}>
+            <Typography variant="h3" fontWeight={700} sx={{ mb: 2, color: '#00BCD4' ,fontSize: { xs: '1.8rem', sm: '2.8rem' }}} >
               Let's Collaborate!
             </Typography>
-            <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
+            <Typography variant="h6" color="text.secondary" sx={{ mb: 4 , fontSize: { xs: '1.2rem', sm: '1.4rem' }}}>
               If you have any inquiry, feel free to contact us!
             </Typography>
             <ActionButton 

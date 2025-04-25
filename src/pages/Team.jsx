@@ -4,7 +4,8 @@ import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import PeopleIcon from '@mui/icons-material/People';
 import SchoolIcon from '@mui/icons-material/School';
-// import { motion } from 'framer-motion';
+import {motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 // Add this import at the top
 import { keyframes } from '@mui/material/styles';
@@ -30,6 +31,37 @@ const PageContainer = styled(Box)(({ theme }) => ({
   }
 }));
 
+const ShimmerText = styled(Typography)(({ theme }) => ({
+    position: 'relative',
+    display: 'inline-block',
+    color: 'black',
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      backgroundSize: '200% 100%',
+      animation: 'shimmer 2s infinite',
+      zIndex: 1,
+      pointerEvents: 'none',
+    },
+    '@keyframes shimmer': {
+      '0%': {
+        backgroundPosition: '100% 50%',
+        opacity: 0,
+      },
+      '30%': {
+        opacity: 0.8,
+      },
+      '100%': {
+        backgroundPosition: '-100% 50%',
+        opacity: 0,
+      },
+    },
+  }));
+
 const SectionTitle = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -46,6 +78,7 @@ const TeamCard = styled(Paper)(({ theme }) => ({
   flexDirection: 'column',
   backgroundColor: '#f9f9f9',
   position: 'relative',
+  cursor: 'pointer',
 }));
 
 const TeamAvatar = styled(Avatar)(({ theme }) => ({
@@ -86,22 +119,38 @@ const ReadMoreButton = styled(Button)(({ theme }) => ({
   marginTop: theme.spacing(1),
 }));
 
-const MeetTeamButton = styled(Button)(({ theme }) => ({
-  borderRadius: theme.spacing(1),
-  padding: theme.spacing(0.8, 3),
-  fontWeight: 600,
-  backgroundColor: '#000',
-  color: '#fff',
-  margin: '0 auto',
-  display: 'block',
-  marginBottom: theme.spacing(5),
-  '&:hover': {
-    backgroundColor: '#333',
-  },
-}));
+const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    },
+    hover: {
+      y: -10,
+      boxShadow: "0px 10px 25px rgba(0, 0, 0, 0)",
+      transition: { duration: 0.3 }
+    }
+  };
 
 const Team = () => {
+
+  const navigate = useNavigate();
   // State to track hover state for each team member
   const [hoveredRoles, setHoveredRoles] = useState({});
 
@@ -112,7 +161,9 @@ const Team = () => {
       [memberId]: isHovered
     }));
   };
-
+  const handleTeamMemberClick = (memberId) => {
+    navigate(`/team/${memberId}`);
+  };
   // Updated team members data with more detailed bios and funny roles
   const coreTeam = [
     {
@@ -171,7 +222,7 @@ const Team = () => {
       funnyRole: 'The newbie',
       roleIcon: '🙋🏻‍♀️',
       image: '/images/team/emily.png',
-      bio: "Emily's background is in Biomedical Science, but she is currently exploring digital marketing, a field beyond her expertise. She enjoys stepping out of her comfort zone, embracing new opportunities, and continuously learning and developing.... ",
+      bio: "Emily's background is in Biomedical Science, but she is currently exploring digital marketing, a field beyond her expertise. She enjoys stepping out of her comfort zone, embracing new opportunities.... ",
     },
     {
       id: 'nichole',
@@ -195,39 +246,90 @@ const Team = () => {
         {/* ROUNDERS Section */}
         <SectionContainer>
           <SectionTitle>
-            <Typography variant="h5" fontWeight={700} sx={{ fontSize: '1.5rem' }}>ROUNDERS</Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-              <PeopleIcon fontSize="small" />
-              <Typography variant="body2" color="text.secondary" sx={{ fontSize: {
-        xs: '0.75rem',
-        sm: '0.85rem',
-        md: 'o.95em'
-      } }}>
-                (5 team members)
-              </Typography>
-            </Box>
+          <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={textVariants}
+            >
+              <Typography variant="h5" fontWeight={700} sx={{ fontSize: '1.5rem' }}>ROUNDERS</Typography>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={textVariants}
+              transition={{ delay: 0.2 }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                <PeopleIcon fontSize="small" />
+                <Typography variant="body2" color="text.secondary" sx={{ fontSize: {
+                  xs: '0.75rem',
+                  sm: '0.85rem',
+                  md: 'o.95em'
+                } }}>
+                  (5 team members)
+                </Typography>
+              </Box>
+            </motion.div>
           </SectionTitle>
-          <Box sx={{ pt: 2 }}></Box>
-          <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
-          {/* <motion.div
-              initial={{ scale: 1 }}
-              animate={{ 
-                scale: [1, 1.05, 1],
-                y: [0, -5, 0]
-              }}
-              transition={{ 
-                duration: 2,
-                repeat: Infinity,
-                repeatType: "reverse"
-              }}
-            > */}
-              <MeetTeamButton variant="contained">
-                Meet Our CEO
-              </MeetTeamButton>
-           {/* </motion.div> */}
+          <Box sx={{ pt: 1 }}></Box>
+
+          {/* Animated "meet our ceo" text */}
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            whileHover="hover"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+          <Box sx={{ mb: 2, height: { xs: '2rem', sm: '2rem' } }}>
+            <motion.div style={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+              gap: '8px',
+              flexWrap: { xs: 'wrap', sm: 'nowrap' }
+            }}>
+              {["Meet", "Our", "CEO"].map((word, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: 0.8 + (i * 0.2),
+                    ease: "easeOut" 
+                  }}
+                >
+                  <ShimmerText  
+                    fontWeight={400} 
+                    component="span"
+                    sx={{
+                      animationDelay: `${i * 0.5}s`,
+                    }}
+                  >
+                    <Typography 
+                      fontWeight={500} 
+                      component="span"
+                      sx={{ 
+                        fontSize: { xs: '1.3rem', sm: '1.6rem' } 
+                      }}
+                    >
+                      {word}
+                    </Typography>
+                  </ShimmerText>  
+                </motion.div>
+              ))}
+            </motion.div>
           </Box>
-          
+          <Box sx={{ pt: 4 }}></Box>
           {/* Featured Team Member - Hyun Ji Kim */}
+          <motion.div
+        variants={cardVariants}
+        initial="hidden"
+        whileInView="visible"
+        whileHover="hover"
+        viewport={{ once: true, amount: 0.1 }}
+        onClick={() => handleTeamMemberClick('hyunji-kim')}
+      >
           <TeamCard elevation={1} sx={{ maxWidth: '100%', mb: 4 }}>
             <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' } }}>
               <Box sx={{ 
@@ -295,19 +397,65 @@ const Team = () => {
               </Box>
             </Box>
           </TeamCard>
+          </motion.div>
+          </motion.div>
           <Box sx={{ pt: 4, pb: 1 }}></Box>
-          <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
-            
-              <MeetTeamButton variant="contained">
-                Meet Our Team
-              </MeetTeamButton>
-            
+          {/* Animated "meet our ceo" text */}
+          <Box sx={{ mb: 2, height: { xs: '2rem', sm: '2rem' } }}>
+            <motion.div style={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+              gap: '8px',
+              flexWrap: { xs: 'wrap', sm: 'nowrap' }
+            }}>
+              {["Meet", "Our", "Team"].map((word, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: 0.8 + (i * 0.2),
+                    ease: "easeOut" 
+                  }}
+                >
+                  <ShimmerText  
+                    fontWeight={400} 
+                    component="span"
+                    sx={{
+                      animationDelay: `${i * 0.5}s`,
+                    }}
+                  >
+                    <Typography 
+                      fontWeight={500} 
+                      component="span"
+                      sx={{ 
+                        fontSize: { xs: '1.3rem', sm: '1.6rem' } 
+                      }}
+                    >
+                      {word}
+                    </Typography>
+                  </ShimmerText>  
+                </motion.div>
+              ))}
+            </motion.div>
           </Box>
+          <Box sx={{ pt: 4 }}></Box>
           
           {/* Other Core Team Members */}
           <Grid container spacing={8}>
-            {coreTeam.slice(1).map((member) => (
+            {coreTeam.slice(1).map((member,index) => (
               <Grid item xs={12} sm={6} key={member.id}>
+                <motion.div
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  whileHover="hover"
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ delay: index * 0.1 }}
+                  onClick={() => handleTeamMemberClick(member.id)}
+            
+                >
                 <TeamCard elevation={1}>
                   <Box sx={{ 
                     p: 3, 
@@ -366,6 +514,7 @@ const Team = () => {
                     </Box>
                   </TeamInfo>
                 </TeamCard>
+                </motion.div>
               </Grid>
             ))}
           </Grid>
@@ -442,26 +591,48 @@ const Team = () => {
         <Box sx={{ pt: 4, pb: 1 }}></Box>
         <SectionContainer>
           <SectionTitle>
-            <Typography variant="h5" fontWeight={700} sx={{ fontSize: {
-        xs: '1.2rem',
-        sm: '1.4rem',
-        md: '1.5em'
-      }}}>PRE-ROUNDERS</Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-              <SchoolIcon fontSize="small"/>
-              <Typography variant="body2" color="text.secondary" sx={{ fontSize: {
-        xs: '0.75rem',
-        sm: '0.85rem',
-        md: 'o.95em'
-      } }}>
-                (2 team members)
-              </Typography>
-            </Box>
+          <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={textVariants}
+            >
+              <Typography variant="h5" fontWeight={700} sx={{ fontSize: {
+                xs: '1.2rem',
+                sm: '1.4rem',
+                md: '1.5em'
+              }}}>PRE-ROUNDERS</Typography>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={textVariants}
+              transition={{ delay: 0.2 }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                <SchoolIcon fontSize="small"/>
+                <Typography variant="body2" color="text.secondary" sx={{ fontSize: {
+                  xs: '0.75rem',
+                  sm: '0.85rem',
+                  md: 'o.95em'
+                } }}>
+                  (2 team members)
+                </Typography>
+              </Box>
+            </motion.div>
           </SectionTitle>
           
           <Grid container spacing={8}>
-            {preRounders.map((member) => (
+            {preRounders.map((member, index) => (
               <Grid item xs={12} sm={6} key={member.id}>
+                <motion.div
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  whileHover="hover"
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ delay: index * 0.1 }}
+                  onClick={() => handleTeamMemberClick(member.id)}
+                >
                 <TeamCard elevation={1}>
                   <Box sx={{ 
                     p: 3, 
@@ -520,6 +691,7 @@ const Team = () => {
                     </Box>
                   </TeamInfo>
                 </TeamCard>
+                </motion.div>
               </Grid>
             ))}
           </Grid>
