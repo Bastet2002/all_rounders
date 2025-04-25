@@ -527,7 +527,7 @@ const AboutUs = () => {
                       >Q1</TimelineMarker>
                       <TimelineContent borderColor="#444">
                       <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                      - Establishment of ALLROUNDERS Inc.<br />
+                      - Establishment of ALLROUNDERS Inc <br />
                       - Product planning<br />
                       - Start social media management
                     </Typography>
@@ -541,10 +541,9 @@ const AboutUs = () => {
                         }}>Q2</TimelineMarker>
                   <TimelineContent borderColor="#444">
                     <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                      Secured 50M yen pre-seed funding
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: '#ccc' }}>
-                      Expanded team to 10 members
+                    - Operated ROUND8 pre-registration page <br />
+                    - Selected as an incubation company by Jeju startup bay<br />
+                    - Start operating local interns (10+ interns)
                     </Typography>
                   </TimelineContent>
                 </TimelineItem>
@@ -556,11 +555,11 @@ const AboutUs = () => {
                         }}>Q3</TimelineMarker>
                   <TimelineContent borderColor="#444">
                     <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                      Established R&D and marketing
+                    - Accumulated 500+ pre-registers <br />
+                    - Expanded local partnerships in Thailand (20+ partners) <br />
+                    - MVP version 1 development (Shopify, in-house)
                     </Typography>
-                    <Typography variant="body2" sx={{ color: '#ccc' }}>
-                      Launched first prototype
-                    </Typography>
+                
                   </TimelineContent>
                 </TimelineItem>
                 
@@ -571,10 +570,11 @@ const AboutUs = () => {
                         }}>Q4</TimelineMarker>
                   <TimelineContent borderColor="#444">
                     <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                      MVP release & development completion
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: '#ccc' }}>
-                      Started user testing
+                      - MVP version 2 development (wordpress, outsource)<br />
+                      - Setup of Bangkok office<br />
+                      - Selected as an incubation company by Jeju creative economy innovation center<br />
+                      - Appointed as a representative of the Korean business delegation by the Thai Embassy<br />
+                      - Mobile UI/UX design completion
                     </Typography>
                   </TimelineContent>
                 </TimelineItem>
@@ -610,10 +610,7 @@ const AboutUs = () => {
                   <TimelineMarker bgColor="#000" textColor="#fff">Q2</TimelineMarker>
                   <TimelineContent borderColor="#ddd">
                     <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                      Partnership with 5 brands companies
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: '#666' }}>
-                      Expanded user base to 50,000
+                        - Beta service launch (Targeting 3,000 Users)
                     </Typography>
                   </TimelineContent>
                 </TimelineItem>
@@ -622,11 +619,9 @@ const AboutUs = () => {
                   <TimelineMarker bgColor="#000" textColor="#fff">Q3</TimelineMarker>
                   <TimelineContent borderColor="#ddd">
                     <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                      Expansion into Vietnam, Malaysia, Indonesia
+                        - Secure VC investment
                     </Typography>
-                    <Typography variant="body2" sx={{ color: '#666' }}>
-                      Opened regional offices
-                    </Typography>
+                    
                   </TimelineContent>
                 </TimelineItem>
                 
@@ -634,10 +629,8 @@ const AboutUs = () => {
                   <TimelineMarker bgColor="#000" textColor="#fff">Q4</TimelineMarker>
                   <TimelineContent borderColor="#ddd">
                     <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                      Official service launch "Reaching 25,000 users"
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: '#666' }}>
-                      Implemented AI-powered features
+                    - Official service launch (Targeting 20,000 Users) <br />
+                    - Preparition for international expansion 
                     </Typography>
                   </TimelineContent>
                 </TimelineItem>

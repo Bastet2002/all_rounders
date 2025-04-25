@@ -32,7 +32,8 @@ const HandwrittenTitle = styled(Box)(({ theme }) => ({
     color: '#00BCD4',
     textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '2.5rem',
+      fontSize: '2rem',
+      marginTop: '-5px',
     }
   }
 }));
@@ -85,7 +86,9 @@ const Section = styled(Box)(({ theme, bgcolor }) => ({
   [theme.breakpoints.down('sm')]: {
     width: '100vw', // Each section takes full width of viewport
     padding: theme.spacing(3, 2),
+    height: '85vh',
     minHeight: '100vh',
+    felxShrink: 0,
   },
 }));
 
@@ -107,7 +110,7 @@ const PhoneImage = styled('img')(({ theme }) => ({
   width: '100%',
   height: 'auto',
   borderRadius: '24px',
-  boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+  boxShadow: '0 20px 40px rgba(0, 0, 0, 0)',
 }));
 
 const ContentContainer = styled(Box)(({ theme }) => ({
@@ -128,6 +131,16 @@ const ContentContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     padding: theme.spacing(3),
     paddingTop: theme.spacing(6),
+    maxWidth: '90%',
+    '& h4': {
+      fontSize: '1.3rem', // Smaller heading for mobile
+      marginBottom: '0.5rem',
+    },
+    '& p': {
+      fontSize: '0.85rem', // Smaller paragraph text for mobile
+      marginBottom: '0.5rem',
+    }
+  
   },
 }));
 

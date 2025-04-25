@@ -11,6 +11,9 @@ const BannerSection = styled(Box)(({ theme }) => ({
   width: '100%',
   height: '90vh',
   overflow: 'hidden',
+  [theme.breakpoints.down('sm')]: {
+    height: '80vh', // Slightly shorter on mobile
+  },
 }));
 
 // New styled components for navigation arrows
@@ -55,7 +58,7 @@ const SwipeIndicator = styled(Box)(({ theme }) => ({
   padding: '8px 16px',
   borderRadius: '20px',
   opacity: 0.8,
-  animation: 'fadeInOut 2s infinite',
+  animation: 'fadeInOut 1s infinite',
   '@keyframes fadeInOut': {
     '0%': { opacity: 0 },
     '50%': { opacity: 0.8 },
@@ -98,6 +101,12 @@ const BannerContent = styled(Box)(({ theme }) => ({
   backgroundColor: 'rgba(255, 255, 255, 0.69)',
   borderRadius: theme.spacing(2),
   border: '2px solid #333',
+  margin: '0 auto', // Add this to ensure horizontal centering
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(2.5),
+    width: '85%',
+    maxWidth: '100%',
+  },
 }));
 
 const SectionTitle = styled(Typography)(({ theme }) => ({
@@ -114,6 +123,10 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
     width: '60px',
     height: '3px',
     backgroundColor: theme.palette.primary.main,
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.8rem',
+    marginBottom: theme.spacing(4),
   },
 }));
 
@@ -221,16 +234,16 @@ const Home = () => {
       opacity: 1, 
       y: 0,
       transition: { 
-        duration: 0.7,
-        ease: "easeOut"
+        duration: 0.5,
+        ease: "backOut"
       }
     },
     exit: { 
       opacity: 0, 
       y: -20,
       transition: { 
-        duration: 0.3,
-        ease: "easeIn"
+        duration: 0.2,
+        ease: "backIn"
       }
     }
   };
@@ -317,7 +330,15 @@ const Home = () => {
                           animate="visible"
                           exit="exit"
                         >
-                          <Typography variant="h3" component="h1" gutterBottom>
+                          <Typography 
+                            variant="h3" 
+                            component="h1" 
+                            gutterBottom
+                            sx={{ 
+                              fontSize: { xs: '1.6rem', sm: '2.5rem', md: '2.5rem' },
+                              fontWeight: 700
+                            }}
+                          >
                             {banner.title}
                           </Typography>
                         </motion.div>
@@ -328,7 +349,14 @@ const Home = () => {
                           animate="visible"
                           exit="exit"
                         >
-                          <Typography variant="h6" paragraph>
+                          <Typography 
+                            variant="h6" 
+                            paragraph
+                            sx={{ 
+                              fontSize: { xs: '0.95rem', sm: '1.1rem', md: '1.25rem' },
+                              mb: { xs: 1.5, sm: 2 }
+                            }}
+                          >
                             {banner.description}
                           </Typography>
                         </motion.div>
@@ -345,11 +373,12 @@ const Home = () => {
                             color="primary" 
                             size="large"
                             sx={{ 
-                              mt: 2,
-                              px: 3,
-                              py: 1,
+                              mt: { xs: 1, sm: 2 },
+                              px: { xs: 2, sm: 3 },
+                              py: { xs: 0.8, sm: 1 },
                               borderRadius: '30px',
-                              fontWeight: 'bold'
+                              fontWeight: 'bold',
+                              fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' }
                             }}
                           >
                             {banner.buttonText}
@@ -428,7 +457,7 @@ const Home = () => {
       </BannerSection>
 
       {/* ALLROUNDERS Journey Section */}
-      <Box sx={{ py: 8, backgroundColor: '#f8f9fa' }}>
+      <Box sx={{ py: { xs: 5, sm: 8 }, backgroundColor: '#f8f9fa' }}>
         <Container>
           <SectionTitle variant="h3" component="h2">
             ALLROUNDERS JOURNEY
@@ -438,7 +467,7 @@ const Home = () => {
             sx={{ 
               position: 'relative',
               width: '100%',
-              height: '400px',
+              height: { xs: '250px', sm: '350px', md: '400px' },
               backgroundColor: '#eee',
               display: 'flex',
               alignItems: 'center',
@@ -450,8 +479,8 @@ const Home = () => {
             {/* Video placeholder */}
             <Box 
               sx={{
-                width: '80px',
-                height: '80px',
+                width: { xs: '60px', sm: '80px' },
+                height: { xs: '60px', sm: '80px' },
                 borderRadius: '50%',
                 backgroundColor: 'primary.main',
                 display: 'flex',
@@ -465,9 +494,9 @@ const Home = () => {
                 sx={{ 
                   width: 0,
                   height: 0,
-                  borderTop: '10px solid transparent',
-                  borderBottom: '10px solid transparent',
-                  borderLeft: '18px solid white',
+                  borderTop: { xs: '8px solid transparent', sm: '10px solid transparent' },
+                  borderBottom: { xs: '8px solid transparent', sm: '10px solid transparent' },
+                  borderLeft: { xs: '14px solid white', sm: '18px solid white' },
                   marginLeft: '5px',
                 }}
               />
@@ -477,13 +506,13 @@ const Home = () => {
       </Box>
 
       {/* Recent News Section */}
-      <Box sx={{ py: 8 }}>
+      <Box sx={{ py: { xs: 5, sm: 8 } }}>
         <Container>
           <SectionTitle variant="h3" component="h2">
             Recent News
           </SectionTitle>
           
-          <Grid container spacing={4}>
+          <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
             {newsData.map((news) => (
               <Grid item xs={12} sm={6} md={4} key={news.id}>
                 <NewsCard>
@@ -492,18 +521,40 @@ const Home = () => {
                     title={news.title}
                   />
                   <NewsCardContent>
-                    <Typography gutterBottom variant="h5" component="h3">
+                    <Typography 
+                      gutterBottom 
+                      variant="h5" 
+                      component="h3"
+                      sx={{ 
+                        fontSize: { xs: '1.2rem', sm: '1.5rem' },
+                        fontWeight: 600
+                      }}
+                    >
                       {news.title}
                     </Typography>
-                    <Typography variant="caption" color="text.secondary" display="block" gutterBottom>
+                    <Typography 
+                      variant="caption" 
+                      color="text.secondary" 
+                      display="block" 
+                      gutterBottom
+                      sx={{ fontSize: { xs: '0.7rem', sm: '0.75rem' } }}
+                    >
                       {news.date}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography 
+                      variant="body2" 
+                      color="text.secondary"
+                      sx={{ fontSize: { xs: '0.85rem', sm: '0.875rem' } }}
+                    >
                       {news.description}
                     </Typography>
                   </NewsCardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
+                    <Button 
+                      size="small" 
+                      color="primary"
+                      sx={{ fontWeight: 500 }}
+                    >
                       Read More
                     </Button>
                   </CardActions>
@@ -512,8 +563,15 @@ const Home = () => {
             ))}
           </Grid>
           
-          <Box sx={{ textAlign: 'center', mt: 4 }}>
-            <Button variant="outlined" color="primary">
+          <Box sx={{ textAlign: 'center', mt: { xs: 3, sm: 4 } }}>
+            <Button 
+              variant="outlined" 
+              color="primary"
+              sx={{ 
+                px: { xs: 2, sm: 3 },
+                py: { xs: 0.8, sm: 1 }
+              }}
+            >
               View More
             </Button>
           </Box>
