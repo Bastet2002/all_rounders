@@ -2,10 +2,12 @@ import React from 'react';
 import { Box, Typography, Grid, Container, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
 
 // Styled components
+
+
 const SectionContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(6, 0),
   backgroundColor: ({ bgColor }) => bgColor || 'transparent',
@@ -136,8 +138,7 @@ const PlayButton = styled(Box)(({ theme }) => ({
 
 const AboutUs = () => {
   const { language } = useLanguage();
-  // eslint-disable-next-line no-unused-vars
-  const t = translations[language];
+  const t = key => translations[language][key] || key;
 
   // Animation variants
   const fadeIn = {
@@ -173,7 +174,7 @@ const AboutUs = () => {
                   }
                 }}
               >
-                About ALLROUNDERS Inc
+                 {t('aboutUsTitle')}
               </Typography>
               <Typography 
                 variant="body1" 
@@ -185,9 +186,7 @@ const AboutUs = () => {
                     md: '1.2rem'
                   } }}
               >
-                ALLROUNDERS Inc. developed ROUND8, a global second-hand trading
-                platform that ensures a safe and alternative experience with both its
-                delivery and inspection systems.
+                {t('aboutUsDescription1')}
               </Typography>
               <Typography 
                 variant="body1" 
@@ -199,10 +198,7 @@ const AboutUs = () => {
                     md: '1.2rem'
                   } }}
               >
-                By fostering a community that values economic consumption and
-                resource recycling, ROUND8 introduces a new approach to second-hand
-                trading. Starting in Thailand, the platform is set to expand across ASEAN,
-                aiming to become a leading force in the region.
+                {t('aboutUsDescription2')}
               </Typography>
             </HeroContent>
           </motion.div>
@@ -274,7 +270,7 @@ const AboutUs = () => {
                       }
                     }}
                   >
-                    Our Missions
+                    {t('ourMissions')}
                   </Typography>
                 </motion.div>
                 

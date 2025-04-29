@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Grid, Typography, Link, Divider, Button } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-import { useLanguage } from '../../context/LanguageContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { translations } from '../../utils/translations';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
@@ -30,10 +30,10 @@ const Footer = () => {
               {t.home}
             </Link>
             <Link component={RouterLink} to="/about" color="inherit" display="block" sx={{ mb: 1 }}>
-              {t.aboutUs}
+              {t.ourCompany}
             </Link>
-            <Link component={RouterLink} to="/business" color="inherit" display="block" sx={{ mb: 1 }}>
-              {t.ourBusiness}
+            <Link component={RouterLink} to="/service" color="inherit" display="block" sx={{ mb: 1 }}>
+              {t.ourService}
             </Link>
             <Link component={RouterLink} to="/news" color="inherit" display="block" sx={{ mb: 1 }}>
               {t.news}
