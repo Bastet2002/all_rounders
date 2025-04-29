@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Box, Typography, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ScrollSection from '../components/ScrollSection';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -203,7 +204,30 @@ const Services = () => {
       icon: "/images/services/community-icon.png"
     }
   ];
+// Add this new styled component for the scroll indicator
+const ScrollIndicator = styled(Box)(({ theme }) => ({
+    position: 'absolute',
+    bottom: '20px',
+    left: '50%', // Center horizontally
+    transform: 'translateX(-50%)', // Center horizontally
+    zIndex: 10,
+    display: 'flex',
+    alignItems: 'center',
+    padding: theme.spacing(1, 2),
+    backgroundColor: 'rgba(0, 188, 212, 0.8)',
+    borderRadius: '20px',
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)',
+    color: 'white',
+    [theme.breakpoints.down('sm')]: {
+      bottom: '10px',
+      padding: theme.spacing(0.5, 1.5),
+    },
+    [theme.breakpoints.down('md')]: {
+        display: 'none', // Hide on mobile and tablet
+      },
 
+  }));
+  
   return (
     <PageContainer>
       {/* Hero Section */}
@@ -344,7 +368,10 @@ const Services = () => {
               ease: "easeOut" 
             }}
           >
-            <ActionButton variant="contained" size="large">
+            <ActionButton variant="contained" size="large" component="a"
+              href="https://round8-th.com/"
+              target="_blank"
+              rel="noopener noreferrer">
               <Box component="img" src="/images/services/round8.png" alt="Round8 Logo" sx={{ width: 24, height: 24, mr: 1 }} />
               Explore
             </ActionButton>
@@ -354,9 +381,29 @@ const Services = () => {
       </HeroSection>
 
       {/* How It Works Section - Using the new ScrollSection component */}
-      <ScrollSection 
-        sections={servicePanels} 
-      />
+      <Box sx={{ position: 'relative' }}>
+        <ScrollSection 
+          sections={servicePanels} 
+        />
+        
+        {/* Add the scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: [0, 1, 0], y: [-20, 0, -20] }}
+          transition={{ 
+            duration: 2,
+            repeat: Infinity,
+            repeatType: "loop"
+          }}
+        >
+          <ScrollIndicator>
+            <Typography variant="body2" sx={{ mr: 1, fontWeight: 500 }}>
+              Scroll
+            </Typography>
+            <KeyboardArrowDownIcon />
+          </ScrollIndicator>
+        </motion.div>
+      </Box>
 
       {/* Connect With Us Section */}
       <ConnectSection>

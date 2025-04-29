@@ -13,20 +13,28 @@ import {
   useMediaQuery,
   useTheme,
   Switch,
-  FormControlLabel
+  FormControlLabel,
+  ListItemIcon
 } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useLanguage } from '../../context/LanguageContext';
+import BusinessIcon from '@mui/icons-material/Business';
+import GroupIcon from '@mui/icons-material/Group';
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
+import WorkIcon from '@mui/icons-material/Work';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { translations } from '../../utils/translations';
 
 const Header = () => {
-  const { language, setLanguage } = useLanguage();
+  const { language, toggleLanguage } = useLanguage();
   // eslint-disable-next-line no-unused-vars
   const t = translations[language];
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [drawerOpen, setDrawerOpen] = useState(false);
+  
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -35,19 +43,20 @@ const Header = () => {
     setDrawerOpen(open);
   };
 
-  const menuItems = [
-    { text: 'Our Company', path: '/about' },
-    { text: 'Team', path: '/team' },
-    { text: 'Our Service', path: '/service' },
-    { text: 'News', path: '/news' },
-    { text: 'Careers', path: '/careers' },
-    { text: 'Contact', path: '/contact' },
-  ];
-
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'th' : 'en');
+  const handleInputChange = () => {
+    toggleLanguage();
   };
 
+  const menuItems = [
+    { text: t.ourCompany, path: '/about', icon: <BusinessIcon /> },
+    { text: t.team, path: '/team', icon: <GroupIcon /> },
+    { text: t.ourService, path: '/service', icon: <MiscellaneousServicesIcon /> },
+    { text: t.news, path: '/news', icon: <NewspaperIcon /> },
+    { text: t.careers, path: '/careers', icon: <WorkIcon /> },
+    { text: t.contactUs, path: 'https://tally.so/r/3EAWj4', external: true, icon: <ContactMailIcon /> },
+  ];
+
+  // Fix the drawer toggle implementation
   const drawer = (
     <Box
       sx={{ width: 250 }}
@@ -57,21 +66,40 @@ const Header = () => {
     >
       <List>
         {menuItems.map((item) => (
-          <ListItem 
-            button 
-            component={RouterLink} 
-            to={item.path} 
-            key={item.text}
-          >
-            <ListItemText primary={item.text} />
-          </ListItem>
+          item.external ? (
+            <ListItem 
+              button 
+              component="a" 
+              href={item.path}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={item.text}
+            >
+              <ListItemIcon>
+                {item.icon}
+              </ListItemIcon>
+              <ListItemText primary={item.text} />
+            </ListItem>
+          ) : (
+            <ListItem 
+              button 
+              component={RouterLink} 
+              to={item.path} 
+              key={item.text}
+            >
+              <ListItemIcon>
+                {item.icon}
+              </ListItemIcon>
+              <ListItemText primary={item.text} />
+            </ListItem>
+          )
         ))}
         <ListItem>
           <FormControlLabel
             control={
               <Switch
-                checked={language === 'en'}
-                onChange={toggleLanguage}
+                checked={language === 'th'}
+                onChange={handleInputChange}
                 name="languageToggle"
                 color="primary"
               />
@@ -124,20 +152,33 @@ const Header = () => {
           ) : (
             <>
               {menuItems.map((item) => (
-                <Button
-                  key={item.text}
-                  component={RouterLink}
-                  to={item.path}
-                  sx={{ mx: 1, color: 'white' }}
-                >
-                  {item.text}
-                </Button>
+                item.external ? (
+                  <Button
+                    key={item.text}
+                    component="a"
+                    href={item.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{ mx: 1, color: 'white' }}
+                  >
+                    {item.text}
+                  </Button>
+                ) : (
+                  <Button
+                    key={item.text}
+                    component={RouterLink}
+                    to={item.path}
+                    sx={{ mx: 1, color: 'white' }}
+                  >
+                    {item.text}
+                  </Button>
+                )
               ))}
               <FormControlLabel
                 control={
                   <Switch
-                    checked={language === 'en'}
-                    onChange={toggleLanguage}
+                    checked={language === 'th'}
+                    onChange={handleInputChange}
                     name="languageToggle"
                     color="default"
                     sx={{ 

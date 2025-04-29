@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Typography } from '@mui/material';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
 // Add this import
 import { db } from '../firebase/config';

@@ -5,14 +5,15 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
-import { LanguageProvider } from './context/LanguageContext';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 // Import placeholder pages for new routes
 import Team from './pages/Team';
-import Service from './pages/Services';
+import Services from './pages/Services';
 import News from './pages/News';
 import Careers from './pages/Careers';
 import AboutMeDetail from './pages/AboutMeDetail';
+import NewsDetail from './pages/NewsDetail';
 
 const theme = createTheme({
   palette: {
@@ -39,8 +40,9 @@ function App() {
               <Route path="/about" element={<AboutUs />} />
               <Route path="/team" element={<Team />} />
               <Route path="/team/:id" element={<AboutMeDetail />} />
-              <Route path="/service" element={<Service />} />
+              <Route path="/service" element={<Services />} />
               <Route path="/news" element={<News />} />
+              <Route path="/news/:id" element={<NewsDetail />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>

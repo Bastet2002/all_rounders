@@ -4,6 +4,9 @@ import { styled } from '@mui/material/styles';
 import { motion, AnimatePresence } from 'framer-motion';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import RecentNewsSection from '../components/RecentNewsSection';
+import { useLanguage } from '../contexts/LanguageContext';
+import { Link as RouterLink } from 'react-router-dom';
 
 // Styled components
 const BannerSection = styled(Box)(({ theme }) => ({
@@ -20,7 +23,6 @@ const BannerSection = styled(Box)(({ theme }) => ({
 const NavArrow = styled(Box)(({ theme }) => ({
   position: 'absolute',
   top: '50%',
-  transform: 'translateY(-50%)',
   width: '60px',
   height: '60px',
   display: 'flex',
@@ -35,7 +37,7 @@ const NavArrow = styled(Box)(({ theme }) => ({
   boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
   '&:hover': {
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    transform: 'translateY(-50%) scale(1.1)',
+
   },
   [theme.breakpoints.down('sm')]: {
     width: '45px',
@@ -506,78 +508,8 @@ const Home = () => {
       </Box>
 
       {/* Recent News Section */}
-      <Box sx={{ py: { xs: 5, sm: 8 } }}>
-        <Container>
-          <SectionTitle variant="h3" component="h2">
-            Recent News
-          </SectionTitle>
-          
-          <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
-            {newsData.map((news) => (
-              <Grid item xs={12} sm={6} md={4} key={news.id}>
-                <NewsCard>
-                  <NewsCardMedia
-                    image={news.image}
-                    title={news.title}
-                  />
-                  <NewsCardContent>
-                    <Typography 
-                      gutterBottom 
-                      variant="h5" 
-                      component="h3"
-                      sx={{ 
-                        fontSize: { xs: '1.2rem', sm: '1.5rem' },
-                        fontWeight: 600
-                      }}
-                    >
-                      {news.title}
-                    </Typography>
-                    <Typography 
-                      variant="caption" 
-                      color="text.secondary" 
-                      display="block" 
-                      gutterBottom
-                      sx={{ fontSize: { xs: '0.7rem', sm: '0.75rem' } }}
-                    >
-                      {news.date}
-                    </Typography>
-                    <Typography 
-                      variant="body2" 
-                      color="text.secondary"
-                      sx={{ fontSize: { xs: '0.85rem', sm: '0.875rem' } }}
-                    >
-                      {news.description}
-                    </Typography>
-                  </NewsCardContent>
-                  <CardActions>
-                    <Button 
-                      size="small" 
-                      color="primary"
-                      sx={{ fontWeight: 500 }}
-                    >
-                      Read More
-                    </Button>
-                  </CardActions>
-                </NewsCard>
-              </Grid>
-            ))}
-          </Grid>
-          
-          <Box sx={{ textAlign: 'center', mt: { xs: 3, sm: 4 } }}>
-            <Button 
-              variant="outlined" 
-              color="primary"
-              sx={{ 
-                px: { xs: 2, sm: 3 },
-                py: { xs: 0.8, sm: 1 }
-              }}
-            >
-              View More
-            </Button>
-          </Box>
-        </Container>
+      <RecentNewsSection />
       </Box>
-    </Box>
   );
 };
 
