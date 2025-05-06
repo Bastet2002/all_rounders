@@ -4,9 +4,67 @@ import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
+import { useState } from 'react';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import Button from '@mui/material/Button';
 
 // Styled components
-
+const ExpandableTimelineContent = ({ content }) => {
+    const [expanded, setExpanded] = useState(false);
+    
+    // Split content by line breaks to get individual bullet points
+    const bulletPoints = content.split('\n').filter(point => point.trim() !== '');
+    
+    // If there are only 2 or fewer bullet points, just display them all
+    if (bulletPoints.length <= 2) {
+      return (
+        <Box component="ul" sx={{ pl: 2, m: 0, flex:1, pb:0 }}>
+          {bulletPoints.map((point, index) => (
+            <Typography component="li" variant="body1" key={index} sx={{ fontWeight: 500, mb: 1 }}>
+              {point.trim()}
+            </Typography>
+          ))}
+        </Box>
+      );
+    }
+    
+    // Otherwise, show only first 2 by default with expand option
+    return (
+      <>
+        <Box component="ul" sx={{ pl: 2, m: 0, mb: 0.5, flex:1, pb:0 }}>
+          {(expanded ? bulletPoints : bulletPoints.slice(0, 2)).map((point, index) => (
+            <Typography component="li" variant="body1" key={index} sx={{ fontWeight: 500, mb: 0 }}>
+              {point.trim()}
+            </Typography>
+          ))}
+        </Box>
+        <Button 
+          onClick={() => setExpanded(!expanded)} 
+          sx={{ 
+            minWidth: 'auto', 
+            p: 0.5, 
+            mt: 0, 
+            ml: 1,
+            mb: 0,
+            color: 'inherit',
+            textTransform: 'none',
+            fontSize: '0.8rem'
+          }}
+        >
+          {expanded ? (
+            <>
+              <ExpandLessIcon fontSize="small" sx={{ mr: 0.5 }} /> Show less
+            </>
+          ) : (
+            <>
+              <ExpandMoreIcon fontSize="small" sx={{ mr: 0.5 }} /> Show more ({bulletPoints.length - 2} more)
+            </>
+          )}
+        </Button>
+      </>
+    ); 
+  };
 
 const SectionContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(6, 0),
@@ -44,7 +102,7 @@ const HeroSection = styled(Box)(({ theme }) => ({
     borderRadius: theme.spacing(1),
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
     backdropFilter: 'blur(5px)',
-    maxWidth: '800px',
+    maxWidth: '1200px',
     margin: '0 auto',
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(2),
@@ -56,6 +114,7 @@ const MissionCard = styled(Paper)(({ theme }) => ({
   height: '100%',
   minHeight: '280px',
   display: 'flex',
+  maxWidth: '900px',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
@@ -323,40 +382,7 @@ const AboutUs = () => {
                 viewport={{ once: true, amount: 0.2 }}
               >
                 <Grid container spacing={4}>
-                  <Grid item xs={12} md={4}>
-                    <motion.div 
-                      variants={{
-                        hidden: { opacity: 0, y: 80 }, // Increased y offset
-                        visible: { 
-                          opacity: 1, 
-                          y: 0,
-                          transition: { duration: 0.8 } // Increased duration
-                        }
-                      }}
-                      style={{ height: '100%' }}
-                      whileHover={{ 
-                        y: -15,
-                        boxShadow: "0px 15px 25px rgba(0, 0, 0, 0.2)",
-                        transition: { duration: 0.5 } // Added transition duration for hover
-                      }}
-                    >
-                      <MissionCard elevation={4}>
-                        <Box sx={{ mb: 3, mt: 1 }}>
-                          <motion.div
-                            whileHover={{ rotate: 360, scale: 1.1 }}
-                            transition={{ duration: 1 }}
-                          >
-                            <img src="/images/technology.png" alt="Technology" width="90" height="90" />
-                          </motion.div>
-                        </Box>
-                        <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
-                          Integrate advanced technology while prioritizing Thai markets
-                        </Typography>
-                      </MissionCard>
-                    </motion.div>
-                  </Grid>
-                  
-                  <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={4}>
                     <motion.div  
                       variants={{
                         hidden: { opacity: 0, y: 80 }, // Increased y offset
@@ -374,269 +400,651 @@ const AboutUs = () => {
                       }}
                     >
                       <MissionCard elevation={4}>
-                        <Box sx={{ mb: 3, mt: 1 }}>
-                          <motion.div
-                            whileHover={{ rotate: 360, scale: 1.1 }}
-                            transition={{ duration: 1 }}
-                          >
-                            <img src="/images/market.png" alt="Market" width="90" height="90" />
-                          </motion.div>
-                        </Box>
-                        <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
-                          Scale based on market needs, starting with Thailand while expanding into different businesses
-                        </Typography>
-                      </MissionCard>
-                    </motion.div>
-                  </Grid>
-                  
-                  <Grid item xs={12} md={4}>
-                    <motion.div  
-                      variants={{
-                        hidden: { opacity: 0, y: 80 }, // Increased y offset
-                        visible: { 
-                          opacity: 1, 
-                          y: 0,
-                          transition: { duration: 0.8 } // Increased duration
-                        }
-                      }}
-                      style={{ height: '100%' }}
-                      whileHover={{ 
-                        y: -15,
-                        boxShadow: "0px 15px 25px rgba(0, 0, 0, 0.2)",
-                        transition: { duration: 0.5 } // Added transition duration for hover
-                      }}
-                    >
-                      <MissionCard elevation={4}>
-                        <Box sx={{ mb: 3, mt: 1 }}>
-                          <motion.div
-                            whileHover={{ rotate: 360, scale: 1.1 }}
-                            transition={{ duration: 1 }}
-                          >
-                            <img src="/images/global.png" alt="Global" width="90" height="90" />
-                          </motion.div>
-                        </Box>
-                        <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
-                          Expand operations across Southeast Asia
-                        </Typography>
-                      </MissionCard>
-                    </motion.div>
-                  </Grid>
-                </Grid>
-              </motion.div>
-            </Box>
-          </motion.div>
-        </Container>
-      </SectionContainer>
-
-      {/* Team Interview Section */}
-      <SectionContainer bgColor="#f5f5f5" sx={{ py: 8 }}>
-        <Container maxWidth="lg">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            transition={{ duration: 0.6 }}
-          >
-            <Typography 
-              variant="h4" 
-              component="h2" 
-              align="center" 
-              gutterBottom
-              sx={{ fontWeight: 600, mb: 5 }}
-            >
-              Team Interview
-            </Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.3 }}
-                style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-              >
-                <VideoContainer>
-                  <PlayButton>
-                    <motion.div
-                      whileHover={{ scale: 1.2 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Box sx={{ width: 0, height: 0, borderTop: '15px solid transparent', borderBottom: '15px solid transparent', borderLeft: '25px solid #333', ml: 1 }} />
-                    </motion.div>
-                  </PlayButton>
-                </VideoContainer>
-              </motion.div>
-            </Box>
-          </motion.div>
-        </Container>
-      </SectionContainer>
-
- {/* Our Journey Section */}
- <SectionContainer sx={{ py: 0 }}>
-        <Container maxWidth="lg">
-        <Typography 
-                variant="h4" 
-                component="h2" 
-                align="center" 
-                gutterBottom 
-                sx={{ py: 5, fontWeight: 600 }}
-              >
-                Our Journey
-              </Typography>
-          <Box 
-            sx={{ 
-              border: '2px solid #000', 
-              borderRadius: '8px', 
-              overflow: 'hidden',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
-              mb: 6
-            }}
-          >
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-              transition={{ duration: 0.6 }}
-            >
-              
-              <Grid container>
-                <Grid item xs={12} md={6} sx={{ 
-                  backgroundColor: '#000', 
-                  color: '#fff', 
-                  p: { xs: 3, md: 5 }, 
-                  px: { xs: 4, md: 8 } // Increased horizontal padding
-                }}>
-                  <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                  >
-                    <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 4 }}>
-                      2024
-                    </Typography>
-                    
-                    <TimelineItem>
-                      <TimelineMarker 
-                        bgColor="#fff" 
-                        textColor="#000"
-                        sx={{ 
-                          border: '2px solid #333',
-                          boxShadow: '0 4px 12px rgba(255,255,255,0.2)' 
+                      <motion.div
+                        animate={{ 
+                            y: [0, -10, 0] 
                         }}
-                      >Q1</TimelineMarker>
-                      <TimelineContent borderColor="#444">
-                      <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                      - Establishment of ALLROUNDERS Inc <br />
-                      - Product planning<br />
-                      - Start social media management
-                    </Typography>
-                  </TimelineContent>
-                </TimelineItem>
-                
-                <TimelineItem>
-                  <TimelineMarker bgColor="#fff" textColor="#000" sx={{ 
-                          border: '2px solid #333',
-                          boxShadow: '0 4px 12px rgba(255,255,255,0.2)' 
-                        }}>Q2</TimelineMarker>
-                  <TimelineContent borderColor="#444">
-                    <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                    - Operated ROUND8 pre-registration page <br />
-                    - Selected as an incubation company by Jeju startup bay<br />
-                    - Start operating local interns (10+ interns)
-                    </Typography>
-                  </TimelineContent>
-                </TimelineItem>
-                
-                <TimelineItem>
-                  <TimelineMarker bgColor="#fff" textColor="#000" sx={{ 
-                          border: '2px solid #333',
-                          boxShadow: '0 4px 12px rgba(255,255,255,0.2)' 
-                        }}>Q3</TimelineMarker>
-                  <TimelineContent borderColor="#444">
-                    <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                    - Accumulated 500+ pre-registers <br />
-                    - Expanded local partnerships in Thailand (20+ partners) <br />
-                    - MVP version 1 development (Shopify, in-house)
-                    </Typography>
-                
-                  </TimelineContent>
-                </TimelineItem>
-                
-                <TimelineItem>
-                  <TimelineMarker bgColor="#fff" textColor="#000" sx={{ 
-                          border: '2px solid #333',
-                          boxShadow: '0 4px 12px rgba(255,255,255,0.2)' 
-                        }}>Q4</TimelineMarker>
-                  <TimelineContent borderColor="#444">
-                    <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                      - MVP version 2 development (wordpress, outsource)<br />
-                      - Setup of Bangkok office<br />
-                      - Selected as an incubation company by Jeju creative economy innovation center<br />
-                      - Appointed as a representative of the Korean business delegation by the Thai Embassy<br />
-                      - Mobile UI/UX design completion
-                    </Typography>
-                  </TimelineContent>
-                </TimelineItem>
-                  </motion.div>
+                        transition={{ 
+                            duration: 1.2, 
+                            repeat: Infinity, 
+                            repeatType: "loop", 
+                            ease: "easeInOut" 
+                        }}
+                        >
+                        <img src="/images/tech.png" alt="Market" width="90" height="90" />
+                        <Box sx={{ mt: 3 }}></Box>
+                        </motion.div>
+                            <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
+                            Integrate advanced technology while prioritizing Thai markets
+                            </Typography>
+                        </MissionCard>
+                        </motion.div>
+                  </Grid>
+                  
+                  <Grid item xs={12} md={4}>
+                    <motion.div  
+                      variants={{
+                        hidden: { opacity: 0, y: 80 }, // Increased y offset
+                        visible: { 
+                          opacity: 1, 
+                          y: 0,
+                          transition: { duration: 0.8 } // Increased duration
+                        }
+                      }}
+                      style={{ height: '100%' }}
+                      whileHover={{ 
+                        y: -15,
+                        boxShadow: "0px 15px 25px rgba(0, 0, 0, 0.2)",
+                        transition: { duration: 0.5 } // Added transition duration for hover
+                      }}
+                    >
+                      <MissionCard elevation={4}>
+                      <motion.div
+                        animate={{ 
+                            y: [0, -10, 0] 
+                        }}
+                        transition={{ 
+                            duration: 1.2, 
+                            repeat: Infinity, 
+                            repeatType: "loop", 
+                            ease: "easeInOut" 
+                        }}
+                        >
+                        <img src="/images/market.png" alt="Market" width="95" height="95" />
+                        <Box sx={{ mt: 3 }}></Box>
+                        </motion.div>
+                            <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
+                            Expand our reach to the Thai market
+                            </Typography>
+                        </MissionCard>
+                        </motion.div>
+                  </Grid>
+                  
+                  <Grid item xs={12} md={4}>
+                    <motion.div  
+                      variants={{
+                        hidden: { opacity: 0, y: 80 }, // Increased y offset
+                        visible: { 
+                          opacity: 1, 
+                          y: 0,
+                          transition: { duration: 0.8 } // Increased duration
+                        }
+                      }}
+                      style={{ height: '100%' }}
+                      whileHover={{ 
+                        y: -15,
+                        boxShadow: "0px 15px 25px rgba(0, 0, 0, 0.2)",
+                        transition: { duration: 0.5 } // Added transition duration for hover
+                      }}
+                    >
+                      <MissionCard elevation={4}>
+                      <motion.div
+                        animate={{ 
+                            y: [0, -10, 0] 
+                        }}
+                        transition={{ 
+                            duration: 1.2, 
+                            repeat: Infinity, 
+                            repeatType: "loop", 
+                            ease: "easeInOut" 
+                        }}
+                        >
+                        <img src="/images/asia.png" alt="Market" width="90" height="90" />
+                        <Box sx={{ mt: 3 }}></Box>
+                        </motion.div>
+                            <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
+                            Expand operations across Southeast Asia
+                            </Typography>
+                        </MissionCard>
+                        </motion.div>
+                  </Grid>
                 </Grid>
-                
-                <Grid item xs={12} md={6} sx={{ backgroundColor: '#fff', color: '#000', p: 5 }}>
-                <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 4 }}>
-                  2025
-                </Typography>
-                
-                <TimelineItem>
-                  <TimelineMarker bgColor="#000" textColor="#fff">Q1</TimelineMarker>
-                  <TimelineContent borderColor="#ddd">
-                    <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                    - MVP version 2 operation <br />
-                    - Secured and trained local riders (1 full-time, 40+ part-timers)<br />
-                    - Secured 40+ influencers for promotional support<br />
-                    - Partnerships with K-beauty companies (3)<br />
-                    - Selected as a KOSME global business centere Bangkok tenanat company<br />
-                    - Negotiating partnerships with major Thai companies/universities<br />
-                    - MVP version 3 development (Bubble, in-house)
-                    </Typography>
-                  </TimelineContent>
-                </TimelineItem>
-                
-                <TimelineItem>
-                  <TimelineMarker bgColor="#000" textColor="#fff">Q2</TimelineMarker>
-                  <TimelineContent borderColor="#ddd">
-                    <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                        - Beta service launch (Targeting 3,000 Users)
-                    </Typography>
-                  </TimelineContent>
-                </TimelineItem>
-                
-                <TimelineItem>
-                  <TimelineMarker bgColor="#000" textColor="#fff">Q3</TimelineMarker>
-                  <TimelineContent borderColor="#ddd">
-                    <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                        - Secure VC investment
-                    </Typography>
-                    
-                  </TimelineContent>
-                </TimelineItem>
-                
-                <TimelineItem>
-                  <TimelineMarker bgColor="#000" textColor="#fff">Q4</TimelineMarker>
-                  <TimelineContent borderColor="#ddd">
-                    <Typography variant="body1" gutterBottom sx={{ fontWeight: 500 }}>
-                    - Official service launch (Targeting 20,000 Users) <br />
-                    - Preparition for international expansion 
-                    </Typography>
-                  </TimelineContent>
-                </TimelineItem>
               </motion.div>
-                </Grid>
-              </Grid>
-            </motion.div>
-          </Box>
+            </Box>
+          </motion.div>
         </Container>
       </SectionContainer>
+
+      
+
+
+
+{/* Our Journey Section */}
+<SectionContainer sx={{ py: 0 }}>
+  <Container maxWidth="lg">
+    <Typography 
+      variant="h4" 
+      component="h2" 
+      align="center" 
+      gutterBottom 
+      sx={{ py: 5, fontWeight: 600 }}
+    >
+      Our Journey
+    </Typography>
+    <Box 
+      sx={{ 
+        border: '2px solid #000', 
+        borderRadius: '8px', 
+        overflow: 'hidden',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+        mb: 6
+      }}
+    >
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+        transition={{ duration: 0.6 }}
+      >
+        {/* Mobile View - Stack 2024 and 2025 completely separate */}
+        <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+          {/* 2024 Section */}
+          <Box>
+            <Box sx={{ 
+              backgroundColor: '#000', 
+              color: '#fff', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #444'
+            }}>
+              <Typography variant="h5" align="center" gutterBottom sx={{ fontWeight: 600 }}>
+                2024
+              </Typography>
+            </Box>
+            
+            {/* Q1 2024 */}
+            <Box sx={{ 
+              backgroundColor: '#000', 
+              color: '#fff', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #444'
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#fff" 
+                  textColor="#000"
+                  sx={{ 
+                    border: '2px solid #333',
+                    boxShadow: '0 4px 12px rgba(255,255,255,0.2)',
+                    flexShrink: 0
+                  }}
+                >Q1</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- Establishment of ALLROUNDERS Inc
+- Product planning
+- Start social media management" />
+                </Box>
+              </Box>
+            </Box>
+            
+            {/* Q2 2024 */}
+            <Box sx={{ 
+              backgroundColor: '#000', 
+              color: '#fff', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #444'
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#fff" 
+                  textColor="#000"
+                  sx={{ 
+                    border: '2px solid #333',
+                    boxShadow: '0 4px 12px rgba(255,255,255,0.2)',
+                    flexShrink: 0
+                  }}
+                >Q2</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- Operated ROUND8 pre-registration page 
+- Selected as an incubation company by Jeju startup bay
+- Start operating local interns (10+ interns)" />
+                </Box>
+              </Box>
+            </Box>
+            
+            {/* Q3 2024 */}
+            <Box sx={{ 
+              backgroundColor: '#000', 
+              color: '#fff', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #444'
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#fff" 
+                  textColor="#000"
+                  sx={{ 
+                    border: '2px solid #333',
+                    boxShadow: '0 4px 12px rgba(255,255,255,0.2)',
+                    flexShrink: 0
+                  }}
+                >Q3</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- Accumulated 500+ pre-registers 
+- Expanded local partnerships in Thailand (20+ partners) 
+- MVP version 1 development (Shopify, in-house)" />
+                </Box>
+              </Box>
+            </Box>
+            
+            {/* Q4 2024 */}
+            <Box sx={{ 
+              backgroundColor: '#000', 
+              color: '#fff', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #444'
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#fff" 
+                  textColor="#000"
+                  sx={{ 
+                    border: '2px solid #333',
+                    boxShadow: '0 4px 12px rgba(255,255,255,0.2)',
+                    flexShrink: 0
+                  }}
+                >Q4</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- MVP version 2 development (wordpress, outsource)
+- Setup of Bangkok office
+- Selected as an incubation company by Jeju creative economy innovation center
+- Appointed as a representative of the Korean business delegation by the Thai Embassy
+- Mobile UI/UX design completion" />
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+          
+          {/* 2025 Section */}
+          <Box>
+            <Box sx={{ 
+              backgroundColor: '#fff', 
+              color: '#000', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #ddd'
+            }}>
+              <Typography variant="h5" align="center" gutterBottom sx={{ fontWeight: 600 }}>
+                2025
+              </Typography>
+            </Box>
+            
+            {/* Q1 2025 */}
+            <Box sx={{ 
+              backgroundColor: '#fff', 
+              color: '#000', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #ddd'
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#000" 
+                  textColor="#fff"
+                  sx={{ flexShrink: 0 }}
+                >Q1</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- MVP version 2 operations
+- Secured 40+ influencers for promotional support
+- Secured and trained local riders (1 full-time, 40+ part-timers)
+- Partnerships with K-beauty companies (3)
+- Selected as a KOSME global business centere Bangkok tenanat company
+- Negotiating partnerships with major Thai companies/universities
+- MVP version 3 development (Bubble, in-house)" />
+                </Box>
+              </Box>
+            </Box>
+            
+            {/* Q2 2025 */}
+            <Box sx={{ 
+              backgroundColor: '#fff', 
+              color: '#000', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #ddd'
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#000" 
+                  textColor="#fff"
+                  sx={{ flexShrink: 0 }}
+                >Q2</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- Beta service launch (Targeting 3,000 Users)" />
+                </Box>
+              </Box>
+            </Box>
+            
+            {/* Q3 2025 */}
+            <Box sx={{ 
+              backgroundColor: '#fff', 
+              color: '#000', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #ddd'
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#000" 
+                  textColor="#fff"
+                  sx={{ flexShrink: 0 }}
+                >Q3</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- Secure VC investment hello" />
+                </Box>
+              </Box>
+            </Box>
+            
+            {/* Q4 2025 */}
+            <Box sx={{ 
+              backgroundColor: '#fff', 
+              color: '#000', 
+              p: 2,
+              pb:1,
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#000" 
+                  textColor="#fff"
+                  sx={{ flexShrink: 0 }}
+                >Q4</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- Official service launch (Targeting 20,000 Users) 
+- Preparition for international expansion" />
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+        
+        {/* Desktop View - Side by side layout */}
+        <Grid container sx={{ display: { xs: 'none', md: 'flex' } }}>
+          {/* Headers */}
+          <Grid item xs={6} sx={{ 
+            backgroundColor: '#000', 
+            color: '#fff', 
+            p: 2,
+            pb:1,
+            borderBottom: '1px solid #444'
+          }}>
+            <Typography variant="h5" align="center" gutterBottom sx={{ fontWeight: 600 }}>
+              2024
+            </Typography>
+          </Grid>
+          <Grid item xs={6} sx={{ 
+            backgroundColor: '#fff', 
+            color: '#000', 
+            p: 3,
+            borderBottom: '1px solid #ddd'
+          }}>
+            <Typography variant="h5" align="center" gutterBottom sx={{ fontWeight: 600 }}>
+              2025
+            </Typography>
+          </Grid>
+          
+          {/* Q1 Row */}
+          <Grid container>
+            <Grid item xs={6} sx={{ 
+              backgroundColor: '#000', 
+              color: '#fff', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #444',
+              height: '300px',
+              overflow: 'auto',
+            height: '140px', // Fixed height for desktop view
+            transition: 'height 0.3s ease-in-out', // Smooth transition for height changes
+            '&.expanded': {
+                height: 'auto', // Will expand when content expands
+                minHeight: '180px'
+            }
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#fff" 
+                  textColor="#000"
+                  sx={{ 
+                    border: '2px solid #333',
+                    boxShadow: '0 4px 12px rgba(255,255,255,0.2)',
+                    flexShrink: 0
+                  }}
+                >Q1</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- Establishment of ALLROUNDERS Inc
+- Product planning
+- Start social media management" />
+                </Box>
+              </Box>
+            </Grid>
+            <Grid item xs={6} sx={{ 
+              backgroundColor: '#fff', 
+              color: '#000', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #ddd',
+              height: '300px',
+              overflow: 'auto',
+              height: '140px', // Fixed height for desktop view
+              transition: 'height 0.3s ease-in-out', // Smooth transition for height changes
+              '&.expanded': {
+                  height: 'auto', // Will expand when content expands
+                  minHeight: '180px'
+              }
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#000" 
+                  textColor="#fff"
+                  sx={{ flexShrink: 0 }}
+                >Q1</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- MVP version 2 operations
+- Secured 40+ influencers for promotional support
+- Secured and trained local riders (1 full-time, 40+ part-timers)
+- Partnerships with K-beauty companies (3)
+- Selected as a KOSME global business centere Bangkok tenanat company
+- Negotiating partnerships with major Thai companies/universities
+- MVP version 3 development (Bubble, in-house)" />
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
+          
+          {/* Q2 Row */}
+          <Grid container>
+            <Grid item xs={6} sx={{ 
+              backgroundColor: '#000', 
+              color: '#fff', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #444',
+              height: '250px',
+              overflow: 'auto',
+              height: '140px', // Fixed height for desktop view
+              transition: 'height 0.3s ease-in-out', // Smooth transition for height changes
+              '&.expanded': {
+                  height: 'auto', // Will expand when content expands
+                  minHeight: '180px'
+              }
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#fff" 
+                  textColor="#000"
+                  sx={{ 
+                    border: '2px solid #333',
+                    boxShadow: '0 4px 12px rgba(255,255,255,0.2)',
+                    flexShrink: 0
+                  }}
+                >Q2</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- Operated ROUND8 pre-registration page 
+- Selected as an incubation company by Jeju startup bay
+- Start operating local interns (10+ interns)" />
+                </Box>
+              </Box>
+            </Grid>
+            <Grid item xs={6} sx={{ 
+              backgroundColor: '#fff', 
+              color: '#000', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #ddd',
+              height: '250px',
+              overflow: 'auto',
+              height: '140px', // Fixed height for desktop view
+              transition: 'height 0.3s ease-in-out', // Smooth transition for height changes
+              '&.expanded': {
+                  height: 'auto', // Will expand when content expands
+                  minHeight: '180px'
+              }
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#000" 
+                  textColor="#fff"
+                  sx={{ flexShrink: 0 }}
+                >Q2</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- Beta service launch (Targeting 3,000 Users)" />
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
+          
+          {/* Q3 Row */}
+          <Grid container>
+            <Grid item xs={6} sx={{ 
+              backgroundColor: '#000', 
+              color: '#fff', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #444',
+              height: '250px',
+              overflow: 'auto',
+              height: '140px', // Fixed height for desktop view
+              transition: 'height 0.3s ease-in-out', // Smooth transition for height changes
+              '&.expanded': {
+                  height: 'auto', // Will expand when content expands
+                  minHeight: '180px'
+              }
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#fff" 
+                  textColor="#000"
+                  sx={{ 
+                    border: '2px solid #333',
+                    boxShadow: '0 4px 12px rgba(255,255,255,0.2)',
+                    flexShrink: 0
+                  }}
+                >Q3</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- Accumulated 500+ pre-registers 
+- Expanded local partnerships in Thailand (20+ partners) 
+- MVP version 1 development (Shopify, in-house)" />
+                </Box>
+              </Box>
+            </Grid>
+            <Grid item xs={6} sx={{ 
+              backgroundColor: '#fff', 
+              color: '#000', 
+              p: 2,
+              pb:1,
+              borderBottom: '1px solid #ddd',
+              height: '250px',
+              overflow: 'auto',
+              height: '140px', // Fixed height for desktop view
+              transition: 'height 0.3s ease-in-out', // Smooth transition for height changes
+              '&.expanded': {
+                  height: 'auto', // Will expand when content expands
+                  minHeight: '180px'
+              }
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#000" 
+                  textColor="#fff"
+                  sx={{ flexShrink: 0 }}
+                >Q3</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- Secure VC investment" />
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
+          
+          {/* Q4 Row */}
+          <Grid container>
+            <Grid item xs={6} sx={{ 
+              backgroundColor: '#000', 
+              color: '#fff', 
+              p: 2,
+              pb:1,
+              height: '300px',
+              overflow: 'auto',
+              height: '140px', // Fixed height for desktop view
+              transition: 'height 0.3s ease-in-out', // Smooth transition for height changes
+              '&.expanded': {
+                  height: 'auto', // Will expand when content expands
+                  minHeight: '180px'
+              }
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#fff" 
+                  textColor="#000"
+                  sx={{ 
+                    border: '2px solid #333',
+                    boxShadow: '0 4px 12px rgba(255,255,255,0.2)',
+                    flexShrink: 0
+                  }}
+                >Q4</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- MVP version 2 development (wordpress, outsource)
+- Setup of Bangkok office
+- Selected as an incubation company by Jeju creative economy innovation center
+- Appointed as a representative of the Korean business delegation by the Thai Embassy
+- Mobile UI/UX design completion" />
+                </Box>
+              </Box>
+            </Grid>
+            <Grid item xs={6} sx={{ 
+              backgroundColor: '#fff', 
+              color: '#000', 
+              p: 2,
+              pb:1,
+              height: '300px',
+              overflow: 'auto',
+              height: '140px', // Fixed height for desktop view
+              transition: 'height 0.3s ease-in-out', // Smooth transition for height changes
+              '&.expanded': {
+                  height: 'auto', // Will expand when content expands
+                  minHeight: '180px'
+              }
+            }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <TimelineMarker 
+                  bgColor="#000" 
+                  textColor="#fff"
+                  sx={{ flexShrink: 0 }}
+                >Q4</TimelineMarker>
+                <Box sx={{ ml: 2, flex: 1 }}>
+                  <ExpandableTimelineContent content="- Official service launch (Targeting 20,000 Users) 
+- Preparition for international expansion" />
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
+        </Grid>
+      </motion.div>
+    </Box>
+  </Container>
+</SectionContainer>
       <Box sx={{ pt: 6, pb: 3 }}></Box>
     </>
   );

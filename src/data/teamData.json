@@ -2,7 +2,7 @@
   "team": [
     {
       "id": "hyunji-kim",
-      "name": "Hyunji Kim (Hayley)",
+      "name": "Hayley",
       "role": "CEO",
       "funnyRole": "Mom",
       "roleIcon": "👩🏻‍💼",
@@ -54,7 +54,7 @@
     },
     {
       "id": "kyungsuk-yang",
-      "name": "Kyungsuk Yang (Ben)",
+      "name": "Ben",
       "role": "COO",
       "funnyRole": "AI",
       "roleIcon": "👨‍💼",
@@ -116,7 +116,7 @@
     },
     {
       "id": "jet",
-      "name": "Apichet Charlermwutinan (Jet)",
+      "name": "Jet",
       "role": "Planning Team",
       "funnyRole": "Developer",
       "roleIcon": "🧑🏻‍💼",
@@ -164,7 +164,7 @@
     },
     {
       "id": "p",
-      "name": "Pichaya Saidoung (P)",
+      "name": "P",
       "role": "Business Team",
       "funnyRole": "Mandatory Designer",
       "roleIcon": "🧑🏻‍💼",
@@ -209,7 +209,7 @@
     },
     {
       "id": "big",
-      "name": "Anucha Radinghin (Big)",
+      "name": "Big",
       "role": "Rider",
       "funnyRole": "Body Language Expert",
       "roleIcon": "🛵",
@@ -257,7 +257,7 @@
    
     {
       "id": "emily",
-      "name": "Emily Impens (Mimi)",
+      "name": "Emily",
       "role": "Marketing Intern",
       "funnyRole": "The newbie",
       "roleIcon": "🙋🏻‍♀️",
@@ -299,7 +299,7 @@
     },
     {
       "id": "nichole",
-      "name": "Nann Wutt Yee Win (Nichole)",
+      "name": "Nichole",
       "role": "IT Intern",
       "funnyRole": "Web Designer",
       "roleIcon": "💻",
