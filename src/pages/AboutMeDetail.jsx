@@ -53,12 +53,13 @@ const ProfileInfo = styled(Box)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     textAlign: 'left',
   },
+  
 }));
 
 const SectionTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   marginBottom: theme.spacing(2),
-  display: 'flex',
+  display: 'inline-block',
   alignItems: 'center',
   fontSize: '1.5rem',
   '& svg': {
@@ -375,7 +376,10 @@ const AboutMeDetail = () => {
             <SectionTitle variant="h5">
               About {firstName} ✨
             </SectionTitle>
-            <Typography variant="body1" paragraph sx={{ fontSize: '1rem' }}>
+            <Typography variant="body1" paragraph sx={{ mt: 2,fontSize: '1rem',textAlign: 'justify',  // Aligns text on both left and right edges
+    maxWidth: '800px',     
+    lineHeight: 1.6,       
+    whiteSpace: 'pre-line' }}>
               {member.bio}
             </Typography>
           </Grid>

@@ -114,6 +114,57 @@ export const translations = {
     backToNews: "Back to News",
     relatedArticles: "Related Articles",
     viewAllNews: "View All News",
+
+
+    // Careers page
+    workWithUs: "Work with Us?",
+    workWithUsDesc: "ALLROUNDERS Inc. is a company built on the idea of bringing all-rounders together .",
+    workWithUsDesc2: "Since no one can be perfect on their own, we aim to create a near-perfect company filled with people who can highlight each other's strengths and complement each other's weaknesses. ",
+    learnMore: "Learn More",
+    
+    lookingForPeople: "We are looking for People...",
+    
+    whoHasUnderstanding: "Who has clear and honest understanding of themselves",
+    whoHasCourage: "Who has the courage to stand out and make bold decisions",
+    whoCanConnect: "Who can easily connect and build a wide network of friends",
+    whoCanShare: "Who can openly share their failures and how they overcame them",
+    whoAreIntelligent: "Who are intelligent and resilient in facing challenges and finding solutions",
+    
+    howTeamWorks: "How ALLROUNDERS Team works",
+  
+    valueAction: "We Value Action",
+    valueActionDesc: "We take risks and get things done",
+    
+    pushLimits: "We push limits",
+    pushLimitsDesc: "By embracing tough challenges and constantly striving for more",
+    
+    noExcuses: "We don't accept excuses",
+    noExcusesDesc: "We take ownership and find a way forward",
+    
+    harshFeedback: "We will give harsh feedback",
+    harshFeedbackDesc: "To help you to improve and reach your full potential",
+    
+    responsibilities: "We will give you various responsibilites",
+    responsibilitiesDesc: "Empowering you to grow and take ownership of your work",
+    
+    heavyWorkload: "We will make you handle heavy workload",
+    heavyWorkloadDesc: "Pushing you to build resilience and excel under pressure",
+    
+    butYouWillReceive: "But you will recieve",
+    competitiveSalary: "Competitive Salary and compensation based on your KPI",
+    globalConnections: "Global business connections and networking opportunities",
+    leadershipOpportunities: "Opportunities for leadership and career growth",
+    skillDevelopment: "Rapid skill development across diverse areas",
+    
+    // Become a Rounder section
+    becomeRounder: "Become a Rounder!",
+    becomeRounderDesc: "If you think the person we are looking for is sound like you, please reach out to us.",
+    excitedToMeet: "We're excited to meet diverse people, build meaningful connections, and support each other along the way.",
+    whenSendingCV: "When sending your CV, please feel free to include something that showcases your strengths in any format you prefer.",
+    cannotWait: "We cannot wait for you to join us!",
+    joinUsNow: "Join us now!",
+
+    
   },
   th: {
     // Navigation
@@ -127,7 +178,7 @@ export const translations = {
     
     // Home Page
     welcome: 'ยินดีต้อนรับสู่ ALLROUNDERS Inc',
-    description: 'เราสร้างโซลูชันดิจิทัลที่เป็นนวัตกรรม รวมถึง ROUND8 แพลตฟอร์มที่เชื่อถือได้สำหรับการซื้อขายมือสอง',
+    description: 'เราสร้างโซลูชันดิจิทัลที่เป็นนวัตกรรม รวมถึง ROUND8 แพลตฟอร์มที่เชื่อถือความสามารถรอบด้านเข้าด้วยกัน',
     exploreMore: 'สำรวจเพิ่มเติม',
     swipeToExplore: 'ปัดเพื่อสำรวจ',
     allroundersJourney: 'เส้นทางของ ALLROUNDERS',
@@ -187,9 +238,9 @@ export const translations = {
     
     // 2025 Timeline content
     timeline2025Q1: '- การดำเนินการ MVP เวอร์ชัน 2 \n- จัดหาและฝึกอบรมผู้ขับขี่ท้องถิ่น (1 คนเต็มเวลา, 40+ คนพาร์ทไทม์)\n- จัดหาผู้มีอิทธิพล 40+ คนสำหรับการสนับสนุนการโปรโมท\n- พันธมิตรกับบริษัท K-beauty (3 แห่ง)\n- ได้รับเลือกเป็นบริษัทผู้เช่าศูนย์ธุรกิจระดับโลก KOSME กรุงเทพฯ\n- เจรจาความร่วมมือกับบริษัท/มหาวิทยาลัยไทยรายใหญ่\n- การพัฒนา MVP เวอร์ชัน 3 (Bubble, in-house)',
-    timeline2025Q2: '- เปิดตัวบริการเบต้า (เป้าหมาย 3,000 ผู้ใช้)',
+    timeline2025Q2: '- เปิดตัวบริการเบต้า (เป้าหมาย 3,000 ผู้ช้มมากกก)',
     timeline2025Q3: '- ได้รับการลงทุนจาก VC',
-    timeline2025Q4: '- เปิดตัวบริการอย่างเป็นทางการ (เป้าหมาย 20,000 ผู้ใช้) \n- เตรียมการสำหรับการขยายตัวระหว่างประเทศ',
+    timeline2025Q4: '- เปิดตัวบริการอย่างเป็นทางการ (เป้าหมาย 20,000 ผู้ช้มมากกก)',
     
     // Team Page
     meetOurTeam: 'พบกับทีมของเรา',
@@ -230,5 +281,59 @@ export const translations = {
     backToNews: "กลับไปหาข่าว",
     relatedArticles: "บทความเกี่ยวข้อง",
     viewAllNews: "ดูข่าวทั้งหมด",
+
+
+
+
+  // Careers page
+  workWithUs: "ร่วมงานกับเรา?",
+  workWithUsDesc: "ALLROUNDERS เป็นเอเจนซี่ของคนที่มีความหลงใหลในสิ่งที่พวกเขาทำ เรากำลังมองหาคนที่ต้องการสร้างความแตกต่างในโลก",
+  workWithUsDesc2: "เรามีความเชื่อถือในที่นี่และคงมีคนที่อยากรู้และสนใจที่จะเข้าร่วมงานกับเรา",
+  learnMore: "เรียนรู้เพิ่มเติม",
+  
+  lookingForPeople: "เรากำลังมองหาคน...",
+  
+  whoHasUnderstanding: "ที่มีความเข้าใจตนเองอย่างชัดเจนและซื่อสัตย์",
+  whoHasCourage: "ที่มีความกล้าที่จะโดดเด่นและตัดสินใจอย่างกล้าหาญ",
+  whoCanConnect: "ที่สามารถเชื่อมต่อและสร้างเครือข่ายเพื่อนที่กว้างขวางได้อย่างง่ายดาย",
+  whoCanShare: "ที่สามารถแบ่งปันความล้มเหลวของตนและวิธีที่พวกเขาเอาชนะมันได้อย่างเปิดเผย",
+  whoAreIntelligent: "ที่ฉลาดและมีความยืดหยุ่นในการเผชิญกับความท้าทายและการหาทางแก้ไข",
+  
+  // How ALLROUNDERS Team works section
+  howTeamWorks: "ทีม ALLROUNDERS ทำงานอย่างไร",
+  
+  valueAction: "เราให้คุณค่ากับการลงมือทำ",
+  valueActionDesc: "เรากล้าเสี่ยงและทำงานให้สำเร็จ",
+  
+  pushLimits: "เราผลักดันขีดจำกัด",
+  pushLimitsDesc: "ด้วยการเผชิญกับความท้าทายที่ยากและมุ่งมั่นสู่สิ่งที่มากขึ้นอยู่เสมอ",
+  
+  noExcuses: "เราไม่ยอมรับข้ออ้าง",
+  noExcusesDesc: "เรารับผิดชอบและหาทางออกไปข้างหน้า",
+  
+  harshFeedback: "เราจะให้ข้อเสนอแนะที่ตรงไปตรงมา",
+  harshFeedbackDesc: "เพื่อช่วยให้คุณปรับปรุงและบรรลุศักยภาพสูงสุดของคุณ",
+  
+  responsibilities: "เราจะให้ความรับผิดชอบที่หลากหลาย",
+  responsibilitiesDesc: "เพื่อให้คุณเติบโตและเป็นเจ้าของงานของคุณ",
+  
+  heavyWorkload: "เราจะให้คุณจัดการกับงานที่หนัก",
+  heavyWorkloadDesc: "ผลักดันให้คุณสร้างความยืดหยุ่นและเก่งขึ้นภายใต้ความกดดัน",
+  
+  // But you will receive section
+  butYouWillReceive: "แต่คุณจะได้รับ",
+  competitiveSalary: "เงินเดือนและค่าตอบแทนที่แข่งขันได้ตาม KPI ของคุณ",
+  globalConnections: "การเชื่อมต่อทางธุรกิจระดับโลกและโอกาสในการสร้างเครือข่าย",
+  leadershipOpportunities: "โอกาสในการเป็นผู้นำและการเติบโตในอาชีพ",
+  skillDevelopment: "การพัฒนาทักษะอย่างรวดเร็วในหลากหลายด้าน",
+  
+  // Become a Rounder section
+  becomeRounder: "มาเป็น Rounder กับเรา!",
+  becomeRounderDesc: "หากคุณคิดว่าคุณคือคนที่เรากำลังมองหา โปรดติดต่อเรา",
+  excitedToMeet: "เรารู้สึกตื่นเต้นที่จะได้พบกับผู้คนที่หลากหลาย สร้างความสัมพันธ์ที่มีความหมาย และสนับสนุนซึ่งกันและกันตลอดเส้นทาง",
+  whenSendingCV: "เมื่อส่ง CV ของคุณ โปรดแสดงจุดแข็งของคุณในรูปแบบใดก็ได้ที่คุณต้องการ",
+  cannotWait: "เราไม่สามารถรอให้คุณมาร่วมงานกับเรา!",
+  joinUsNow: "เข้าร่วมกับเราตอนนี้!",
+  
   }
 };

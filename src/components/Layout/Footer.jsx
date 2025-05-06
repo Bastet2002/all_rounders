@@ -15,11 +15,8 @@ const Footer = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={3}>
             <Box sx={{ mb: 2 }}>
-              <img src="/images/logo.png" alt="ALLROUNDERS" style={{ height: '80px', width: 'auto' }} />
+              <img src="/images/logo.png" alt="ALLROUNDERS" style={{ height: '170px', width: 'auto' }} />
             </Box>
-            <Typography variant="body2" paragraph>
-                AllROUNDERS Inc
-            </Typography>
           </Grid>
           
           <Grid item xs={12} sm={3}>
@@ -28,6 +25,9 @@ const Footer = () => {
             </Typography>
             <Link component={RouterLink} to="/" color="inherit" display="block" sx={{ mb: 1 }}>
               {t.home}
+            </Link>
+            <Link component={RouterLink} to="/team" color="inherit" display="block" sx={{ mb: 1 }}>
+              {t.team}
             </Link>
             <Link component={RouterLink} to="/about" color="inherit" display="block" sx={{ mb: 1 }}>
               {t.ourCompany}
@@ -46,47 +46,149 @@ const Footer = () => {
             </Link>
           </Grid>
           
-          <Grid item xs={12} sm={3}>
-            <Typography variant="h6" gutterBottom>
-              Follow Us 
-            </Typography>
-            <Typography variant="body2">
-            <Button
-                  variant="contained"
-                  href= "https://www.linkedin.com/company/allrounders-inc/posts/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ 
-                    minWidth: 'unset',
-                    width: '40px',
-                    height: '40px',
-                    padding: '8px',
-                    backgroundColor: 'black',
-                    color: 'white',
-                    borderColor: '#0077B5',
-                    '&:hover': {
-                      backgroundColor: '#006699',
-                      borderColor: '#006699',
-                    }
-                  }}
-                >
-                  <LinkedInIcon />
-                </Button>
-            </Typography>
-          </Grid>
+          
+
+<Grid item xs={12} sm={3}>
+  <Typography variant="h6" gutterBottom>
+    Follow Us 
+  </Typography>
+  
+  {/* ALLROUNDERS Inc section */}
+  <Typography variant="subtitle1" sx={{ mt: 2, mb: 1 }}>
+    ALLROUNDERS Inc
+  </Typography>
+  <Box sx={{ display: 'flex', mb: 3 }}>
+    <Button
+      variant="contained"
+      href="https://www.linkedin.com/company/allrounders-inc/posts/"
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{ 
+        minWidth: 'unset',
+        width: '40px',
+        height: '40px',
+        padding: '8px',
+        backgroundColor: 'black',
+        color: 'white',
+        borderColor: '#0077B5',
+        '&:hover': {
+          backgroundColor: 'rgba(255, 255, 255, 0.78)',
+          borderColor: '#006699',
+        }
+      }}
+    >
+      <Box 
+        component="img" 
+        src="/images/linkedin.png" 
+        alt="Instagram" 
+        sx={{ width: '24px', height: '24px' }} 
+      />
+    </Button>
+  </Box>
+  
+  {/* ROUND8 section */}
+  <Typography variant="subtitle1" sx={{ mt: 2, mb: 1 }}>
+    ROUND8
+  </Typography>
+  <Box sx={{ display: 'flex' }}>
+    {/* Instagram */}
+    <Button
+      variant="contained"
+      href="https://www.instagram.com/round8_official/"
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{ 
+        minWidth: 'unset',
+        width: '40px',
+        height: '40px',
+        padding: '8px',
+        backgroundColor: 'black',
+        color: '#E1306C',
+        borderColor: '#E1306C',
+        mr: 1,
+        '&:hover': {
+          backgroundColor: 'rgba(255, 255, 255, 0.78)',
+          color: 'white',
+        }
+      }}
+    >
+      <Box 
+        component="img" 
+        src="/images/instagram.png" 
+        alt="Instagram" 
+        sx={{ width: '24px', height: '24px' }} 
+      />
+    </Button>
+    
+    {/* Facebook */}
+    <Button
+      variant="contained"
+      href="https://www.facebook.com/profile.php?id=61556947506273"
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{ 
+        minWidth: 'unset',
+        width: '40px',
+        height: '40px',
+        padding: '8px',
+        backgroundColor: 'black',
+        color: '#1877F2',
+        borderColor: '#1877F2',
+        mr: 1,
+        '&:hover': {
+          backgroundColor: 'rgba(255, 255, 255, 0.78)',
+          color: 'white',
+        }
+      }}
+    >
+      <Box 
+        component="img" 
+        src="/images/facebook.png" 
+        alt="Facebook" 
+        sx={{ width: '23px', height: '23px' }} 
+      />
+    </Button>
+    
+    {/* Line */}
+    <Button
+      variant="contained"
+      href="https://line.me/R/ti/p/@010kmkxs?from=page&liff.referrer=https%3A%2F%2Fround8-th.com%2F&accountId=010kmkxs"
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{ 
+        minWidth: 'unset',
+        width: '40px',
+        height: '40px',
+        padding: '8px',
+        backgroundColor: 'black',
+        color: '#06C755',
+        borderColor: '#06C755',
+        '&:hover': {
+          backgroundColor: 'rgba(255, 255, 255, 0.78)',
+          color: 'white',
+        }
+      }}
+    >
+      <Box 
+        component="img" 
+        src="/images/line-icon.png" 
+        alt="Line" 
+        sx={{ width: '24px', height: '24px' }} 
+      />
+    </Button>
+  </Box>
+</Grid>
+
 
           <Grid item xs={12} sm={3}>
             <Typography variant="h6" gutterBottom>
               CONTACT US
             </Typography>
             <Typography variant="body2" paragraph>
-              Mon-Fri: 9am - 5pm 
+              Mon-Fri: 9am - 6pm 
             </Typography>
             <Typography variant="body2" paragraph>
-              Email: info@allrounders.com
-            </Typography>
-            <Typography variant="body2" paragraph>
-              Phone: +66 0123456789
+              Email: round8@allrounders.io 
             </Typography>
             <Typography variant="body2">
             Address: BHIRAJ TOWER, 689 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok
