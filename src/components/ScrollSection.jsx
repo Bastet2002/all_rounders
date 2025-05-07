@@ -455,7 +455,7 @@ const ScrollSection = ({ sections, title }) => {
       
       <SectionContainer ref={containerRef}>
         <HandwrittenTitle>
-          <Typography variant="h2">How ROUND8 Works?</Typography>
+          <Typography variant="h2" fontWeight={800}>How ROUND8 Works?</Typography>
         </HandwrittenTitle>
         
         <HorizontalWrapper 

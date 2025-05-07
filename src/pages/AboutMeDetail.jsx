@@ -107,6 +107,11 @@ const LikeItem = styled(Box)(({ theme }) => ({
 
 const BackButton = styled(Button)(({ theme }) => ({
   marginBottom: theme.spacing(4),
+  backgroundColor: '#000',
+  color: '#fff',  
+  '&:hover': {
+    backgroundColor: 'rgba(135, 126, 126, 0.8)',
+  },  
 }));
 
 const AboutMeDetail = () => {

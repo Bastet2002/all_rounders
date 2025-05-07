@@ -312,13 +312,7 @@ const Team = () => {
             >
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                 <PeopleIcon fontSize="small" />
-                <Typography variant="body2" color="text.secondary" sx={{ fontSize: {
-                  xs: '0.75rem',
-                  sm: '0.85rem',
-                  md: 'o.95em'
-                } }}>
-                  (5 team members)
-                </Typography>
+                
               </Box>
             </motion.div>
           </SectionTitle>
@@ -732,13 +726,6 @@ const Team = () => {
             >
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                 <SchoolIcon fontSize="small"/>
-                <Typography variant="body2" color="text.secondary" sx={{ fontSize: {
-                  xs: '0.75rem',
-                  sm: '0.85rem',
-                  md: 'o.95em'
-                } }}>
-                  (2 team members)
-                </Typography>
               </Box>
             </motion.div>
           </SectionTitle>

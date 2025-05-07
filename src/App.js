@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import { LanguageProvider } from './contexts/LanguageContext';
+import CookieConsent from './components/CookieConsent';
 
 // Import placeholder pages for new routes
 import Team from './pages/Team';
@@ -49,7 +50,9 @@ function App() {
           </Layout>
         </Router>
       </ThemeProvider>
+      <CookieConsent />
     </LanguageProvider>
+    
   );
 }
 
