@@ -68,6 +68,16 @@ const CookieConsent = () => {
     }
   }, []);
 
+  // Add this function to your component
+  const displayConsentCookies = () => {
+    const consentCookie = getCookie('cookieConsent');
+    const analyticsCookie = getCookie('analyticsEnabled');
+    
+    console.log('Cookie Consent Status:', consentCookie || 'Not set');
+    console.log('Analytics Enabled:', analyticsCookie || 'Not set');
+  };
+  
+  // Then modify your handleAccept function
   const handleAccept = () => {
     // Set cookie for 365 days
     setCookie('cookieConsent', 'true', 365);
@@ -75,12 +85,19 @@ const CookieConsent = () => {
     
     // You can set additional cookies or tracking here
     setCookie('analyticsEnabled', 'true', 365);
+    
+    // Display the cookies we just set
+    displayConsentCookies();
   };
-
+  
+  // And your handleDecline function
   const handleDecline = () => {
     // Set cookie to remember the choice, but don't enable tracking
     setCookie('cookieConsent', 'false', 365);
     setOpen(false);
+    
+    // Display the cookies we just set
+    displayConsentCookies();
   };
 
   return (
