@@ -88,6 +88,26 @@ const CookieConsent = () => {
     
     // Display the cookies we just set
     displayConsentCookies();
+    initializeAnalytics();
+  };
+
+  // Add this function to initialize analytics
+const initializeAnalytics = () => {
+    // Google Analytics
+    if (typeof window !== 'undefined' && !window.GA_INITIALIZED) {
+      // Initialize Google Analytics
+      // This is a placeholder - you would add your actual GA initialization code here
+      console.log('Analytics initialized');
+      window.GA_INITIALIZED = true;
+    }
+    
+    // Facebook Pixel
+    if (typeof window !== 'undefined' && !window.FB_PIXEL_INITIALIZED) {
+      // Initialize Facebook Pixel
+      // This is a placeholder - you would add your actual FB Pixel initialization code here
+      console.log('Facebook Pixel initialized');
+      window.FB_PIXEL_INITIALIZED = true;
+    }
   };
   
   // And your handleDecline function

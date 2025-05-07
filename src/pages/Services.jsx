@@ -164,7 +164,7 @@ const Services = () => {
     {
       title: "Marketplace",
       description: "See something you like or have something to sell? Connect with users and trade directly, hassle-free! Our marketplace brings buyers and sellers together in a secure environment.",
-      image: "/images/services/marketPlace.png",
+      image: "/images/services/maketPlace.png",
       animation: "/images/services/marketplace-animation.gif",
       icon: "/images/services/marketplace-icon.png"
     },
@@ -185,7 +185,7 @@ const Services = () => {
     {
       title: "Inspection",
       description: "Secure transactions with exterior inspection. Protecting buyers and ensuring quality, fraud-free products. Our inspection process verifies that what you see is what you get.",
-      image: "/images/services/delivery.png",
+      image: "/images/services/inception.png",
       animation: "/images/services/inception-animation.gif",
       icon: "/images/services/inception-icon.png"
     },

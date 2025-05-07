@@ -403,11 +403,11 @@ const Team = () => {
                 color: '#fff',
                 width: { xs: '100%', sm: '70%' }
               }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                <Box sx={{mb: 1 }}>
                   <Typography variant="h6" fontWeight={600} sx={{ fontSize: '1.25rem' }}>
                     Hayley
                   </Typography>
-                  <Box sx={{ display: 'flex', alignItems: 'center', ml: 2 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Typography 
                       variant="body2" 
                       color="white" 
