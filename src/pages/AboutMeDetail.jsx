@@ -381,7 +381,7 @@ const AboutMeDetail = () => {
             <SectionTitle variant="h5">
               About {firstName} ✨
             </SectionTitle>
-            <Typography variant="body1" paragraph sx={{ mt: 2,fontSize: '1rem',textAlign: 'justify',  // Aligns text on both left and right edges
+            <Typography variant="body1" paragraph sx={{ fontSize: '1rem',textAlign: 'justify',  // Aligns text on both left and right edges
     maxWidth: '800px',     
     lineHeight: 1.6,       
     whiteSpace: 'pre-line' }}>
