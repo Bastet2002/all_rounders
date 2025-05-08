@@ -7,6 +7,8 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import { LanguageProvider } from './contexts/LanguageContext';
 import CookieConsent from './components/CookieConsent';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Terms from './pages/Terms';
 
 // Import placeholder pages for new routes
 import Team from './pages/Team';
@@ -46,6 +48,8 @@ function App() {
               <Route path="/news/:id" element={<NewsDetail />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<Terms />} />
             </Routes>
           </Layout>
         </Router>
