@@ -5,6 +5,8 @@ import { Box, Typography, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ScrollSection from '../components/ScrollSection';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { keyframes } from '@mui/material/styles';
+
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -18,21 +20,57 @@ const PageContainer = styled(Box)(({ theme }) => ({
   }
 }));
 
+const gradientAnimation = keyframes`
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+`;
+const MotorcycleAnimation = styled(motion.div)(({ theme }) => ({
+    position: 'absolute',
+    zIndex: 1, // This ensures it stays behind the card
+    width: '120px',
+    [theme.breakpoints.down('sm')]: {
+      width: '80px',
+    },
+  }));
+
 const HeroSection = styled(Box)(({ theme }) => ({
-  minHeight: '60vh',
+  minHeight: '90.5vh',
   display: 'flex',
+  background: 'linear-gradient(-45deg,rgb(255, 255, 255),rgb(255, 255, 255),rgba(144, 194, 229, 0.61),rgb(218, 223, 228))',
+  animation: `${gradientAnimation} 6s ease infinite`,
+  backgroundSize: '400% 400%',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
   textAlign: 'center',
   color: '#00BCD4',
   padding: theme.spacing(1.5),
-  background: 'white',
   [theme.breakpoints.down('sm')]: {
     padding: theme.spacing(2, 1),
-    minHeight: '50vh', // Shorter on mobile
+    minHeight: '90vh', // Shorter on mobile
   },
 }));
+const HeroCard = styled(Box)(({ theme }) => ({
+    backgroundColor: 'rgb(255, 255, 255)',
+    backdropFilter: 'blur(10px)',
+    borderRadius: theme.spacing(3),
+    padding: theme.spacing(5, 4),
+    boxShadow: '0 8px 32px rgba(0, 187, 212, 0.81)',
+    width: '100%',
+    maxWidth: '850px',
+    margin: '0 auto',
+    border: '1px solid rgba(0, 188, 212, 0.2)',
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    '&:hover': {
+      transform: 'translateY(-5px)',
+      boxShadow: '0 12px 40px rgba(0, 187, 212, 0.72)',
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(3, 2),
+      borderRadius: theme.spacing(2),
+    },
+  }));
 
 const ActionButton = styled(Button)(({ theme }) => ({
   borderRadius: theme.spacing(3),
@@ -166,44 +204,46 @@ const Services = () => {
       description: "See something you like or have something to sell? Connect with users and trade directly, hassle-free! Our marketplace brings buyers and sellers together in a secure environment.",
       image: "/images/services/maketPlace.png",
       animation: "/images/services/marketplace-animation.gif",
-      icon: "/images/services/marketplace-icon.png"
+      //icon: "/images/services/marketplace-icon.png"
     },
     {
       title: "Payment (ESCROW)",
       description: "Protected payments with escrow system. Holding funds for buyers and sellers until transaction is complete. This ensures both parties are protected throughout the entire process.",
       image: "/images/services/payment.png",
       animation: "/images/services/payment-animation.gif",
-      icon: "/images/services/payment-icon.png"
+      //icon: "/images/services/payment-icon.png"
     },
     {
       title: "Delivery",
       description: "Choose when and where you want to pick up or drop off your items with our scheduled deliveries. Our flexible delivery system ensures your items arrive safely and on time.",
       image: "/images/services/delivery.png",
-      animation: "/images/services/delivery-animation.gif",
-      icon: "/images/services/delivery-icon.png"
+      animation: "/images/services/cycle3.gif",
+      //icon: "/images/services/delivery-icon.png"
     },
     {
       title: "Inspection",
       description: "Secure transactions with exterior inspection. Protecting buyers and ensuring quality, fraud-free products. Our inspection process verifies that what you see is what you get.",
       image: "/images/services/inception.png",
       animation: "/images/services/inception-animation.gif",
-      icon: "/images/services/inception-icon.png"
+      //icon: "/images/services/inception-icon.png"
     },
     {
       title: "Product Review",
       description: "Drop a review to support fellow Rounders and keep it real! Help others make informed decisions. Our review system builds trust and transparency in our community.",
       image: "/images/services/review.png",
       animation: "/images/services/review-animation.gif",
-      icon: "/images/services/review-icon.png"
+      //icon: "/images/services/review-icon.png"
     },
     {
       title: "Our Community",
       description: "Come join us and be a part of our community! Connect with like-minded individuals and grow together. Our community is built on trust, respect, and shared interests.",
       image: "/images/services/community.png",
       animation: "/images/services/community-animation.gif",
-      icon: "/images/services/community-icon.png"
+      //icon: "/images/services/community-icon.png"
     }
   ];
+
+  
 // Add this new styled component for the scroll indicator
 const ScrollIndicator = styled(Box)(({ theme }) => ({
     position: 'absolute',
@@ -232,6 +272,32 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
     <PageContainer>
       {/* Hero Section */}
       <HeroSection>
+      {/* Add the motorcycle animation */}
+      <MotorcycleAnimation
+          initial={{ x: -900, y: 50 }}
+          animate={{ 
+            x: window.innerWidth,
+            y: [50, 30, 60, 40, 50], // Small up and down movement for bounce effect
+            rotate: [0, 5, 0, -5, 0], // Slight rotation for realistic movement
+          }}
+          transition={{ 
+            duration: 6,
+            repeat: Infinity,
+            repeatDelay: 1,
+            ease: "easeInOut",
+          }}
+        >
+          <Box 
+            component="img" 
+            src="/images/services/cycle3.gif" // You'll need to add this image
+            alt="Motorcycle" 
+            sx={{ 
+              width: '100%',
+              height: '100%',
+              filter: 'drop-shadow(0px 10px 10px rgba(0,0,0,0.3))',
+            }} 
+          />
+        </MotorcycleAnimation>
       <Box 
           sx={{ 
             width: '100%', 
@@ -239,7 +305,7 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
             display: 'flex', 
             flexDirection: 'column', 
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
           }}
         >
         <motion.div
@@ -247,6 +313,7 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+        <HeroCard>
         <AnimationContainer>
               <Box 
                 component="img" 
@@ -376,6 +443,7 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
               Explore
             </ActionButton>
           </motion.div>
+        </HeroCard>
         </motion.div>
         </Box>
       </HeroSection>
@@ -384,6 +452,7 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
       <Box sx={{ position: 'relative' }}>
         <ScrollSection 
           sections={servicePanels} 
+          
         />
         
         {/* Add the scroll indicator */}

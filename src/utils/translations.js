@@ -164,6 +164,85 @@ export const translations = {
     cannotWait: "We cannot wait for you to join us!",
     joinUsNow: "Join us now!",
 
+
+
+    // Privacy Policy
+    privacyPolicy: "Privacy Policy",
+    lastUpdated: "Last updated",
+    pleaseReadCarefully: "Allrounders Inc. understands that our users care about their personal data and how it is collected, used, shared and cared for. We are committed to handling your personal data in accordance with the applicable laws when you use any of the features, functions, or social media available on our Platform or Services, interact with us via an external service, application or through our customer service agents, or access our Services or our Platform through your computer, mobile device, or any other device with Internet connectivity.PLEASE READ THIS PRIVACY POLICY CAREFULLY. BY CLICKING OR CHECKING “SIGN UP”, “I AGREE TO ROUND8'S PRIVACY POLICY”, “I AGREE AND CONSENT TO THE COLLECTION, USE, DISCLOSURE, STORAGE, TRANSFER AND/OR PROCESSING OF MY PERSONAL DATA FOR THE PURPOSE STATED IN, AND UNDER THE TERMS OF, ROUND8'S PRIVACY POLICY” OR SIMILAR STATEMENTS AVAILABLE AT THE ROUND8 REGISTRATION PAGE OR IN THE COURSE OF PROVIDING YOU WITH THE SERVICES OR ACCESS TO THE PLATFORM, YOU ACKNOWLEDGE THAT YOU HAVE READ AND UNDERSTOOD THE TERMS OF THIS PRIVACY POLICY AND THAT YOU HAVE AGREED AND CONSENTED TO THE COLLECTION, USE, DISCLOSURE, STORAGE, TRANSFER AND/OR PROCESSING OF YOUR PERSONAL DATA AS DESCRIBED AND UNDER THE TERMS HEREIN.",
+    
+    // Privacy Policy Sections
+    introduction: "1. INTRODUCTION",
+    introductionContent1: "1.1 Welcome to the ROUND8 platform, operated by Allrounders Inc. (individually and collectively, \"ROUND8,\" \"we,\" \"us,\" or \"our\"). At Allrounders Inc., we take our responsibilities under applicable privacy laws and regulations (\"Privacy Laws\") seriously and are dedicated to respecting the privacy rights and concerns of all users of our ROUND8 website and mobile application (the \"Platform\"). The term \"Platform,\" along with the services described on it, is collectively referred to as the \"Services.\" Users refer to individuals who register for an account with us to utilize the Services, including both buyers and sellers (individually and collectively, \"Users,\" \"you,\" or \"your\"). We understand the importance of the personal data entrusted to us and are committed to managing, protecting, and processing your data responsibly. This Privacy Policy (\"Policy\") is designed to help you understand how we collect, use, disclose, and/or process your personal data, both now and in the future, and to enable you to make informed decisions about providing us with your information.",
+    introductionContent2: "1.2 This Privacy Policy is here to keep you informed about how we collect, use, disclose, store, and/or process the data we obtain while providing you with access to the Platform and Services, regardless of whether you have registered as a buyer or seller. We are committed to collecting, using, disclosing, storing, and processing your personal data strictly in accordance with this Privacy Policy.",
+    introductionContent3: "1.3 We may revise this Privacy Policy periodically, and any updates will be reflected on this page. If there are significant changes, we will notify you accordingly. Where permitted by local laws, your continued use of the Services or access to the Platform, including placing Orders (as defined in the Terms of Use) on the Platform, or your express consent to the changes, constitutes your acknowledgment and acceptance of the updated Privacy Policy, even if you have not reviewed the updated document. You agree that it is your responsibility to regularly review this Privacy Policy to stay informed about any updates or modifications.",
+    introductionContent4: "1.4 These terms apply to all ROUND8 users, regardless of whether they have created an account as buyers and/or sellers, unless explicitly stated otherwise to apply exclusively to buyers or sellers.",
+    
+    personalDataWeCollect: "2. The Personal Data We Collect From You",
+    personalDataContent: "Placeholder text for the Personal Data We Collect section. This section will detail what types of personal information we gather from users, including but not limited to contact information, transaction data, device information, and usage patterns.",
+    
+    howWeUseData: "3. HOW WE USE YOUR PERSONAL DATA",
+    howWeUseDataContent: "Placeholder text for How We Use Your Personal Data section. This section will explain the purposes for which we collect and process your information, such as providing services, improving user experience, marketing, and legal compliance.",
+    
+    disclosureOfData: "4. DISCLOSURE OF YOUR PERSONAL DATA",
+    disclosureContent: "Placeholder text for Disclosure of Your Personal Data section. This section will outline the circumstances under which we may share your information with third parties, including service providers, business partners, and legal authorities.",
+    
+    retentionOfData: "5. RETENTION OF PERSONAL DATA",
+    retentionContent: "Placeholder text for Retention of Personal Data section. This section will describe how long we keep your information and the criteria used to determine retention periods.",
+    
+    securityOfData: "6. SECURITY OF YOUR PERSONAL DATA",
+    securityContent: "Placeholder text for Security of Your Personal Data section. This section will detail the measures we take to protect your information from unauthorized access, loss, or misuse.",
+    
+    internationalTransfers: "7. INTERNATIONAL TRANSFERS",
+    transfersContent: "Placeholder text for International Transfers section. This section will explain how and when your data may be transferred across borders and the safeguards we implement for such transfers.",
+    
+    yourRights: "8. YOUR RIGHTS",
+    rightsContent: "Placeholder text for Your Rights section. This section will inform you about your rights regarding your personal data, including access, correction, deletion, and objection to processing.",
+    
+    cookiesAndTracking: "9. COOKIES AND TRACKING TECHNOLOGIES",
+    cookiesContent: "Placeholder text for Cookies and Tracking Technologies section. This section will describe how we use cookies and similar technologies to collect information and enhance your experience on our platform.",
+    
+    contactUsT: "10. CONTACT US",
+    contactUsContent: "Placeholder text for Contact Us section. This section will provide information on how to reach us with questions or concerns about your privacy or this policy.",
+    
+    privacyPolicyDisclaimer: "This Privacy Policy is subject to change. Please check back regularly for updates.",
+    
+    // Terms of Service
+    termsOfService: "Terms of Service",
+    
+    // Terms Sections
+    acceptanceOfTerms: "1. ACCEPTANCE OF TERMS",
+    acceptanceContent: "By accessing and using the services provided by ALLROUNDERS Inc. (\"Company\", \"we\", \"our\", \"us\"), you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing our services.",
+    
+    useLicense: "2. USE LICENSE",
+    licenseContent: "Placeholder text for Use License section. This section will outline the permissions granted to users for accessing and using our platform and services.",
+    
+    userAccounts: "3. USER ACCOUNTS",
+    accountsContent: "Placeholder text for User Accounts section. This section will detail the requirements and responsibilities associated with creating and maintaining an account on our platform.",
+    
+    buyingAndSelling: "4. BUYING AND SELLING",
+    transactionsContent: "Placeholder text for Buying and Selling section. This section will explain the rules and processes for transactions conducted on our platform.",
+    
+    prohibitedActivities: "5. PROHIBITED ACTIVITIES",
+    prohibitedContent: "Placeholder text for Prohibited Activities section. This section will list actions and behaviors that are not permitted on our platform.",
+    
+    intellectualProperty: "6. INTELLECTUAL PROPERTY",
+    ipContent: "Placeholder text for Intellectual Property section. This section will address ownership and usage rights for content and materials on our platform.",
+    
+    disclaimerOfWarranties: "7. DISCLAIMER OF WARRANTIES",
+    disclaimerContent: "Placeholder text for Disclaimer of Warranties section. This section will outline the limitations of guarantees provided for our services.",
+    
+    limitationOfLiability: "8. LIMITATION OF LIABILITY",
+    liabilityContent: "Placeholder text for Limitation of Liability section. This section will explain the extent of our responsibility for damages or losses related to use of our platform.",
+    
+    indemnification: "9. INDEMNIFICATION",
+    indemnificationContent: "Placeholder text for Indemnification section. This section will describe user obligations to protect the company from claims related to their use of the platform.",
+    
+    governingLaw: "10. GOVERNING LAW",
+    lawContent: "Placeholder text for Governing Law section. This section will specify which legal jurisdiction's laws apply to these terms and any disputes.",
+    
+    termsDisclaimer: "These Terms of Service are subject to change. Please check back regularly for updates.",
+
     
   },
   th: {
@@ -334,6 +413,89 @@ export const translations = {
   whenSendingCV: "เมื่อส่ง CV ของคุณ โปรดแสดงจุดแข็งของคุณในรูปแบบใดก็ได้ที่คุณต้องการ",
   cannotWait: "เราไม่สามารถรอให้คุณมาร่วมงานกับเรา!",
   joinUsNow: "เข้าร่วมกับเราตอนนี้!",
+
+
+
+  // Privacy Policy
+  privacyPolicy: "นโยบายความเป็นส่วนตัว",
+  lastUpdated: "ปรับปรุงล่าสุดเมื่อ",
+  pleaseReadCarefully: "โปรดอ่านนโยบายความเป็นส่วนตัวนี้อย่างละเอียด เมื่อคลิกหรือทำเครื่องหมายที่ \"ลงทะเบียน\", \"ฉันยอมรับนโยบายความเป็นส่วนตัวของ ROUND8\", \"ฉันยอมรับและยินยอมให้เก็บรวบรวม ใช้ เปิดเผย จัดเก็บ โอน และ/หรือประมวลผลข้อมูลส่วนบุคคลของฉันเพื่อวัตถุประสงค์ที่ระบุไว้ และภายใต้ข้อกำหนดของนโยบายความเป็นส่วนตัวของ ROUND8\" หรือข้อความที่คล้ายกันที่มีอยู่ในหน้าลงทะเบียน ROUND8 หรือในระหว่างการให้บริการหรือการเข้าถึงแพลตฟอร์มแก่คุณ คุณรับทราบว่าคุณได้อ่านและเข้าใจข้อกำหนดของนโยบายความเป็นส่วนตัวนี้และคุณได้ตกลงและยินยอมให้เก็บรวบรวม ใช้ เปิดเผย จัดเก็บ โอน และ/หรือประมวลผลข้อมูลส่วนบุคคลของคุณตามที่อธิบายไว้และภายใต้ข้อกำหนดในที่นี้",
+  
+  // Privacy Policy Sections
+  introduction: "1. บทนำ",
+  introductionContent1: "1.1 ยินดีต้อนรับสู่แพลตฟอร์ม ROUND8 ที่ดำเนินการโดย Allrounders Inc. (เรียกแยกและรวมกันว่า \"ROUND8,\" \"เรา,\" \"พวกเรา,\" หรือ \"ของเรา\") ที่ Allrounders Inc. เราให้ความสำคัญกับความรับผิดชอบของเราภายใต้กฎหมายและข้อบังคับเกี่ยวกับความเป็นส่วนตัวที่เกี่ยวข้อง (\"กฎหมายความเป็นส่วนตัว\") อย่างจริงจังและทุ่มเทในการเคารพสิทธิความเป็นส่วนตัวและข้อกังวลของผู้ใช้ทั้งหมดของเว็บไซต์และแอปพลิเคชันมือถือ ROUND8 ของเรา (\"แพลตฟอร์ม\") คำว่า \"แพลตฟอร์ม\" พร้อมกับบริการที่อธิบายไว้ในนั้น เรียกรวมกันว่า \"บริการ\" ผู้ใช้หมายถึงบุคคลที่ลงทะเบียนบัญชีกับเราเพื่อใช้บริการ รวมถึงทั้งผู้ซื้อและผู้ขาย (เรียกแยกและรวมกันว่า \"ผู้ใช้,\" \"คุณ,\" หรือ \"ของคุณ\") เราเข้าใจถึงความสำคัญของข้อมูลส่วนบุคคลที่ได้รับความไว้วางใจจากคุณและมุ่งมั่นที่จะจัดการ ปกป้อง และประมวลผลข้อมูลของคุณอย่างรับผิดชอบ นโยบายความเป็นส่วนตัวนี้ (\"นโยบาย\") ออกแบบมาเพื่อช่วยให้คุณเข้าใจวิธีการที่เราเก็บรวบรวม ใช้ เปิดเผย และ/หรือประมวลผลข้อมูลส่วนบุคคลของคุณ ทั้งในปัจจุบันและในอนาคต และเพื่อให้คุณสามารถตัดสินใจอย่างมีข้อมูลเกี่ยวกับการให้ข้อมูลของคุณแก่เรา",
+  introductionContent2: "1.2 นโยบายความเป็นส่วนตัวนี้มีไว้เพื่อแจ้งให้คุณทราบเกี่ยวกับวิธีการที่เราเก็บรวบรวม ใช้ เปิดเผย จัดเก็บ และ/หรือประมวลผลข้อมูลที่เราได้รับในขณะที่ให้คุณเข้าถึงแพลตฟอร์มและบริการ ไม่ว่าคุณจะได้ลงทะเบียนเป็นผู้ซื้อหรือผู้ขายก็ตาม เรามุ่งมั่นที่จะเก็บรวบรวม ใช้ เปิดเผย จัดเก็บ และประมวลผลข้อมูลส่วนบุคคลของคุณอย่างเคร่งครัดตามนโยบายความเป็นส่วนตัวนี้",
+  introductionContent3: "1.3 เราอาจแก้ไขนโยบายความเป็นส่วนตัวนี้เป็นครั้งคราว และการอัปเดตใด ๆ จะถูกแสดงบนหน้านี้ หากมีการเปลี่ยนแปลงที่สำคัญ เราจะแจ้งให้คุณทราบตามความเหมาะสม ในกรณีที่กฎหมายท้องถิ่นอนุญาต การใช้บริการหรือการเข้าถึงแพลตฟอร์มอย่างต่อเนื่องของคุณ รวมถึงการสั่งซื้อ (ตามที่กำหนดไว้ในข้อกำหนดการใช้งาน) บนแพลตฟอร์ม หรือความยินยอมโดยชัดแจ้งของคุณต่อการเปลี่ยนแปลง ถือเป็นการรับทราบและยอมรับนโยบายความเป็นส่วนตัวที่อัปเดตของคุณ แม้ว่าคุณจะยังไม่ได้ตรวจสอบเอกสารที่อัปเดตก็ตาม คุณตกลงว่าเป็นความรับผิดชอบของคุณที่จะตรวจสอบนโยบายความเป็นส่วนตัวนี้เป็นประจำเพื่อรับทราบการอัปเดตหรือการแก้ไขใด ๆ",
+  introductionContent4: "1.4 ข้อกำหนดเหล่านี้ใช้กับผู้ใช้ ROUND8 ทั้งหมด ไม่ว่าพวกเขาจะได้สร้างบัญชีเป็นผู้ซื้อและ/หรือผู้ขายหรือไม่ เว้นแต่จะระบุไว้อย่างชัดเจนว่าใช้กับผู้ซื้อหรือผู้ขายเท่านั้น",
+  
+  personalDataWeCollect: "2. ข้อมูลส่วนบุคคลที่เราเก็บรวบรวม",
+  personalDataContent: "ข้อความสำรองสำหรับส่วนข้อมูลส่วนบุคคลที่เราเก็บรวบรวม ส่วนนี้จะระบุรายละเอียดประเภทของข้อมูลส่วนบุคคลที่เรารวบรวมจากผู้ใช้ ซึ่งรวมถึงแต่ไม่จำกัดเพียงข้อมูลการติดต่อ ข้อมูลธุรกรรม ข้อมูลอุปกรณ์ และรูปแบบการใช้งาน",
+  
+  howWeUseData: "3. วิธีการใช้ข้อมูลส่วนบุคคลของคุณ",
+  howWeUseDataContent: "ข้อความสำรองสำหรับส่วนวิธีการใช้ข้อมูลส่วนบุคคลของคุณ ส่วนนี้จะอธิบายวัตถุประสงค์ที่เราเก็บรวบรวมและประมวลผลข้อมูลของคุณ เช่น การให้บริการ การปรับปรุงประสบการณ์ผู้ใช้ การตลาด และการปฏิบัติตามกฎหมาย",
+  
+  disclosureOfData: "4. การเปิดเผยข้อมูลส่วนบุคคลของคุณ",
+  disclosureContent: "ข้อความสำรองสำหรับส่วนการเปิดเผยข้อมูลส่วนบุคคลของคุณ ส่วนนี้จะระบุสถานการณ์ที่เราอาจแบ่งปันข้อมูลของคุณกับบุคคลที่สาม รวมถึงผู้ให้บริการ พันธมิตรทางธุรกิจ และหน่วยงานทางกฎหมาย",
+  
+  retentionOfData: "5. การเก็บรักษาข้อมูลส่วนบุคคล",
+  retentionContent: "ข้อความสำรองสำหรับส่วนการเก็บรักษาข้อมูลส่วนบุคคล ส่วนนี้จะอธิบายว่าเราเก็บข้อมูลของคุณไว้นานแค่ไหนและเกณฑ์ที่ใช้ในการกำหนดระยะเวลาการเก็บรักษา",
+  
+  securityOfData: "6. ความปลอดภัยของข้อมูลส่วนบุคคลของคุณ",
+  securityContent: "ข้อความสำรองสำหรับส่วนความปลอดภัยของข้อมูลส่วนบุคคลของคุณ ส่วนนี้จะระบุรายละเอียดมาตรการที่เราใช้เพื่อปกป้องข้อมูลของคุณจากการเข้าถึงโดยไม่ได้รับอนุญาต การสูญหาย หรือการใช้ในทางที่ผิด",
+  
+  internationalTransfers: "7. การโอนข้อมูลระหว่างประเทศ",
+  transfersContent: "ข้อความสำรองสำหรับส่วนการโอนข้อมูลระหว่างประเทศ ส่วนนี้จะอธิบายว่าข้อมูลของคุณอาจถูกโอนข้ามพรมแดนอย่างไรและเมื่อใด และมาตรการป้องกันที่เราใช้สำหรับการโอนดังกล่าว",
+  
+  yourRights: "8. สิทธิของคุณ",
+  rightsContent: "ข้อความสำรองสำหรับส่วนสิทธิของคุณ ส่วนนี้จะแจ้งให้คุณทราบเกี่ยวกับสิทธิของคุณเกี่ยวกับข้อมูลส่วนบุคคลของคุณ รวมถึงการเข้าถึง การแก้ไข การลบ และการคัดค้านการประมวลผล",
+  
+  cookiesAndTracking: "9. คุกกี้และเทคโนโลยีการติดตาม",
+  cookiesContent: "ข้อความสำรองสำหรับส่วนคุกกี้และเทคโนโลยีการติดตาม ส่วนนี้จะอธิบายวิธีการที่เราใช้คุกกี้และเทคโนโลยีที่คล้ายกันเพื่อเก็บรวบรวมข้อมูลและเพิ่มประสบการณ์ของคุณบนแพลตฟอร์มของเรา",
+  
+  contactUs: "10. ติดต่อเรา",
+  contactUsContent: "ข้อความสำรองสำหรับส่วนติดต่อเรา ส่วนนี้จะให้ข้อมูลเกี่ยวกับวิธีการติดต่อเราเกี่ยวกับคำถามหรือข้อกังวลเกี่ยวกับความเป็นส่วนตัวของคุณหรือนโยบายนี้",
+  
+  privacyPolicyDisclaimer: "นโยบายความเป็นส่วนตัวนี้อาจมีการเปลี่ยนแปลง โปรดตรวจสอบเป็นประจำเพื่อรับทราบการอัปเดต",
+  
+  // Terms of Service
+  termsOfService: "ข้อกำหนดการใช้บริการ",
+  
+  // Terms Sections
+  acceptanceOfTerms: "1. การยอมรับข้อกำหนด",
+  acceptanceContent: "โดยการเข้าถึงและใช้บริการที่ให้โดย ALLROUNDERS Inc. (\"บริษัท\", \"เรา\", \"ของเรา\", \"พวกเรา\") คุณตกลงที่จะผูกพันตามข้อกำหนดการใช้บริการเหล่านี้และกฎหมายและข้อบังคับที่เกี่ยวข้องทั้งหมด หากคุณไม่เห็นด้วยกับข้อกำหนดใด ๆ เหล่านี้ คุณถูกห้ามไม่ให้ใช้หรือเข้าถึงบริการของเรา",
+  
+  useLicense: "2. ใบอนุญาตการใช้งาน",
+  licenseContent: "ข้อความสำรองสำหรับส่วนใบอนุญาตการใช้งาน ส่วนนี้จะระบุการอนุญาตที่ให้แก่ผู้ใช้สำหรับการเข้าถึงและใช้แพลตฟอร์มและบริการของเรา",
+  
+  userAccounts: "3. บัญชีผู้ใช้",
+  accountsContent: "ข้อความสำรองสำหรับส่วนบัญชีผู้ใช้ ส่วนนี้จะระบุรายละเอียดข้อกำหนดและความรับผิดชอบที่เกี่ยวข้องกับการสร้างและรักษาบัญชีบนแพลตฟอร์มของเรา",
+  
+  buyingAndSelling: "4. การซื้อและการขาย",
+  transactionsContent: "ข้อความสำรองสำหรับส่วนการซื้อและการขาย ส่วนนี้จะอธิบายกฎและกระบวนการสำหรับธุรกรรมที่ดำเนินการบนแพลตฟอร์มของเรา",
+  
+  prohibitedActivities: "5. กิจกรรมต้องห้าม",
+  prohibitedContent: "ข้อความสำรองสำหรับส่วนกิจกรรมต้องห้าม ส่วนนี้จะระบุการกระทำและพฤติกรรมที่ไม่อนุญาตบนแพลตฟอร์มของเรา",
+  
+  intellectualProperty: "6. ทรัพย์สินทางปัญญา",
+  ipContent: "ข้อความสำรองสำหรับส่วนทรัพย์สินทางปัญญา ส่วนนี้จะกล่าวถึงความเป็นเจ้าของและสิทธิ์การใช้งานสำหรับเนื้อหาและวัสดุบนแพลตฟอร์มของเรา",
+  
+  disclaimerOfWarranties: "7. การปฏิเสธการรับประกัน",
+  disclaimerContent: "ข้อความสำรองสำหรับส่วนการปฏิเสธการรับประกัน ส่วนนี้จะระบุข้อจำกัดของการรับประกันที่ให้สำหรับบริการของเรา",
+  
+  limitationOfLiability: "8. ข้อจำกัดความรับผิด",
+  liabilityContent: "ข้อความสำรองสำหรับส่วนข้อจำกัดความรับผิด ส่วนนี้จะอธิบายขอบเขตความรับผิดชอบของเราสำหรับความเสียหายหรือการสูญเสียที่เกี่ยวข้องกับการใช้แพลตฟอร์มของเรา",
+  
+  indemnification: "9. การชดใช้ค่าเสียหาย",
+  indemnificationContent: "ข้อความสำรองสำหรับส่วนการชดใช้ค่าเสียหาย ส่วนนี้จะอธิบายภาระผูกพันของผู้ใช้ในการปกป้องบริษัทจากการเรียกร้องที่เกี่ยวข้องกับการใช้แพลตฟอร์มของพวกเขา",
+  
+  governingLaw: "10. กฎหมายที่ใช้บังคับ",
+  lawContent: "ข้อความสำรองสำหรับส่วนกฎหมายที่ใช้บังคับ ส่วนนี้จะระบุว่ากฎหมายของเขตอำนาจทางกฎหมายใดที่ใช้กับข้อกำหนดเหล่านี้และข้อพิพาทใด ๆ",
+  
+  termsDisclaimer: "ข้อกำหนดการใช้บริการเหล่านี้อาจมีการเปลี่ยนแปลง โปรดตรวจสอบเป็นประจำเพื่อรับทราบการอัปเดต",
+  
+  // ... existing code ...
+  
+  skillDevelopment: "การพัฒนาทักษะอย่างรวดเร็วในหลากหลายด้าน",
   
   }
 };

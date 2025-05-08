@@ -95,12 +95,13 @@ const BannerSlide = styled(Box)(({ theme }) => ({
 // Text overlay for the banner
 const BannerOverlay = styled(Box)(({ theme }) => ({
   position: 'absolute',
-  bottom: '4rem',
+  bottom: '1rem',
   width: '100%',
-  padding: theme.spacing(3),
+  padding: theme.spacing(2),
   color: 'white',
   textAlign: 'center',
   zIndex: 2,
+  backgroundColor: 'rgba(0, 0, 0, 0.6)',
 }));
 
 // Create a new component for the text section below the banner
@@ -199,14 +200,14 @@ const bannerData = [
     id: 3,
     //title: 'Thailand & SEA expansion',
     description: 'Expanding from Thailand to Southeast Asia, we aim to unlock potential and elevate our global presence.',
-    image: '/images/home/banner4.png',
+    image: '/images/home/banner4.jpg',
     link: '/about', // Link to about page
   },
   {
     id: 4,
     //title: 'Partnership & Collaboration',
     description: 'At ALLROUNDERS, we create meaningful change through collaboration and partnerships.',
-    image: '/images/home/banner3.png',
+    image: '/images/home/banner3.jpg',
     link: '/services', // Link to contact page
   },
 ];
@@ -391,40 +392,7 @@ const Home = () => {
             </SwipeIndicator>
           )} */}
           
-          {/* Banner Navigation Dots */}
-          <Box 
-            sx={{ 
-              position: 'absolute', 
-              bottom: '20px', 
-              left: '50%', 
-              transform: 'translateX(-50%)',
-              display: 'flex',
-              gap: '10px',
-              zIndex: 10
-            }}
-          >
-            {bannerData.map((_, index) => (
-              <Box 
-                key={index}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setActiveBanner(index);
-                }}
-                component={motion.div}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-                sx={{
-                  width: activeBanner === index ? '12px' : '8px',
-                  height: activeBanner === index ? '12px' : '8px',
-                  borderRadius: '50%',
-                  backgroundColor: activeBanner === index ? 'primary.main' : 'white',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  boxShadow: activeBanner === index ? '0 0 8px rgba(25, 118, 210, 0.8)' : 'none',
-                }}
-              />
-            ))}
-          </Box>
+          
         </BannerSection>
         
         {/* Caption section below the banner */}
