@@ -277,8 +277,6 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
           initial={{ x: -900, y: 50 }}
           animate={{ 
             x: window.innerWidth,
-            y: [50, 30, 60, 40, 50], // Small up and down movement for bounce effect
-            rotate: [0, 5, 0, -5, 0], // Slight rotation for realistic movement
           }}
           transition={{ 
             duration: 6,
