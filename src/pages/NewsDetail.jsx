@@ -3,9 +3,10 @@ import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
 import newsData from '../data/newsData.json';
-import { Box, Container, Typography, Breadcrumbs, Button, Grid } from '@mui/material';
+import { Box, Container, Typography, Breadcrumbs, Button, Grid, Modal, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import CloseIcon from '@mui/icons-material/Close';
 import '../styles/NewsDetail.css';
 
 const NewsDetail = () => {
@@ -17,6 +18,8 @@ const NewsDetail = () => {
   const [article, setArticle] = useState(null);
   const [relatedArticles, setRelatedArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [openImageModal, setOpenImageModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState('');
 
   useEffect(() => {
     // Find the article with the matching ID
@@ -36,6 +39,17 @@ const NewsDetail = () => {
     
     setLoading(false);
   }, [id]);
+
+
+  // Image modal handlers
+  const handleOpenImageModal = (image) => {
+    setSelectedImage(image);
+    setOpenImageModal(true);
+  };
+
+  const handleCloseImageModal = () => {
+    setOpenImageModal(false);
+  };
 
   // Format date based on language
   const formatDate = (dateString) => {
@@ -60,7 +74,7 @@ const NewsDetail = () => {
           variant="body1" 
           paragraph 
           key={index}
-          sx={{ fontSize: '1.1rem', lineHeight: 1.7, mb: 3 }}
+          sx={{ fontSize: '1.1rem', lineHeight: 1.7, mb: 3 , maxWidth: '1200px'}}
         >
           {paragraph}
         </Typography>
@@ -70,7 +84,7 @@ const NewsDetail = () => {
       <Typography 
         variant="body1" 
         paragraph
-        sx={{ fontSize: '1.1rem', lineHeight: 1.7, mb: 3 }}
+        sx={{ fontSize: '1.1rem', lineHeight: 1.7, mb: 3 ,maxWidth: '1200px', mx: 'auto'}}
       >
         {content}
       </Typography>
@@ -174,18 +188,68 @@ const NewsDetail = () => {
         {/* Image gallery (if more than one image) */}
         {article.images.length > 1 && (
           <div className="article-gallery">
-            
             <Grid container spacing={2}>
               {article.images.slice(1).map((image, index) => (
                 <Grid item xs={12} sm={6} md={4} key={index}>
                   <div className="gallery-image">
-                    <img src={image} alt={`${article.title[currentLanguage]} - ${index + 2}`} />
+                    <img 
+                      src={image} 
+                      alt={`${article.title[currentLanguage]} - ${index + 2}`} 
+                      onClick={() => handleOpenImageModal(image)}
+                      style={{ cursor: 'pointer' }}
+                    />
                   </div>
                 </Grid>
               ))}
             </Grid>
           </div>
         )}
+
+        {/* Image Modal */}
+        <Modal
+          open={openImageModal}
+          onClose={handleCloseImageModal}
+          aria-labelledby="image-modal"
+          aria-describedby="enlarged image view"
+        >
+          <Box sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '90%',
+            maxWidth: '1200px',
+            maxHeight: '90vh',
+            bgcolor: 'transparent',
+            outline: 'none',
+          }}>
+            <IconButton
+              onClick={handleCloseImageModal}
+              sx={{
+                position: 'absolute',
+                top: '-40px',
+                right: '0',
+                color: 'white',
+                bgcolor: 'rgba(0,0,0,0.5)',
+                '&:hover': {
+                  bgcolor: 'rgba(0,0,0,0.7)',
+                }
+              }}
+            >
+              <CloseIcon />
+            </IconButton>
+            <img
+              src={selectedImage}
+              alt="Enlarged view"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: '85vh',
+                objectFit: 'contain'
+              }}
+            />
+          </Box>
+        </Modal>
 
         {/* Related articles */}
         {relatedArticles.length > 0 && (

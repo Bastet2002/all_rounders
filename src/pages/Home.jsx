@@ -97,11 +97,12 @@ const BannerOverlay = styled(Box)(({ theme }) => ({
   position: 'absolute',
   bottom: '0rem',
   width: '100%',
+  height: '110px',
   padding: theme.spacing(2),
   color: 'white',
   textAlign: 'center',
   zIndex: 2,
-  backgroundColor: 'rgba(0, 0, 0, 0.6)',
+  backgroundColor: 'rgba(0, 0, 0, 0.38)',
 }));
 
 // Create a new component for the text section below the banner
@@ -200,14 +201,14 @@ const bannerData = [
     id: 3,
     //title: 'Thailand & SEA expansion',
     description: 'Expanding from Thailand to Southeast Asia, we aim to unlock potential and elevate our global presence.',
-    image: '/images/home/banner4.jpg',
+    image: '/images/home/banner4.png',
     link: '/about', // Link to about page
   },
   {
     id: 4,
     //title: 'Partnership & Collaboration',
     description: 'At ALLROUNDERS, we create meaningful change through collaboration and partnerships.',
-    image: '/images/home/banner3.jpg',
+    image: '/images/home/banner3.png',
     link: '/services', // Link to contact page
   },
 ];
@@ -345,7 +346,7 @@ const Home = () => {
                                 maxWidth: '800px',
                                 margin: '0 auto',
                                 textShadow: '1px 1px 2px rgba(0,0,0,0.7)',
-                                fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.6rem' }, // Added font size
+                                fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.4rem' }, // Added font size
                                 fontWeight: 500, // Added font weight
                                 
                               }}

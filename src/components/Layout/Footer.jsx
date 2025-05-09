@@ -471,7 +471,7 @@ const Footer = () => {
             Privacy Policy
           </Link>
           <Link component={RouterLink} to="/terms" color="inherit">
-            Terms of Service
+            Terms & Conditions
           </Link>
           <Link 
             href="#" 
