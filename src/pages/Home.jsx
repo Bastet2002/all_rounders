@@ -95,7 +95,7 @@ const BannerSlide = styled(Box)(({ theme }) => ({
 // Text overlay for the banner
 const BannerOverlay = styled(Box)(({ theme }) => ({
   position: 'absolute',
-  bottom: '1rem',
+  bottom: '0rem',
   width: '100%',
   padding: theme.spacing(2),
   color: 'white',
