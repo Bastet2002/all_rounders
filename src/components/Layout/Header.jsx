@@ -18,15 +18,27 @@ import {
 } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
-import BusinessIcon from '@mui/icons-material/Business';
-import GroupIcon from '@mui/icons-material/Group';
-import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
-import NewspaperIcon from '@mui/icons-material/Newspaper';
-import WorkIcon from '@mui/icons-material/Work';
+import ApartmentIcon from '@mui/icons-material/Apartment';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
+import AppShortcutIcon from '@mui/icons-material/AppShortcut';
+import ArticleIcon from '@mui/icons-material/Article';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { translations } from '../../utils/translations';
+import { motion } from 'framer-motion';
+import { styled } from '@mui/material/styles';
 
+
+// Add this styled component for the logo container
+const DrawerHeader = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(1),
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  marginBottom: theme.spacing(1),
+  backgroundColor: 'black',
+}));
 const Header = () => {
   const { language, toggleLanguage } = useLanguage();
   // eslint-disable-next-line no-unused-vars
@@ -48,68 +60,125 @@ const Header = () => {
   };
 
   const menuItems = [
-    { text: t.ourCompany, path: '/about', icon: <BusinessIcon /> },
-    { text: t.team, path: '/team', icon: <GroupIcon /> },
-    { text: t.ourService, path: '/service', icon: <MiscellaneousServicesIcon /> },
-    { text: t.news, path: '/news', icon: <NewspaperIcon /> },
-    { text: t.careers, path: '/careers', icon: <WorkIcon /> },
+    { text: t.ourCompany, path: '/about', icon: <ApartmentIcon /> },
+    { text: t.team, path: '/team', icon: <Diversity3Icon /> },
+    { text: t.ourService, path: '/service', icon: <img src="/images/banner2.png" alt="Round8" style={{ width: 26, height: 22 }} /> },
+    { text: t.news, path: '/news', icon: <ArticleIcon/> },
+    { text: t.careers, path: '/careers', icon: <BusinessCenterIcon /> },
     { text: t.contactUs, path: 'https://tally.so/r/3EAWj4', external: true, icon: <ContactMailIcon /> },
   ];
+
+  // Animation variants for drawer items
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { x: -20, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100
+      }
+    }
+  };
 
   // Fix the drawer toggle implementation
   const drawer = (
     <Box
-      sx={{ width: 250 }}
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
+    sx={{ width: 250 }}
+    role="presentation"
+    onClick={toggleDrawer(false)}
+    onKeyDown={toggleDrawer(false)}
+  >
+    <DrawerHeader>
+      <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <img 
+          src="/images/logo.png" 
+          alt="ALLROUNDERS Logo" 
+          style={{ 
+            width: 85, 
+            height: 65,
+            marginBottom: 0 
+          }} 
+        />
+      </motion.div>
+    </DrawerHeader>
+
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
     >
       <List>
-        {menuItems.map((item) => (
-          item.external ? (
-            <ListItem 
-              button 
-              component="a" 
-              href={item.path}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={item.text}
-            >
-              <ListItemIcon>
-                {item.icon}
-              </ListItemIcon>
-              <ListItemText primary={item.text} />
-            </ListItem>
-          ) : (
-            <ListItem 
-              button 
-              component={RouterLink} 
-              to={item.path} 
-              key={item.text}
-            >
-              <ListItemIcon>
-                {item.icon}
-              </ListItemIcon>
-              <ListItemText primary={item.text} />
-            </ListItem>
-          )
+        {menuItems.map((item, index) => (
+          <motion.div 
+            key={item.text}
+            variants={itemVariants}
+            custom={index}
+          >
+            {item.external ? (
+              <ListItem 
+                button 
+                component="a" 
+                href={item.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ color: 'primary.main' }}
+              >
+                <ListItemIcon sx={{ color: 'primary.main' }}>
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText primary={item.text} />
+              </ListItem>
+            ) : (
+              <ListItem 
+                button 
+                component={RouterLink} 
+                to={item.path}
+              >
+                <ListItemIcon sx={{ color: 'primary.main' }}>
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText primary={item.text} />
+              </ListItem>
+            )}
+          </motion.div>
         ))}
-        <ListItem>
-          <FormControlLabel
-            control={
-              <Switch
-                checked={language === 'th'}
-                onChange={handleInputChange}
-                name="languageToggle"
-                color="primary"
-              />
-            }
-            label={language === 'en' ? 'EN' : 'TH'}
-          />
-        </ListItem>
+        <motion.div
+          variants={itemVariants}
+          custom={menuItems.length}
+        >
+          <ListItem sx={{ color: 'primary.main' }}>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={language === 'th'}
+                  onChange={handleInputChange}
+                  name="languageToggle"
+                  color="primary"
+                />
+              }
+              label={language === 'en' ? 'EN' : 'TH'}
+            />
+          </ListItem>
+        </motion.div>
       </List>
-    </Box>
-  );
+    </motion.div>
+  </Box>
+);
 
   return (
     <AppBar position="static" color="primary" elevation={1} sx={{ backgroundColor: '#000000' }}>

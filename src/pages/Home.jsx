@@ -16,8 +16,9 @@ const BannerSection = styled(Box)(({ theme }) => ({
   overflow: 'hidden',
   
   [theme.breakpoints.down('sm')]: {
-    height: '60vh', // Slightly shorter on mobile
-    marginTop: '56px', // Mobile header is typically shorter
+    height: '40vh', // Slightly shorter on mobile
+    marginTop: '0', 
+    
   },
 }));
 
@@ -45,6 +46,8 @@ const NavArrow = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     width: '45px',
     height: '45px',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }));
 
@@ -103,6 +106,10 @@ const BannerOverlay = styled(Box)(({ theme }) => ({
   textAlign: 'center',
   zIndex: 2,
   backgroundColor: 'rgba(0, 0, 0, 0.54)',
+  [theme.breakpoints.down('sm')]: {
+    bottom: '0rem',
+    
+  },
 }));
 
 // Create a new component for the text section below the banner
@@ -313,45 +320,53 @@ const Home = () => {
                   >
                     <BannerSlide style={{ 
                       backgroundImage: banner.video ? 'none' : `url(${banner.image})`,
-                      backgroundColor: '#000'
+                      backgroundColor: '#000', 
+                      backgroundPosition: 'center 20%',
+                     
                     }}>
                       {banner.video && banner.isRound8 && (
-  <Box sx={{ 
-    width: '100%', 
-    height: '100%', 
-    display: 'flex',
-    backgroundColor: '#fff',
-    position: 'relative', pl: { xs: 2, sm: 4, md: 12 } 
-  }}>
-    {/* Left side - Logo */}
-    <Box sx={{
-      width: '30%',
-      height: '100%',
-      backgroundColor: '#white', // The cyan color from the image
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: '2rem'
-    }}>
-      <img 
-        src="/images/home/banner2.png" 
-        alt="ROUND8 Logo" 
-        style={{
-          maxWidth: '120%',
-          maxHeight: '120%',
-          objectFit: 'contain'
-        }}
-      />
-    </Box>
+                      <Box sx={{ 
+                        width: '100%', 
+                        height: '100%', 
+                        display: 'flex',
+                        flexDirection: { xs: 'column', sm: 'row' },
+                        backgroundColor: '#fff',
+                        position: 'relative',
+                        pl: { xs: 0, sm: 4, md: 12 } 
+                      }}>
+                        {/* Left side - Logo */}
+                        <Box sx={{
+                          width: { xs: '100%', sm: '30%' }, // Full width on mobile, 30% on desktop
+                          height: { xs: '30%', sm: '100%' }, // 30%
+                          backgroundColor: '#white', // The cyan color from the image
+                          display: { xs: 'none', sm: 'flex' }, // Hide on mobile
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          padding: '2rem'
+                        }}>
+                          <img 
+                            src="/images/home/banner2.png" 
+                            alt="ROUND8 Logo" 
+                            style={{
+                              maxWidth: '120%',
+                              maxHeight: '120%',
+                              objectFit: 'contain'
+                            }}
+                          />
+                        </Box>
+
+          {/* Right side - Video */}      
     
     {/* Right side - Video */}
     <Box sx={{
-      width: '65%',
-      height: '90%',
+      width: { xs: '80%', sm: '65%' }, // Full width on mobile, 65% on desktop
+      height: { xs: '60%', sm: '90%' }, // 70% height on mobile, 90% on desktop
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#fff'
+      backgroundColor: '#fff',
+      mx: '10.5%',
+      paddingTop: { xs:'2rem', sm: '0'}
     }}>
       <video
         autoPlay
@@ -375,8 +390,8 @@ const Home = () => {
 {/* Regular video rendering for non-ROUND8 banners */}
 {banner.video && !banner.isRound8 && (
   <Box sx={{ 
-    width: '100%', 
-    height: '100%', 
+    width: { xs: '100%', sm: '65%' },
+    height: { xs: '100%', sm: '90%' }, // Full height on mobile 
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
