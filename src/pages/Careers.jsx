@@ -568,7 +568,7 @@ const Careers = () => {
             <Box sx={{ my: 4 }}>
             <Box 
                 component="img" 
-                src="/images/careers/teamPhoto.png" 
+                src="/images/careers/ourPic.png" 
                 alt="Our Team"
                 sx={{ 
                 width: '100%', 

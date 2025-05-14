@@ -97,12 +97,12 @@ const BannerOverlay = styled(Box)(({ theme }) => ({
   position: 'absolute',
   bottom: '0rem',
   width: '100%',
-  height: '110px',
+  height: '105px',
   padding: theme.spacing(2),
   color: 'white',
   textAlign: 'center',
   zIndex: 2,
-  backgroundColor: 'rgba(0, 0, 0, 0.38)',
+  backgroundColor: 'rgba(0, 0, 0, 0.54)',
 }));
 
 // Create a new component for the text section below the banner
@@ -195,7 +195,9 @@ const bannerData = [
     //title: 'ROUND8',
     description: 'We offer the safest, and most convenient secondhand trading platform in SEA.',
     image: '/images/home/banner2.png',
+    video: '/images/home/ui2.mp4', 
     link: '/service', // Link to services page
+    isRound8: true, 
   },
   {
     id: 3,
@@ -229,7 +231,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveBanner((prev) => (prev + 1) % bannerData.length);
-    }, 10000); // 5 seconds auto-scroll
+    }, 50000); 
 
     return () => clearInterval(interval);
   }, []);
@@ -290,29 +292,115 @@ const Home = () => {
     <Box>
       {/* Banner Section */}
       <Box>
-        <BannerSection>
-          <AnimatePresence mode="wait">
-            {bannerData.map((banner, index) => (
-              activeBanner === index && (
-                <motion.div
-                  key={banner.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  style={{ position: 'absolute', width: '100%', height: '100%' }}
-                >
-                  <RouterLink to={banner.link} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-                    <motion.div
-                      initial={{ scale: 1.1 }}
-                      animate={{ scale: 1 }}
-                      transition={{ duration: 1.5 }}
-                      style={{ width: '100%', height: '100%' }}
-                    >
-                      <BannerSlide style={{ 
-                        backgroundImage: `url(${banner.image})`,
-                        backgroundColor: '#000'
-                      }}>
+      <BannerSection>
+        <AnimatePresence mode="wait">
+          {bannerData.map((banner, index) => (
+            activeBanner === index && (
+              <motion.div
+                key={banner.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                style={{ position: 'absolute', width: '100%', height: '100%' }}
+              >
+                <RouterLink to={banner.link} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                  <motion.div
+                    initial={{ scale: 1.1 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 1.5 }}
+                    style={{ width: '100%', height: '100%' }}
+                  >
+                    <BannerSlide style={{ 
+                      backgroundImage: banner.video ? 'none' : `url(${banner.image})`,
+                      backgroundColor: '#000'
+                    }}>
+                      {banner.video && banner.isRound8 && (
+  <Box sx={{ 
+    width: '100%', 
+    height: '100%', 
+    display: 'flex',
+    backgroundColor: '#fff',
+    position: 'relative', pl: { xs: 2, sm: 4, md: 12 } 
+  }}>
+    {/* Left side - Logo */}
+    <Box sx={{
+      width: '30%',
+      height: '100%',
+      backgroundColor: '#white', // The cyan color from the image
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '2rem'
+    }}>
+      <img 
+        src="/images/home/banner2.png" 
+        alt="ROUND8 Logo" 
+        style={{
+          maxWidth: '120%',
+          maxHeight: '120%',
+          objectFit: 'contain'
+        }}
+      />
+    </Box>
+    
+    {/* Right side - Video */}
+    <Box sx={{
+      width: '65%',
+      height: '90%',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#fff'
+    }}>
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          width: '120%',
+          height: '120%',
+          maxHeight: '120%',
+          objectFit: 'contain'
+        }}
+      >
+        <source src={banner.video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </Box>
+  </Box>
+)}
+
+{/* Regular video rendering for non-ROUND8 banners */}
+{banner.video && !banner.isRound8 && (
+  <Box sx={{ 
+    width: '100%', 
+    height: '100%', 
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    position: 'relative',
+    pl: { xs: 2, sm: 4, md: 6 }
+  }}>
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{
+        width: '120%',
+        height: 'auto',
+        maxHeight: '80%',
+        objectFit: 'contain'
+      }}
+    >
+      <source src={banner.video} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </Box>
+)}
                         
                         <BannerOverlay>
                           <motion.div
@@ -346,7 +434,7 @@ const Home = () => {
                                 maxWidth: '800px',
                                 margin: '0 auto',
                                 textShadow: '1px 1px 2px rgba(0,0,0,0.7)',
-                                fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.4rem' }, // Added font size
+                                fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' }, // Added font size
                                 fontWeight: 500, // Added font weight
                                 
                               }}

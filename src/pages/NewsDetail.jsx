@@ -205,6 +205,32 @@ const NewsDetail = () => {
           </div>
         )}
 
+        {/* Source Link Section */}
+        <Box sx={{ mt: 6, mb: 4, borderTop: '1px solid #eaeaea', pt: 3 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1, display: 'inline-block', mr: 1 }}>
+            {t('source') || 'Source'}:
+          </Typography>
+          {article.source ? (
+            <a 
+              href={article.source.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ 
+                color: '#00BCD4',
+                textDecoration: 'none',
+              }}
+              onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
+              onMouseOut={(e) => e.target.style.textDecoration = 'none'}
+            >
+              {article.source.url}
+            </a>
+          ) : (
+            <Typography variant="body2" color="text.secondary" display="inline">
+              {t('originalContent') || 'Original content by ALLROUNDERS Inc.'}
+            </Typography>
+          )}
+        </Box>
+
         {/* Image Modal */}
         <Modal
           open={openImageModal}

@@ -164,6 +164,9 @@ export const translations = {
     cannotWait: "We cannot wait for you to join us!",
     joinUsNow: "Join us now!",
 
+    "source": "Source",
+    "originalContent": "Original content by ALLROUNDERS Inc.",
+
 
 
     // Privacy Policy
@@ -414,7 +417,9 @@ export const translations = {
   cannotWait: "เราไม่สามารถรอให้คุณมาร่วมงานกับเรา!",
   joinUsNow: "เข้าร่วมกับเราตอนนี้!",
 
-
+    // Add to your Thai translations
+  "source": "แหล่งที่มา",
+  "originalContent": "เนื้อหาต้นฉบับโดย ALLROUNDERS Inc.",
 
   // Privacy Policy
   privacyPolicy: "นโยบายความเป็นส่วนตัว",
