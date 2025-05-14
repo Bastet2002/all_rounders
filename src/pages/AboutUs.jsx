@@ -415,7 +415,7 @@ const AboutUs = () => {
                         <Box sx={{ mt: 3 }}></Box>
                         </motion.div>
                             <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
-                            Integrate advanced technology while prioritizing Thai markets
+                            {t('missionCard1Title')}
                             </Typography>
                         </MissionCard>
                         </motion.div>
@@ -454,7 +454,7 @@ const AboutUs = () => {
                         <Box sx={{ mt: 3 }}></Box>
                         </motion.div>
                             <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
-                            Expand our reach to the Thai market
+                            {t('missionCard2Title')}
                             </Typography>
                         </MissionCard>
                         </motion.div>
@@ -493,7 +493,7 @@ const AboutUs = () => {
                         <Box sx={{ mt: 3 }}></Box>
                         </motion.div>
                             <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
-                            Expand operations across Southeast Asia
+                            {t('missionCard3Title')}
                             </Typography>
                         </MissionCard>
                         </motion.div>

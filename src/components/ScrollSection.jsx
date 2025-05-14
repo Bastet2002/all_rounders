@@ -17,7 +17,7 @@ const SectionContainer = styled(Box)(({ theme }) => ({
   overflow: 'hidden',
   height: '100vh',
   [theme.breakpoints.down('sm')]: {
-    height: '100vh', // Maintain full height on mobile
+    height: '85vh', // Maintain full height on mobile
   }
 }));
 
@@ -89,10 +89,10 @@ const Section = styled(Box)(({ theme, bgcolor }) => ({
     width: '100vw', // Each section takes full width of viewport
     padding: theme.spacing(2, 2),
     height: '85vh',
-    minHeight: '100vh',
+    minHeight: '85vh',
     felxShrink: 0,
     justifyContent: 'flex-start', // Align content to top on mobile
-    paddingTop: '80px',
+  
   },
 }));
 
@@ -238,6 +238,9 @@ const NavigationControls = styled(Box)(({ theme }) => ({
   padding: theme.spacing(1),
   backdropFilter: 'blur(4px)',
   backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  [theme.breakpoints.down('sm')]: {
+    bottom: '120px', // Move it higher on mobile
+  },
 }));
 
 const NavButton = styled(IconButton)(({ theme }) => ({
@@ -262,28 +265,7 @@ const PaginationDot = styled(Box)(({ active, theme }) => ({
   transition: 'all 0.3s ease',
 }));
 
-// New component for the auto-scroll timer indicator
-const AutoScrollIndicator = styled(Box)(({ theme, progress }) => ({
-  position: 'absolute',
-  bottom: '20px',
-  left: '50%',
-  transform: 'translateX(-50%)',
-  width: '80%',
-  height: '4px',
-  backgroundColor: 'rgba(0, 0, 0, 0.1)',
-  borderRadius: '2px',
-  overflow: 'hidden',
-  '&::after': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    height: '100%',
-    width: `${progress}%`,
-    backgroundColor: '#00BCD4',
-    transition: 'width 0.3s linear',
-  }
-}));
+
 
 const ScrollSection = ({ sections, title }) => {
   const containerRef = useRef(null);
@@ -356,7 +338,7 @@ const ScrollSection = ({ sections, title }) => {
     // Set up next slide timer
     autoScrollRef.current = setTimeout(() => {
       goToNext();
-    }, 5000); // 10 seconds
+    }, 4000); // 10 seconds
   };
 
   // Toggle auto-scroll
@@ -623,10 +605,12 @@ const ScrollSection = ({ sections, title }) => {
               
               <Grid 
                 container 
-                spacing={3} 
+                spacing={2} 
                 alignItems="center" 
                 justifyContent="center"
-                sx={{ maxWidth: '1200px', position: 'relative', zIndex: 2, px: { xs: 2, sm: 3 }}}
+                
+                sx={{ maxWidth: '1200px', position: 'relative', zIndex: 2, px: { xs: 2, sm: 3 }, mb: { xs: 1, md: 0 },
+                mt: { xs: 0, md: 0 }}}
               >
                 <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center' , mb: { xs: 1, md: 0 }}}>
                   <PhoneContainer className="phone-container">
@@ -713,10 +697,7 @@ const ScrollSection = ({ sections, title }) => {
            
             </NavigationControls>
             
-            {/* Auto-scroll progress indicator */}
-            {autoScrollEnabled && (
-              <AutoScrollIndicator progress={autoScrollProgress} />
-            )}
+            
           </>
         )}
       </SectionContainer>
