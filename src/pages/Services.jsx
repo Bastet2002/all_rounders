@@ -34,6 +34,23 @@ const MotorcycleAnimation = styled(motion.div)(({ theme }) => ({
     },
   }));
 
+  const ServiceImage = styled(Box)(({ theme }) => ({
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    '& img': {
+      maxWidth: '280px', // Set a consistent max width
+      maxHeight: '500px', // Set a consistent max height
+      objectFit: 'contain',
+      [theme.breakpoints.down('sm')]: {
+        maxWidth: '200px', // Smaller on mobile
+        maxHeight: '350px',
+      },
+    }
+  }));
+
 const HeroSection = styled(Box)(({ theme }) => ({
   minHeight: '90.5vh',
   display: 'flex',
@@ -209,7 +226,7 @@ const Services = () => {
     {
       title: "Payment (ESCROW)",
       description: "Protected payments with escrow system. Holding funds for buyers and sellers until transaction is complete. This ensures both parties are protected throughout the entire process.",
-      image: "/images/services/payment.png",
+      image: "/images/services/inception.png",
       animation: "/images/services/payment-animation.gif",
       //icon: "/images/services/payment-icon.png"
     },
@@ -223,7 +240,7 @@ const Services = () => {
     {
       title: "Inspection",
       description: "Secure transactions with exterior inspection. Protecting buyers and ensuring quality, fraud-free products. Our inspection process verifies that what you see is what you get.",
-      image: "/images/services/inception.png",
+      image: "/images/services/payment.png",
       animation: "/images/services/inception-animation.gif",
       //icon: "/images/services/inception-icon.png"
     },
@@ -237,7 +254,7 @@ const Services = () => {
     {
       title: "Our Community",
       description: "Come join us and be a part of our community! Connect with like-minded individuals and grow together. Our community is built on trust, respect, and shared interests.",
-      image: "/images/services/community.png",
+      image: "/images/services/delivery.png",
       animation: "/images/services/community-animation.gif",
       //icon: "/images/services/community-icon.png"
     }
@@ -450,6 +467,14 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
       <Box sx={{ position: 'relative' }}>
         <ScrollSection 
           sections={servicePanels} 
+          imageProps={{
+            component: ServiceImage,
+            sx: { 
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }
+          }}
           
         />
         

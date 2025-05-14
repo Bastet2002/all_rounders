@@ -6,6 +6,8 @@ import { Box, Typography, Grid, IconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import PauseIcon from '@mui/icons-material/Pause';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -47,7 +49,7 @@ const HorizontalWrapper = styled(Box)(({ theme }) => ({
     flexDirection: 'row', // Keep horizontal layout for mobile swipe
     width: 'fit-content', // Let it expand based on content
     height: '100vh',
-    transition: 'transform 0.5s ease',
+    transition: 'transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1)',
   },
 }));
 
@@ -85,16 +87,19 @@ const Section = styled(Box)(({ theme, bgcolor }) => ({
   },
   [theme.breakpoints.down('sm')]: {
     width: '100vw', // Each section takes full width of viewport
-    padding: theme.spacing(3, 2),
+    padding: theme.spacing(2, 2),
     height: '85vh',
     minHeight: '100vh',
     felxShrink: 0,
+    justifyContent: 'flex-start', // Align content to top on mobile
+    paddingTop: '80px',
   },
 }));
 
 const PhoneContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
   maxWidth: '300px',
+  height: '500px',
   zIndex: 2,
   transform: 'perspective(1000px) rotateY(5deg)',
   transition: 'transform 0.5s ease',
@@ -102,13 +107,17 @@ const PhoneContainer = styled(Box)(({ theme }) => ({
     transform: 'perspective(1000px) rotateY(0deg)',
   },
   [theme.breakpoints.down('sm')]: {
-    maxWidth: '200px', // Smaller phone image on mobile
+    maxWidth: '200px',
+    height: '350px' // Smaller phone image on mobile
   },
 }));
 
 const PhoneImage = styled('img')(({ theme }) => ({
-  width: '100%',
+  width: 'auto',
   height: 'auto',
+  maxWidth: '100%',
+  maxHeight: '100%',
+  objectFit: 'contain', // This ensures the image maintains its aspect ratio
   borderRadius: '24px',
   boxShadow: '0 20px 40px rgba(0, 0, 0, 0)',
 }));
@@ -131,14 +140,18 @@ const ContentContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     padding: theme.spacing(3),
     paddingTop: theme.spacing(6),
-    maxWidth: '90%',
+    maxWidth: '100%',
+    margin: '0 auto', // Center the box
+    marginTop: theme.spacing(2),
     '& h4': {
       fontSize: '1.3rem', // Smaller heading for mobile
       marginBottom: '0.5rem',
+      textAlign: 'center',
     },
     '& p': {
       fontSize: '0.85rem', // Smaller paragraph text for mobile
       marginBottom: '0.5rem',
+      textAlign: 'center',
     }
   
   },
@@ -222,6 +235,9 @@ const NavigationControls = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   zIndex: 100,
   gap: theme.spacing(2),
+  padding: theme.spacing(1),
+  backdropFilter: 'blur(4px)',
+  backgroundColor: 'rgba(255, 255, 255, 0.1)',
 }));
 
 const NavButton = styled(IconButton)(({ theme }) => ({
@@ -246,6 +262,29 @@ const PaginationDot = styled(Box)(({ active, theme }) => ({
   transition: 'all 0.3s ease',
 }));
 
+// New component for the auto-scroll timer indicator
+const AutoScrollIndicator = styled(Box)(({ theme, progress }) => ({
+  position: 'absolute',
+  bottom: '20px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  width: '80%',
+  height: '4px',
+  backgroundColor: 'rgba(0, 0, 0, 0.1)',
+  borderRadius: '2px',
+  overflow: 'hidden',
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    height: '100%',
+    width: `${progress}%`,
+    backgroundColor: '#00BCD4',
+    transition: 'width 0.3s linear',
+  }
+}));
+
 const ScrollSection = ({ sections, title }) => {
   const containerRef = useRef(null);
   const wrapperRef = useRef(null);
@@ -254,11 +293,16 @@ const ScrollSection = ({ sections, title }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
+  const [autoScrollProgress, setAutoScrollProgress] = useState(0);
+  const autoScrollRef = useRef(null);
+  const autoScrollIntervalRef = useRef(null); // For the progress bar
 
   // Function to navigate to previous section
   const goToPrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
+      resetAutoScroll();
     }
   };
 
@@ -266,12 +310,84 @@ const ScrollSection = ({ sections, title }) => {
   const goToNext = () => {
     if (currentIndex < sections.length - 1) {
       setCurrentIndex(currentIndex + 1);
+      resetAutoScroll();
+    } else {
+      // Loop back to the first slide when reaching the end
+      setCurrentIndex(0);
+      resetAutoScroll();
+    }
+  };
+
+  // Reset auto-scroll timer
+  const resetAutoScroll = () => {
+    if (autoScrollRef.current) {
+      clearTimeout(autoScrollRef.current);
+    }
+    if (autoScrollIntervalRef.current) {
+      clearInterval(autoScrollIntervalRef.current);
+    }
+    setAutoScrollProgress(0);
+    
+    if (autoScrollEnabled && isMobile) {
+      startAutoScroll();
+    }
+  };
+
+  // Start auto-scroll timer
+  const startAutoScroll = () => {
+    if (autoScrollRef.current) {
+      clearTimeout(autoScrollRef.current);
+    }
+    if (autoScrollIntervalRef.current) {
+      clearInterval(autoScrollIntervalRef.current);
+    }
+    
+    // Set up progress bar
+    setAutoScrollProgress(0);
+    const updateFrequency = 100; // Update progress every 100ms
+    const totalUpdates = 10000 / updateFrequency; // 10 seconds total
+    let progress = 0;
+    
+    autoScrollIntervalRef.current = setInterval(() => {
+      progress += (100 / totalUpdates);
+      setAutoScrollProgress(Math.min(progress, 100));
+    }, updateFrequency);
+    
+    // Set up next slide timer
+    autoScrollRef.current = setTimeout(() => {
+      goToNext();
+    }, 5000); // 10 seconds
+  };
+
+  // Toggle auto-scroll
+  const toggleAutoScroll = () => {
+    setAutoScrollEnabled(!autoScrollEnabled);
+    if (!autoScrollEnabled) {
+      // Turning on auto-scroll
+      startAutoScroll();
+    } else {
+      // Turning off auto-scroll
+      if (autoScrollRef.current) {
+        clearTimeout(autoScrollRef.current);
+      }
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+      setAutoScrollProgress(0);
     }
   };
 
   // Handle touch events for swipe
   const handleTouchStart = (e) => {
     setTouchStart(e.targetTouches[0].clientX);
+    
+    // Pause auto-scroll during manual interaction
+    if (autoScrollRef.current) {
+      clearTimeout(autoScrollRef.current);
+    }
+    if (autoScrollIntervalRef.current) {
+      clearInterval(autoScrollIntervalRef.current);
+    }
   };
 
   const handleTouchMove = (e) => {
@@ -287,6 +403,11 @@ const ScrollSection = ({ sections, title }) => {
     if (touchEnd - touchStart > 75) {
       // Swipe right
       goToPrev();
+    }
+    
+    // Resume auto-scroll after manual interaction if enabled
+    if (autoScrollEnabled) {
+      startAutoScroll();
     }
   };
 
@@ -379,16 +500,44 @@ const ScrollSection = ({ sections, title }) => {
       gsap.set('.section-content', { opacity: 1, y: 0 });
       gsap.set('.phone-container', { opacity: 1, x: 0 });
       gsap.set('.icon-container', { opacity: 1, scale: 1 });
+      
+      // Start auto-scroll for mobile
+      if (autoScrollEnabled) {
+        startAutoScroll();
+      }
     }
 
     // Event listener for resize
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener('resize', () => {
+      const wasMobile = isMobile;
+      checkMobile();
+      
+      // If switching between desktop and mobile, handle auto-scroll
+      if (wasMobile !== isMobile) {
+        if (isMobile && autoScrollEnabled) {
+          startAutoScroll();
+        } else {
+          if (autoScrollRef.current) {
+            clearTimeout(autoScrollRef.current);
+          }
+          if (autoScrollIntervalRef.current) {
+            clearInterval(autoScrollIntervalRef.current);
+          }
+        }
+      }
+    });
     
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
       window.removeEventListener('resize', checkMobile);
+      if (autoScrollRef.current) {
+        clearTimeout(autoScrollRef.current);
+      }
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
     };
-  }, [sections.length]);
+  }, [sections.length, autoScrollEnabled]);
 
   // Effect to handle the swiping animation on mobile
   useEffect(() => {
@@ -477,9 +626,9 @@ const ScrollSection = ({ sections, title }) => {
                 spacing={3} 
                 alignItems="center" 
                 justifyContent="center"
-                sx={{ maxWidth: '1200px', position: 'relative', zIndex: 2 }}
+                sx={{ maxWidth: '1200px', position: 'relative', zIndex: 2, px: { xs: 2, sm: 3 }}}
               >
-                <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center' }}>
+                <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center' , mb: { xs: 1, md: 0 }}}>
                   <PhoneContainer className="phone-container">
                     <PhoneImage 
                       src={section.image} 
@@ -491,7 +640,9 @@ const ScrollSection = ({ sections, title }) => {
                     />
                   </PhoneContainer>
                 </Grid>
-                <Grid item xs={12} md={7}>
+                <Grid item xs={12} md={7} sx={{ 
+                  display: 'flex', 
+                  justifyContent: 'center'}}>
                   <ContentContainer className="section-content">
                     {section.animation && (
                       <AnimationTopOverlay>
@@ -517,24 +668,6 @@ const ScrollSection = ({ sections, title }) => {
                     <Typography variant="body1" sx={{ mb: 3 }}>
                       {section.description}
                     </Typography>
-                    
-                    {section.icon && (
-                      <IconContainer className="icon-container">
-                        <motion.img 
-                          src={section.icon} 
-                          alt="Icon" 
-                          style={{ width: '50px', height: '50px' }}
-                          animate={{ 
-                            rotate: [0, 10, 0, -10, 0],
-                          }}
-                          transition={{ 
-                            duration: 5,
-                            repeat: Infinity,
-                            repeatType: "reverse"
-                          }}
-                        />
-                      </IconContainer>
-                    )}
                   </ContentContainer>
                 </Grid>
               </Grid>
@@ -544,35 +677,47 @@ const ScrollSection = ({ sections, title }) => {
         
         {/* Mobile navigation controls - only show on mobile */}
         {isMobile && (
-          <NavigationControls>
-            <NavButton 
-              onClick={goToPrev} 
-              disabled={currentIndex === 0}
-              aria-label="Previous section"
-              size="small"
-            >
-              <ArrowBackIosNewIcon fontSize="small" />
-            </NavButton>
+          <>
+            <NavigationControls>
+              <NavButton 
+                onClick={goToPrev} 
+                disabled={currentIndex === 0}
+                aria-label="Previous section"
+                size="small"
+              >
+                <ArrowBackIosNewIcon fontSize="small" />
+              </NavButton>
+              
+              <PaginationDots>
+                {sections.map((_, index) => (
+                  <PaginationDot 
+                    key={index} 
+                    active={index === currentIndex}
+                    onClick={() => {
+                      setCurrentIndex(index);
+                      resetAutoScroll();
+                    }}
+                  />
+                ))}
+              </PaginationDots>
+              
+              <NavButton 
+                onClick={goToNext} 
+                disabled={currentIndex === sections.length - 1}
+                aria-label="Next section"
+                size="small"
+              >
+                <ArrowForwardIosIcon fontSize="small" />
+              </NavButton>
+              
+           
+            </NavigationControls>
             
-            <PaginationDots>
-              {sections.map((_, index) => (
-                <PaginationDot 
-                  key={index} 
-                  active={index === currentIndex}
-                  onClick={() => setCurrentIndex(index)}
-                />
-              ))}
-            </PaginationDots>
-            
-            <NavButton 
-              onClick={goToNext} 
-              disabled={currentIndex === sections.length - 1}
-              aria-label="Next section"
-              size="small"
-            >
-              <ArrowForwardIosIcon fontSize="small" />
-            </NavButton>
-          </NavigationControls>
+            {/* Auto-scroll progress indicator */}
+            {autoScrollEnabled && (
+              <AutoScrollIndicator progress={autoScrollProgress} />
+            )}
+          </>
         )}
       </SectionContainer>
     </Box>

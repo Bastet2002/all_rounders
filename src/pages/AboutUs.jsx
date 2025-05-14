@@ -358,7 +358,7 @@ const AboutUs = () => {
                       px: 3
                     }}
                   >
-                    To provide a secure and innovative platform that brings new value to people in need
+                    {t('missionStatement')}
                   </Typography>
                 </motion.div>
               </SectionContainer>
