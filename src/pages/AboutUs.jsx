@@ -571,9 +571,7 @@ const AboutUs = () => {
                   }}
                 >Q1</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- Establishment of ALLROUNDERS Inc
-- Product planning
-- Start social media management" />
+                  <ExpandableTimelineContent content= {t('timeline2024Q1')} />
                 </Box>
               </Box>
             </Box>
@@ -597,9 +595,7 @@ const AboutUs = () => {
                   }}
                 >Q2</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- Operated ROUND8 pre-registration page 
-- Selected as an incubation company by Jeju startup bay
-- Start operating local interns (10+ interns)" />
+                  <ExpandableTimelineContent content={t('timeline2024Q2')} />
                 </Box>
               </Box>
             </Box>

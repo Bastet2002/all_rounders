@@ -17,7 +17,7 @@ const SectionContainer = styled(Box)(({ theme }) => ({
   overflow: 'hidden',
   height: '100vh',
   [theme.breakpoints.down('sm')]: {
-    height: '85vh', // Maintain full height on mobile
+    height: '100vh', // Maintain full height on mobile
   }
 }));
 
@@ -34,8 +34,8 @@ const HandwrittenTitle = styled(Box)(({ theme }) => ({
     color: '#00BCD4',
     textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '2rem',
-      marginTop: '-5px',
+      fontSize: '1.8rem',
+      marginTop: '10px',
     }
   }
 }));
@@ -88,11 +88,13 @@ const Section = styled(Box)(({ theme, bgcolor }) => ({
   [theme.breakpoints.down('sm')]: {
     width: '100vw', // Each section takes full width of viewport
     padding: theme.spacing(2, 2),
-    height: '85vh',
-    minHeight: '85vh',
-    felxShrink: 0,
-    justifyContent: 'flex-start', // Align content to top on mobile
-  
+    height: '100vh',
+    flexShrink: 0,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center', // Center content on mobile
+    paddingTop: '40px',
+    paddingBottom: '80px', // Make room for navigation controls
   },
 }));
 
@@ -107,8 +109,11 @@ const PhoneContainer = styled(Box)(({ theme }) => ({
     transform: 'perspective(1000px) rotateY(0deg)',
   },
   [theme.breakpoints.down('sm')]: {
-    maxWidth: '200px',
-    height: '350px' // Smaller phone image on mobile
+    maxWidth: '180px',
+    height: 'auto',
+    maxHeight: '280px', // Smaller phone image on mobile
+    margin: '0 auto',
+    marginBottom: '10px'
   },
 }));
 
@@ -138,13 +143,12 @@ const ContentContainer = styled(Box)(({ theme }) => ({
     transform: 'translateY(-5px)',
   },
   [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(3),
-    paddingTop: theme.spacing(6),
-    maxWidth: '100%',
-    margin: '0 auto', // Center the box
-    marginTop: theme.spacing(2),
+    padding: theme.spacing(2.5),
+    paddingTop: theme.spacing(5),
+    maxWidth: '90%',
+    margin: '0 auto',
     '& h4': {
-      fontSize: '1.3rem', // Smaller heading for mobile
+      fontSize: '1.2rem', // Smaller heading for mobile
       marginBottom: '0.5rem',
       textAlign: 'center',
     },
@@ -172,9 +176,9 @@ const AnimationTopOverlay = styled(Box)(({ theme }) => ({
   borderRadius: '50%',
   boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
   [theme.breakpoints.down('sm')]: {
-    width: '80px',
-    height: '80px',
-    top: '-30px',
+    width: '70px',
+    height: '70px',
+    top: '-25px',
   },
 }));
 
@@ -227,7 +231,7 @@ const CurvedBackground = styled(Box)(({ theme, color }) => ({
 // Mobile navigation controls
 const NavigationControls = styled(Box)(({ theme }) => ({
   position: 'absolute',
-  bottom: '30px',
+  bottom: '20px',
   left: '0',
   width: '100%',
   display: 'flex',
@@ -237,10 +241,7 @@ const NavigationControls = styled(Box)(({ theme }) => ({
   gap: theme.spacing(2),
   padding: theme.spacing(1),
   backdropFilter: 'blur(4px)',
-  backgroundColor: 'rgba(255, 255, 255, 0.1)',
-  [theme.breakpoints.down('sm')]: {
-    bottom: '120px', // Move it higher on mobile
-  },
+  backgroundColor: 'rgba(255, 255, 255, 0.2)',
 }));
 
 const NavButton = styled(IconButton)(({ theme }) => ({
@@ -265,7 +266,28 @@ const PaginationDot = styled(Box)(({ active, theme }) => ({
   transition: 'all 0.3s ease',
 }));
 
-
+// Auto-scroll progress indicator with improved positioning
+const AutoScrollIndicator = styled(Box)(({ theme, progress }) => ({
+  position: 'absolute',
+  bottom: '12px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  width: '50%',
+  height: '3px',
+  backgroundColor: 'rgba(0, 0, 0, 0.1)',
+  borderRadius: '2px',
+  overflow: 'hidden',
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    height: '100%',
+    width: `${progress}%`,
+    backgroundColor: '#00BCD4',
+    transition: 'width 0.3s linear',
+  }
+}));
 
 const ScrollSection = ({ sections, title }) => {
   const containerRef = useRef(null);
@@ -338,7 +360,7 @@ const ScrollSection = ({ sections, title }) => {
     // Set up next slide timer
     autoScrollRef.current = setTimeout(() => {
       goToNext();
-    }, 4000); // 10 seconds
+    }, 10000); // 10 seconds
   };
 
   // Toggle auto-scroll
@@ -608,11 +630,9 @@ const ScrollSection = ({ sections, title }) => {
                 spacing={2} 
                 alignItems="center" 
                 justifyContent="center"
-                
-                sx={{ maxWidth: '1200px', position: 'relative', zIndex: 2, px: { xs: 2, sm: 3 }, mb: { xs: 1, md: 0 },
-                mt: { xs: 0, md: 0 }}}
+                sx={{ maxWidth: '1200px', position: 'relative', zIndex: 2, px: { xs: 1, sm: 3 }}}
               >
-                <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center' , mb: { xs: 1, md: 0 }}}>
+                <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center', mb: { xs: 0, md: 0 }}}>
                   <PhoneContainer className="phone-container">
                     <PhoneImage 
                       src={section.image} 
@@ -694,10 +714,11 @@ const ScrollSection = ({ sections, title }) => {
                 <ArrowForwardIosIcon fontSize="small" />
               </NavButton>
               
+              {/* Auto-scroll toggle button */}
            
             </NavigationControls>
             
-            
+           
           </>
         )}
       </SectionContainer>
