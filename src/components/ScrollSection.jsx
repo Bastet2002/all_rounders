@@ -34,7 +34,7 @@ const HandwrittenTitle = styled(Box)(({ theme }) => ({
     color: '#00BCD4',
     textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1.8rem',
+      fontSize: '1.6rem',
       marginTop: '10px',
     }
   }
@@ -92,9 +92,11 @@ const Section = styled(Box)(({ theme, bgcolor }) => ({
     flexShrink: 0,
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center', // Center content on mobile
-    paddingTop: '40px',
-    paddingBottom: '80px', // Make room for navigation controls
+    justifyContent: 'center',
+    justifyContent: 'flex-start', 
+    paddingTop: '80px',
+    paddingBottom: '60px', 
+    
   },
 }));
 
@@ -109,11 +111,12 @@ const PhoneContainer = styled(Box)(({ theme }) => ({
     transform: 'perspective(1000px) rotateY(0deg)',
   },
   [theme.breakpoints.down('sm')]: {
-    maxWidth: '180px',
+    maxWidth: '160px',
     height: 'auto',
-    maxHeight: '280px', // Smaller phone image on mobile
+    maxHeight: '240px', // Smaller phone image on mobile
     margin: '0 auto',
-    marginBottom: '10px'
+    marginBottom: '10px',
+    transform: 'perspective(1000px) rotateY(0deg)', // No rotation on mobile
   },
 }));
 
@@ -145,17 +148,18 @@ const ContentContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     padding: theme.spacing(2.5),
     paddingTop: theme.spacing(5),
-    maxWidth: '90%',
+    maxWidth: '95%',
     margin: '0 auto',
     '& h4': {
-      fontSize: '1.2rem', // Smaller heading for mobile
+      fontSize: '1.1rem', // Smaller heading for mobile
       marginBottom: '0.5rem',
       textAlign: 'center',
     },
     '& p': {
-      fontSize: '0.85rem', // Smaller paragraph text for mobile
+      fontSize: '0.8rem', // Smaller paragraph text for mobile
       marginBottom: '0.5rem',
       textAlign: 'center',
+      lineHeight: 1.4,
     }
   
   },
@@ -231,7 +235,7 @@ const CurvedBackground = styled(Box)(({ theme, color }) => ({
 // Mobile navigation controls
 const NavigationControls = styled(Box)(({ theme }) => ({
   position: 'absolute',
-  bottom: '20px',
+  bottom: '10px',
   left: '0',
   width: '100%',
   display: 'flex',
@@ -630,7 +634,7 @@ const ScrollSection = ({ sections, title }) => {
                 spacing={2} 
                 alignItems="center" 
                 justifyContent="center"
-                sx={{ maxWidth: '1200px', position: 'relative', zIndex: 2, px: { xs: 1, sm: 3 }}}
+                sx={{ maxWidth: '1200px', position: 'relative', zIndex: 2, px: { xs: 1, sm: 3, }}}
               >
                 <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center', mb: { xs: 0, md: 0 }}}>
                   <PhoneContainer className="phone-container">
@@ -714,11 +718,10 @@ const ScrollSection = ({ sections, title }) => {
                 <ArrowForwardIosIcon fontSize="small" />
               </NavButton>
               
-              {/* Auto-scroll toggle button */}
-           
+              
             </NavigationControls>
             
-           
+            
           </>
         )}
       </SectionContainer>
