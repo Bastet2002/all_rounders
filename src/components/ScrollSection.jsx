@@ -86,7 +86,7 @@ const Section = styled(Box)(({ theme, bgcolor }) => ({
   [theme.breakpoints.down('sm')]: {
     width: '100vw', // Each section takes full width of viewport
     padding: theme.spacing(2, 2),
-    height: '85vh',
+    height: '60vh',
     minHeight: '100vh',
     felxShrink: 0,
     display: 'flex',
