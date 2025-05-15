@@ -16,7 +16,7 @@ const BannerSection = styled(Box)(({ theme }) => ({
   overflow: 'hidden',
   
   [theme.breakpoints.down('sm')]: {
-    height: '40vh', // Slightly shorter on mobile
+    height: '50vh', // Slightly shorter on mobile
     marginTop: '0', 
     
   },
@@ -107,7 +107,7 @@ const BannerOverlay = styled(Box)(({ theme }) => ({
   zIndex: 2,
   backgroundColor: 'rgba(0, 0, 0, 0.54)',
   [theme.breakpoints.down('sm')]: {
-    bottom: '0rem',
+    bottom: '0.6rem',
     
   },
 }));
@@ -116,7 +116,7 @@ const BannerOverlay = styled(Box)(({ theme }) => ({
 const BannerCaption = styled(Box)(({ theme }) => ({
   width: '100%',
   backgroundColor: 'white',
-  padding: theme.spacing(4, 2),
+  padding: theme.spacing(0, 2),
   textAlign: 'center',
 }));
 
@@ -344,7 +344,7 @@ const Home = () => {
                           alignItems: { xs: 'flex-start', sm: 'center' }, // Align to top on mobile
                           position: 'relative', // Keep as relative on all devices
                           pl: { xs: 2, sm: 0 },
-                          pt: { xs: 5, sm: 0 }, // Add top padding instead of margin
+                          pt: { xs: 8, sm: 0 }, // Add top padding instead of margin
                           mt: { xs: 0, sm: 0 }, // 
                           
                         }}>
@@ -532,10 +532,10 @@ const Home = () => {
 
       {/* Rest of the content remains the same */}
       {/* ALLROUNDERS Journey Section */}
-      <Box sx={{ py: { xs: 5, sm: 8 }, backgroundColor: '#f8f9fa' }}>
+      <Box sx={{ py: { xs: 3, sm: 8 }, backgroundColor: '#f8f9fa' }}>
         <Container>
           <SectionTitle variant="h3" component="h2">
-            ALLROUNDERS JOURNEY
+            OUR JOURNEY
           </SectionTitle>
           
           <Box 
