@@ -329,20 +329,24 @@ const Home = () => {
                         width: '100%', 
                         height: '100%', 
                         display: 'flex',
-                        flexDirection: { xs: 'column', sm: 'row' },
+                        flexDirection: 'row',
                         backgroundColor: '#fff',
                         position: 'relative',
-                        pl: { xs: 0, sm: 4, md: 12 } 
+                        pl: { xs: 1, sm: 4, md: 12 } 
                       }}>
                         {/* Left side - Logo */}
                         <Box sx={{
-                          width: { xs: '100%', sm: '30%' }, // Full width on mobile, 30% on desktop
-                          height: { xs: '30%', sm: '100%' }, // 30%
+                          width: { xs: '35%', sm: '30%' }, // Full width on mobile, 30% on desktop
+                          height: { xs: '100%', sm: '100%' }, // 30%
                           backgroundColor: '#white', // The cyan color from the image
-                          display: { xs: 'none', sm: 'flex' }, // Hide on mobile
+                          display: 'flex', // Show on all devices
                           justifyContent: 'center',
-                          alignItems: 'center',
-                          padding: '2rem'
+                          alignItems: { xs: 'flex-start', sm: 'center' }, // Align to top on mobile
+                          position: 'relative', // Keep as relative on all devices
+                          pl: { xs: 2, sm: 0 },
+                          pt: { xs: 5, sm: 0 }, // Add top padding instead of margin
+                          mt: { xs: 0, sm: 0 }, // 
+                          
                         }}>
                           <img 
                             src="/images/home/banner2.png" 
@@ -365,8 +369,8 @@ const Home = () => {
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: '#fff',
-      mx: '10.5%',
-      paddingTop: { xs:'2rem', sm: '0'}
+      mx: { xs: '0', sm: '10%' },
+      paddingTop: { xs: '0', sm: '0' }, // Increased padding top on mobile for log 
     }}>
       <video
         autoPlay
