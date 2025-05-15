@@ -540,45 +540,32 @@ const Home = () => {
             OUR JOURNEY
           </SectionTitle>
           
-          <Box 
-            sx={{ 
-              position: 'relative',
-              width: '100%',
-              height: { xs: '250px', sm: '350px', md: '400px' },
-              backgroundColor: '#eee',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderRadius: 2,
-              overflow: 'hidden',
-            }}
-          >
-            {/* Video placeholder */}
-            <Box 
-              sx={{
-                width: { xs: '60px', sm: '80px' },
-                height: { xs: '60px', sm: '80px' },
-                borderRadius: '50%',
-                backgroundColor: 'primary.main',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
+          {/* Add video container */}
+          <Box sx={{ 
+            width: '100%', 
+            maxWidth: '1200px', 
+            margin: '0 auto',
+            mb: 4,
+            borderRadius: '12px',
+            overflow: 'hidden',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+          }}>
+            <video
+              loop
+              playsInline
+              controls={true}
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block',
               }}
             >
-              <Box 
-                component="span" 
-                sx={{ 
-                  width: 0,
-                  height: 0,
-                  borderTop: { xs: '8px solid transparent', sm: '10px solid transparent' },
-                  borderBottom: { xs: '8px solid transparent', sm: '10px solid transparent' },
-                  borderLeft: { xs: '14px solid white', sm: '18px solid white' },
-                  marginLeft: '5px',
-                }}
-              />
-            </Box>
+              <source src="/images/home/ourjourneys.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </Box>
+          
+      
         </Container>
       </Box>
 
