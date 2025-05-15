@@ -202,7 +202,7 @@ const bannerData = [
     //title: 'ROUND8',
     description: 'We offer the safest, and most convenient secondhand trading platform in SEA.',
     image: '/images/home/banner2.png',
-    video: '/images/home/ui2.mp4', 
+    video: '/images/home/ui3.mp4', 
     link: '/service', // Link to services page
     isRound8: true, 
   },
@@ -218,7 +218,7 @@ const bannerData = [
     //title: 'Partnership & Collaboration',
     description: 'At ALLROUNDERS, we create meaningful change through collaboration and partnerships.',
     image: '/images/home/banner3.png',
-    link: '/services', // Link to contact page
+    link: "https://tally.so/r/3EAWj4" , // Link to contact page
   },
 ];
 
@@ -336,24 +336,25 @@ const Home = () => {
                       }}>
                         {/* Left side - Logo */}
                         <Box sx={{
-                          width: { xs: '35%', sm: '30%' }, // Full width on mobile, 30% on desktop
+                          width: { xs: '35%', sm: '40%' }, // Full width on mobile, 30% on desktop
                           height: { xs: '100%', sm: '100%' }, // 30%
                           backgroundColor: '#white', // The cyan color from the image
                           display: 'flex', // Show on all devices
                           justifyContent: 'center',
                           alignItems: { xs: 'flex-start', sm: 'center' }, // Align to top on mobile
                           position: 'relative', // Keep as relative on all devices
-                          pl: { xs: 2, sm: 0 },
-                          pt: { xs: 8, sm: 0 }, // Add top padding instead of margin
-                          mt: { xs: 0, sm: 0 }, // 
+                          pl: { xs: 0, sm: 5 }, // Remove left padding
+                          pr: { xs: 0, sm: 0 }, // Remove right padding
+                          pt: { xs: 8, sm: 0 },
+                          mt: { xs: 0, sm: 0 },
                           
                         }}>
                           <img 
                             src="/images/home/banner2.png" 
                             alt="ROUND8 Logo" 
                             style={{
-                              maxWidth: '120%',
-                              maxHeight: '120%',
+                              maxWidth: '110%',
+                              maxHeight: '110%',
                               objectFit: 'contain'
                             }}
                           />
@@ -363,14 +364,15 @@ const Home = () => {
     
     {/* Right side - Video */}
     <Box sx={{
-      width: { xs: '80%', sm: '65%' }, // Full width on mobile, 65% on desktop
+      width: { xs: '80%', sm: '55%' }, // Full width on mobile, 65% on desktop
       height: { xs: '60%', sm: '90%' }, // 70% height on mobile, 90% on desktop
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: '#fff',
-      mx: { xs: '0', sm: '10%' },
-      paddingTop: { xs: '0', sm: '0' }, // Increased padding top on mobile for log 
+      mx: { xs: '0', sm: '0' },
+      paddingTop: { xs: '0', sm: '0' }, 
+      pl: { xs: 0, sm: 0 },
     }}>
       <video
         autoPlay
