@@ -32,8 +32,8 @@ const HandwrittenTitle = styled(Box)(({ theme }) => ({
     color: '#00BCD4',
     textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1.8rem',
-      marginTop: '5px',
+      fontSize: '2rem',
+      marginTop: '-5px',
     }
   }
 }));
@@ -86,13 +86,10 @@ const Section = styled(Box)(({ theme, bgcolor }) => ({
   [theme.breakpoints.down('sm')]: {
     width: '100vw', // Each section takes full width of viewport
     padding: theme.spacing(2, 2),
-    height: '60vh',
+    height: '85vh',
     minHeight: '100vh',
     felxShrink: 0,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    paddingBottom: '60px',  // Align content to top on mobile
+    justifyContent: 'flex-start', // Align content to top on mobile
     paddingTop: '80px',
   },
 }));
@@ -108,12 +105,8 @@ const PhoneContainer = styled(Box)(({ theme }) => ({
     transform: 'perspective(1000px) rotateY(0deg)',
   },
   [theme.breakpoints.down('sm')]: {
-    maxWidth: '160px', // Smaller width
-    height: 'auto',
-    maxHeight: '240px', // Smaller height
-    margin: '0 auto',
-    marginBottom: '10px',
-    transform: 'perspective(1000px) rotateY(0deg)', // No rotation on mobile
+    maxWidth: '200px',
+    height: '350px' // Smaller phone image on mobile
   },
 }));
 
@@ -145,19 +138,18 @@ const ContentContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     padding: theme.spacing(3),
     paddingTop: theme.spacing(6),
-    maxWidth: '95%',
+    maxWidth: '100%',
     margin: '0 auto', // Center the box
     marginTop: theme.spacing(2),
     '& h4': {
-      fontSize: '1.1rem', // Smaller heading for mobile
+      fontSize: '1.3rem', // Smaller heading for mobile
       marginBottom: '0.5rem',
       textAlign: 'center',
     },
     '& p': {
-      fontSize: '0.8rem', // Smaller paragraph text for mobile
+      fontSize: '0.85rem', // Smaller paragraph text for mobile
       marginBottom: '0.5rem',
       textAlign: 'center',
-      lineHeight: 1.4,
     }
   
   },
@@ -233,7 +225,7 @@ const CurvedBackground = styled(Box)(({ theme, color }) => ({
 // Mobile navigation controls
 const NavigationControls = styled(Box)(({ theme }) => ({
   position: 'absolute',
-  bottom: '-1px',
+  bottom: '30px',
   left: '0',
   width: '100%',
   display: 'flex',
