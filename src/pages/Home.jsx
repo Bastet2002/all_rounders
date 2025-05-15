@@ -560,7 +560,7 @@ const Home = () => {
                 display: 'block',
               }}
             >
-              <source src="/images/home/Ourjourneys.mp4" type="video/mp4" />
+              
               Your browser does not support the video tag.
             </video>
           </Box>
