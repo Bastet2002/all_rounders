@@ -225,7 +225,7 @@ const CurvedBackground = styled(Box)(({ theme, color }) => ({
 // Mobile navigation controls
 const NavigationControls = styled(Box)(({ theme }) => ({
   position: 'absolute',
-  bottom: '30px',
+  bottom: '20px',
   left: '0',
   width: '100%',
   display: 'flex',
