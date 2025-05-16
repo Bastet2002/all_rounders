@@ -111,8 +111,8 @@ const ActionButton = styled(Button)(({ theme }) => ({
   borderRadius: theme.spacing(3),
   padding: theme.spacing(1, 4),
   fontWeight: 600,
-  backgroundColor: '#000',
-  color: '#fff',
+  backgroundColor: '#fff',
+  color: '#000',
   '&:hover': {
     backgroundColor: '#333',
   },
@@ -252,13 +252,28 @@ const Careers = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
+            {/* Add logo above the title */}
+            <Box 
+              component="img"
+              src="/images/logo.png" 
+              alt="ALLROUNDERS Logo"
+              sx={{ 
+                width: '120px', 
+                height: 'auto', 
+                mb: 3,
+                margin: '0 auto', 
+                display: 'block',
+                paddingTop:'0px'
+              }}
+            />
+            
             <Typography 
               variant="h3" 
               component="h1" 
               gutterBottom
               sx={{ 
                 fontWeight: 700,
-                fontSize: { xs: '2rem', md: '2.5rem' }
+                fontSize: { xs: '1.8rem', md: '2.5rem' }
               }}
             >
               {t('workWithUs')}
@@ -307,7 +322,9 @@ const Careers = () => {
             variant="h4" 
             component="h2"
             centered
-          >
+            sx={{ fontSize: { xs: '1.5rem', sm: '1.8rem', md: '2rem' } }}
+            >
+          
             {t('lookingForPeople')}
           </SectionTitle>
 
@@ -329,7 +346,8 @@ const Careers = () => {
                         sx={{ width: '55px', height: '55px', objectFit: 'contain' }}
                       />
                     </IconBox>
-                    <Typography variant="h6" component="h3" gutterBottom fontWeight={450}>
+                    <Typography variant="h6" component="h3" gutterBottom fontWeight={450} 
+                    sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '2rem' } }}>
                       {t('whoHasUnderstanding')}
                     </Typography>
                   </RoleCard>
@@ -347,7 +365,7 @@ const Careers = () => {
                         sx={{ width: '55px', height: '55px', objectFit: 'contain' }}
                       />
                     </IconBox>
-                    <Typography variant="h6" component="h3" gutterBottom fontWeight={450}>
+                    <Typography variant="h6" component="h3" gutterBottom fontWeight={450} sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '2rem' } }}>
                       {t('whoHasCourage')}
                     </Typography>
                   </RoleCard>
@@ -365,7 +383,7 @@ const Careers = () => {
                         sx={{ width: '55px', height: '55px', objectFit: 'contain' }}
                       />
                     </IconBox>
-                    <Typography variant="h6" component="h3" gutterBottom fontWeight={450}>
+                    <Typography variant="h6" component="h3" gutterBottom fontWeight={450} sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '2rem' } }}>
                       {t('whoCanConnect')}
                     </Typography>
                   </RoleCard>
@@ -384,7 +402,7 @@ const Careers = () => {
                           sx={{ width: '55px', height: '55px', objectFit: 'contain' }}
                         />
                       </IconBox>
-                      <Typography variant="h6" component="h3" gutterBottom fontWeight={450}>
+                      <Typography variant="h6" component="h3" gutterBottom fontWeight={450} sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '2rem' } }}>
                         {t('whoCanShare')}
                       </Typography>
                     </RoleCard>
@@ -402,7 +420,7 @@ const Careers = () => {
                           sx={{ width: '55px', height: '55px', objectFit: 'contain' }}
                         />
                       </IconBox>
-                      <Typography variant="h6" component="h3" gutterBottom fontWeight={450}>
+                      <Typography variant="h6" component="h3" gutterBottom fontWeight={450} sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '2rem' } }}>
                         {t('whoAreIntelligent')}
                       </Typography>
                     </RoleCard>
@@ -421,7 +439,7 @@ const Careers = () => {
             <Typography 
               variant="h4" 
               component="h2"
-              sx={{ fontWeight: 700, fontFamily: 'Roboto' }}
+              sx={{ fontWeight: 700, fontFamily: 'Roboto',fontSize: { xs: '1.5rem', sm: '1.8rem', md: '2rem' } }}
             >
               {t('howTeamWorks')}
             </Typography>
@@ -476,7 +494,7 @@ const Careers = () => {
         <Typography 
             variant="h4" 
             component="h2"
-            sx={{ fontWeight: 700, fontFamily: 'Roboto' }}
+            sx={{ fontWeight: 700, fontFamily: 'Roboto',fontSize: { xs: '1.5rem', sm: '1.8rem', md: '2rem' }  }}
         >
             {t('butYouWillReceive')}
         </Typography>
@@ -506,7 +524,7 @@ const Careers = () => {
                 variant="h6" 
                 component="h3" 
                 fontWeight={600}
-                sx={{ fontFamily: 'Roboto' }}
+                sx={{ fontFamily: 'Roboto',fontSize: { xs: '1rem', sm: '1.8rem', md: '2rem' }  }}
                 >
                 {benefit.title}
                 </Typography>
@@ -518,7 +536,7 @@ const Careers = () => {
     </SectionContainer>
 
       {/* Become a Rounder */}
-    <SectionContainer bgcolor="#FFF8E1" id="join-us">
+    <SectionContainer id="join-us">
     <Container maxWidth="md">
         <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -531,7 +549,7 @@ const Careers = () => {
             <Typography 
                 variant="h4" 
                 component="h2" 
-                sx={{ fontWeight: 700 }}
+                sx={{ fontWeight: 700 ,fontSize: { xs: '1.5rem', sm: '1.8rem', md: '2rem' } }}
             >
                 {t('becomeRounder')}
             </Typography>
@@ -544,7 +562,8 @@ const Careers = () => {
                 maxWidth: '900px', 
                 mx: 'auto', 
                 mb: 2,
-                fontWeight: 500
+                fontWeight: 500,
+                fontSize: { xs: '1rem', sm: '1.8rem', md: '1.5rem' } 
             }}
             >
             {t('becomeRounderDesc')}
@@ -559,7 +578,9 @@ const Careers = () => {
             sx={{
                 borderRadius: '50px',
                 padding: '12px 40px',
-                fontSize: '1.1rem'
+                color:'white',
+                backgroundColor: '#000000',
+                
             }}
             >
             {t('joinUsNow')}
@@ -586,8 +607,11 @@ const Careers = () => {
                 maxWidth: '900px', 
                 mx: 'auto', 
                 mb: 2,
-                fontWeight: 500
+                fontWeight: 500,
+                fontSize: { xs: '1rem', sm: '1.8rem', md: '1.5rem' } 
+            
             }}
+            
             >
             {t('excitedToMeet')}
             </Typography>
@@ -599,7 +623,9 @@ const Careers = () => {
                 maxWidth: '900px', 
                 mx: 'auto', 
                 mb: 4,
-                fontWeight: 500
+                fontWeight: 500,
+                fontSize: { xs: '1rem', sm: '1.8rem', md: '1.5rem' } 
+            
             }}
             >
             {t('whenSendingCV')}
@@ -612,7 +638,9 @@ const Careers = () => {
                 maxWidth: '700px', 
                 mx: 'auto', 
                 mb: 4,
-                fontWeight: 600
+                fontWeight: 600,
+                fontSize: { xs: '1.2rem', sm: '1.8rem', md: '1.5rem' } 
+            
             }}
             >
             {t('cannotWait')}

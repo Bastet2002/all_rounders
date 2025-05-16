@@ -69,6 +69,7 @@ const ExpandableTimelineContent = ({ content }) => {
 const SectionContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(6, 0),
   backgroundColor: ({ bgColor }) => bgColor || 'transparent',
+  fontFamily: 'Roboto, sans-serif', 
 }));
 
 const HeroSection = styled(Box)(({ theme }) => ({
@@ -76,12 +77,13 @@ const HeroSection = styled(Box)(({ theme }) => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
+    fontFamily: 'Roboto, sans-serif',
     padding: theme.spacing(12, 0), // Reduce for mobile
     minHeight: '70vh',
     position: 'relative',
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(22, 0),
-      minHeight: '80vh',
+      minHeight: '70vh',
     },
     '&::before': {
       content: '""',
@@ -97,11 +99,13 @@ const HeroSection = styled(Box)(({ theme }) => ({
   const HeroContent = styled(Box)(({ theme }) => ({
     position: 'relative',
     zIndex: 2,
+    justifyContent: 'center',
     color: 'black',
     padding: theme.spacing(3),
     borderRadius: theme.spacing(1),
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
     backdropFilter: 'blur(5px)',
+    fontFamily: 'Roboto, sans-serif', 
     maxWidth: '1200px',
     margin: '0 auto',
     [theme.breakpoints.down('sm')]: {
@@ -144,6 +148,7 @@ const TimelineMarker = styled(Box)(({ theme }) => ({
   fontWeight: 'bold',
   marginRight: theme.spacing(2),
   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+  fontFamily: 'Roboto, sans-serif',
 }));
 
 const TimelineContent = styled(Box)(({ theme }) => ({
@@ -205,6 +210,11 @@ const AboutUs = () => {
     visible: { opacity: 1, y: 0 }
   };
 
+    // Add global typography style
+    const typographyStyle = {
+      fontFamily: 'Roboto, sans-serif'
+    };
+
 
   return (
     <>
@@ -227,7 +237,7 @@ const AboutUs = () => {
                   fontWeight: 600,
                   textShadow: '0 2px 4px rgba(0,0,0,0.5)',
                   fontSize: {
-                    xs: '1.8rem', // small screens
+                    xs: '1.6rem', // small screens
                     sm: '2.2rem', // medium screens and up
                     md: '2.5rem'  // large screens
                   }
@@ -326,6 +336,7 @@ const AboutUs = () => {
                         height: '2px',
                         backgroundColor: '#fff',
                         margin: '15px auto 0',
+                        fontSize: { xs: '1.6rem', sm: '1.8rem', md: '2.2rem' } ,
                       }
                     }}
                   >
@@ -351,7 +362,8 @@ const AboutUs = () => {
                       mx: 'auto',
                       position: 'relative',
                       zIndex: 2,
-                      fontSize: '1.2rem',
+                      fontSize: { xs: '1rem', sm: '1.8rem', md: '1.5rem' } ,
+            
                       fontWeight: 300,
                       letterSpacing: '0.5px',
                       textShadow: '0 1px 3px rgba(0,0,0,0.5)',
@@ -489,7 +501,7 @@ const AboutUs = () => {
                             ease: "easeInOut" 
                         }}
                         >
-                        <img src="/images/asia.png" alt="Market" width="90" height="90" />
+                        <img src="/images/asia.png" alt="Market" width="80" height="80" />
                         <Box sx={{ mt: 3 }}></Box>
                         </motion.div>
                             <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>

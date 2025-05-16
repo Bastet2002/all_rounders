@@ -14,10 +14,12 @@ const BannerSection = styled(Box)(({ theme }) => ({
   width: '100%',
   height: '91vh', // Reduced height for more compact look
   overflow: 'hidden',
+  marginBottom: '2rem',
   
   [theme.breakpoints.down('sm')]: {
     height: '50vh', // Slightly shorter on mobile
     marginTop: '0', 
+    marginBottom: '1.5rem',
     
   },
 }));
@@ -85,9 +87,10 @@ const BannerSlide = styled(Box)(({ theme }) => ({
   position: 'relative',
   width: '100%',
   height: '100%',
-  backgroundSize: 'contain',
+  backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center 40%',
   backgroundColor: '#000',
   cursor: 'pointer',
   display: 'flex',
@@ -98,14 +101,15 @@ const BannerSlide = styled(Box)(({ theme }) => ({
 // Text overlay for the banner
 const BannerOverlay = styled(Box)(({ theme }) => ({
   position: 'absolute',
-  bottom: '0rem',
+  bottom: '2rem',
   width: '100%',
-  height: '105px',
+  height: 'auto',
   padding: theme.spacing(2),
   color: 'white',
+  font:'Roboto',
   textAlign: 'center',
   zIndex: 2,
-  backgroundColor: 'rgba(0, 0, 0, 0.54)',
+  backgroundColor: 'rgba(0, 0, 0, 0)',
   [theme.breakpoints.down('sm')]: {
     bottom: '0.6rem',
     
@@ -118,6 +122,7 @@ const BannerCaption = styled(Box)(({ theme }) => ({
   backgroundColor: 'white',
   padding: theme.spacing(0, 2),
   textAlign: 'center',
+  borderBottom: '1px solidrgb(0, 0, 0)', 
 }));
 
 // Update BannerContent to be at the bottom of the image
@@ -200,11 +205,11 @@ const bannerData = [
   {
     id: 2,
     //title: 'ROUND8',
-    description: 'We offer the safest, and most convenient secondhand trading platform in SEA.',
-    image: '/images/home/banner2.png',
-    video: '/images/home/ui3.mp4', 
+    description: 'Say goodbye to all inconvenieces and shop secondhand with us!',
+    //image: '/images/home/banner2.png',
+    video: '/images/home/ui4.mp4', 
     link: '/service', // Link to services page
-    isRound8: true, 
+    //isRound8: true, 
   },
   {
     id: 3,
@@ -321,18 +326,23 @@ const Home = () => {
                     <BannerSlide style={{ 
                       backgroundImage: banner.video ? 'none' : `url(${banner.image})`,
                       backgroundColor: '#000', 
-                      backgroundPosition: 'center 20%',
+                      backgroundPosition: 'center center%',
+                      backgroundSize: '70%',
                      
                     }}>
                       {banner.video && banner.isRound8 && (
                       <Box sx={{ 
-                        width: '100%', 
-                        height: '100%', 
+                        width: { xs: '90%', sm: '70%' }, // Increased width
+                        height: { xs: '80%', sm: '70%' }, // Increased height
                         display: 'flex',
                         flexDirection: 'row',
+                        
                         backgroundColor: '#fff',
                         position: 'relative',
-                        pl: { xs: 1, sm: 4, md: 12 } 
+                        pl: { xs: 0, sm: 4, md: 12 } ,
+                        mt: { xs: 0, sm: 12 },
+                        mx: 'auto', // Center horizontally
+                        my: 'auto', // Center vertically
                       }}>
                         {/* Left side - Logo */}
                         <Box sx={{
@@ -340,12 +350,13 @@ const Home = () => {
                           height: { xs: '100%', sm: '100%' }, // 30%
                           backgroundColor: '#white', // The cyan color from the image
                           display: 'flex', // Show on all devices
+                          
                           justifyContent: 'center',
-                          alignItems: { xs: 'flex-start', sm: 'center' }, // Align to top on mobile
+                          alignItems: { xs: 'center', sm: 'center' }, // Align to top on mobile
                           position: 'relative', // Keep as relative on all devices
                           pl: { xs: 0, sm: 5 }, // Remove left padding
                           pr: { xs: 0, sm: 0 }, // Remove right padding
-                          pt: { xs: 8, sm: 0 },
+                          pt: { xs: 0, sm: 0 },
                           mt: { xs: 0, sm: 0 },
                           
                         }}>
@@ -353,8 +364,8 @@ const Home = () => {
                             src="/images/home/banner2.png" 
                             alt="ROUND8 Logo" 
                             style={{
-                              maxWidth: '110%',
-                              maxHeight: '110%',
+                              maxWidth: '100%',
+                              maxHeight: '100%',
                               objectFit: 'contain'
                             }}
                           />
@@ -364,7 +375,7 @@ const Home = () => {
     
     {/* Right side - Video */}
     <Box sx={{
-      width: { xs: '80%', sm: '55%' }, // Full width on mobile, 65% on desktop
+      width: { xs: '80%', sm: '60%' }, // Full width on mobile, 65% on desktop
       height: { xs: '60%', sm: '90%' }, // 70% height on mobile, 90% on desktop
       display: 'flex',
       justifyContent: 'center',
@@ -396,14 +407,19 @@ const Home = () => {
 {/* Regular video rendering for non-ROUND8 banners */}
 {banner.video && !banner.isRound8 && (
   <Box sx={{ 
-    width: { xs: '100%', sm: '65%' },
-    height: { xs: '100%', sm: '90%' }, // Full height on mobile 
+    width: { xs: '90%', sm: '80%' }, // Full width to match image banners
+    height: { xs: '90%', sm: '85%' }, // Full height to match image banners
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     position: 'relative',
-    pl: { xs: 2, sm: 4, md: 6 }
+    // Remove duplicate properties
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    cursor: 'pointer',
+    
   }}>
     <video
       autoPlay
@@ -411,10 +427,10 @@ const Home = () => {
       loop
       playsInline
       style={{
-        width: '120%',
-        height: 'auto',
-        maxHeight: '80%',
-        objectFit: 'contain'
+        width: '100%',
+        height: '80%',
+        objectFit: 'contain',
+        
       }}
     >
       <source src={banner.video} type="video/mp4" />
@@ -522,7 +538,8 @@ const Home = () => {
                   fontSize: { xs: '1.1rem', sm: '1.3rem', md: '1.5rem' },
                   fontWeight: 400,
                   color: 'text.primary',
-                  lineHeight: 1.6
+                  lineHeight: 1.6,
+                  py: 1 // Add vertical padding
                 }}
               >
                 {bannerData[activeBanner].caption}
@@ -534,10 +551,10 @@ const Home = () => {
 
       {/* Rest of the content remains the same */}
       {/* ALLROUNDERS Journey Section */}
-      <Box sx={{ py: { xs: 3, sm: 8 }, backgroundColor: '#f8f9fa' }}>
+      <Box sx={{ py: { xs: 3, sm: 8 }, backgroundColor: '#fff' }}>
         <Container>
           <SectionTitle variant="h3" component="h2">
-            OUR JOURNEY
+            The Story Behind ALLROUNDERS
           </SectionTitle>
           
           {/* Add video container */}

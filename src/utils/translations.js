@@ -48,7 +48,7 @@ export const translations = {
     ourMissions: 'Our Missions',
     missionStatement: 'To provide a secure and innovative platform that brings new value to people in need',
     missionCard1Title: 'Integrate advanced technology while prioritizing Thai markets',
-    missionCard2Title: 'Scale based on market needs, starting with Thailand while expanding into different businesses',
+    missionCard2Title: 'Start with ROUND8 and scale with market demand',
     missionCard3Title: 'Expand operations across Southeast Asia',
     teamInterview: 'Team Interview',
     ourJourney: 'Our Journey',

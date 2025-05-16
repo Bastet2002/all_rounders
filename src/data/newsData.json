@@ -171,9 +171,11 @@
       },
       "date": "2024-12-16",
       "images": [
-        "/images/news/industry1.png",
+        "/images/news/industry5.png",
         "/images/news/industry2.png",
-        "/images/news/industry3.png"
+        "/images/news/industry3.png",
+        "/images/news/industry4.png",
+        "/images/news/industry.png"
       ],
       "source": {
       "url": "https://www.thaigov.go.th/news/contents/details/91470"

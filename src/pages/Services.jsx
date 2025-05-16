@@ -507,10 +507,10 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
           style={{ width: '100%' }}
         >
           <ConnectCard>
-            <Typography variant="h3" fontWeight={700} sx={{ mb: 2, color: '#00BCD4' ,fontSize: { xs: '1.8rem', sm: '2.8rem' }}} >
+            <Typography variant="h3" fontWeight={700} sx={{ mb: 2, color: 'black' ,fontSize: { xs: '1.8rem', sm: '2.8rem' }}} >
               Let's Collaborate!
             </Typography>
-            <Typography variant="h6" color="text.secondary" sx={{ mb: 4 , fontSize: { xs: '1.2rem', sm: '1.4rem' }}}>
+            <Typography variant="h6" color="black" sx={{ mb: 4 , fontSize: { xs: '1.2rem', sm: '1.4rem' }}}>
               If you have any inquiry, feel free to contact us!
             </Typography>
             <ActionButton 

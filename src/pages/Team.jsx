@@ -224,7 +224,7 @@ const Team = () => {
       funnyRole: 'Mom',
       roleIcon: '👩🏻‍💼',
       image: '/images/team/hyun.png',
-      bio: "Hayley's background is mainly in academia, but after realizing that her work in renewable energy research wasn't having the environmental impact she hoped for, she made a big change and transitioned from academia to business. To quickly learn about the business world, she joined a strategy consulting firm, gaining experience with different companies for a year. At the same time, she founded an e-commerce distributor company ....",
+      bio: "Hayley transitioned from academia to business after realizing her renewable energy research lacked environmental impact. She joined a strategy consulting firm to gain business experience, while also launching an e-commerce distribution company, securing 30 deals a day from day one. After thorough research on Thai e-commerce, she recruited a strong ....",
     },
     {
       id: 'kyungsuk-yang',
@@ -355,7 +355,7 @@ const Team = () => {
                       fontWeight={500} 
                       component="span"
                       sx={{ 
-                        fontSize: { xs: '1.3rem', sm: '1.6rem' } 
+                        fontSize: { xs: '1.3rem', sm: '2rem' } 
                       }}
                     >
                       {word}
@@ -485,7 +485,7 @@ const Team = () => {
                       fontWeight={500} 
                       component="span"
                       sx={{ 
-                        fontSize: { xs: '1.3rem', sm: '1.6rem' } 
+                        fontSize: { xs: '1.3rem', sm: '2rem' } 
                       }}
                     >
                       {word}
@@ -546,7 +546,7 @@ const Team = () => {
                       fontWeight={500} 
                       component="span"
                       sx={{ 
-                        fontSize: { xs: '1.3rem', sm: '1.6rem' } 
+                        fontSize: { xs: '1.3rem', sm: '2rem' } 
                       }}
                     >
                       {word}
