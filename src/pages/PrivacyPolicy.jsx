@@ -41,20 +41,73 @@ const PrivacyPolicy = () => {
         t.introductionContent1,
         t.introductionContent2,
         t.introductionContent3,
-        t.introductionContent4
+        t.introductionContent4,
+        t.introductionContent5,
+        t.introductionContent6,
+        t.introductionContent7,
+        t.introductionContent8
       ]
     },
     {
       title: t.personalDataWeCollect,
-      content: [t.personalDataContent]
+      content: [
+        t.personalDataContent1,
+        t.personalDataContent2,
+        t.personalDataContent3,
+        t.personalDataContent4,
+        t.personalDataContent5,
+        t.personalDataContent6,
+        t.personalDataContent7,
+        t.personalDataContent8,
+        t.personalDataContent9,
+        t.personalDataContent10,
+        t.personalDataContent11,
+        t.personalDataContent12,
+        t.personalDataContent13,
+        t.personalDataContent14,
+        t.personalDataContent15,
+        t.personalDataContent16,
+        t.personalDataContent17,
+        t.personalDataContent18,
+        t.personalDataContent19,
+        t.personalDataContent20,
+        t.personalDataContent21,
+
+      ]
     },
     {
       title: t.howWeUseData,
-      content: [t.howWeUseDataContent]
+      content: [
+        t.howWeUseDataContent1,
+        t.howWeUseDataContent2,
+        t.howWeUseDataContent3,
+        t.howWeUseDataContent4,
+        t.howWeUseDataContent5,
+        t.howWeUseDataContent6,
+        t.howWeUseDataContent7,
+        t.howWeUseDataContent8,
+        t.howWeUseDataContent9,
+        t.howWeUseDataContent10,
+        t.howWeUseDataContent11,
+        t.howWeUseDataContent12,
+        t.howWeUseDataContent13,
+        t.howWeUseDataContent14,
+        t.howWeUseDataContent15,
+        t.howWeUseDataContent16,
+      ]
     },
     {
       title: t.disclosureOfData,
-      content: [t.disclosureContent]
+      content: [
+        t.disclosureContent1,
+        t.disclosureContent2,
+        t.disclosureContent3,
+        t.disclosureContent4,
+        t.disclosureContent5,
+        t.disclosureContent6,
+        t.disclosureContent7,
+
+      ]
     },
     {
       title: t.retentionOfData,
@@ -72,14 +125,6 @@ const PrivacyPolicy = () => {
       title: t.yourRights,
       content: [t.rightsContent]
     },
-    {
-      title: t.cookiesAndTracking,
-      content: [t.cookiesContent]
-    },
-    {
-      title: t.contactUsT,
-      content: [t.contactUsContent]
-    }
   ];
 
   return (
@@ -94,8 +139,11 @@ const PrivacyPolicy = () => {
             {t.lastUpdated}: {new Date().toLocaleDateString()}
           </Typography>
           
-          <Typography variant="body1" paragraph sx={{ fontWeight: 'bold' }}>
+          <Typography variant="body1" paragraph>
             {t.pleaseReadCarefully}
+          </Typography>
+          <Typography variant="body1" paragraph sx={{ stroke: 'black',  fontStyle: 'italic',}}>
+            {t.accessing}
           </Typography>
         </Box>
 

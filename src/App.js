@@ -9,14 +9,13 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import CookieConsent from './components/CookieConsent';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
-
-// Import placeholder pages for new routes
 import Team from './pages/Team';
 import Services from './pages/Services';
 import News from './pages/News';
 import Careers from './pages/Careers';
 import AboutMeDetail from './pages/AboutMeDetail';
 import NewsDetail from './pages/NewsDetail';
+import Admin from './pages/Admin';
 
 const theme = createTheme({
   palette: {
@@ -39,6 +38,7 @@ function App() {
         <Router>
           <Layout>
             <Routes>
+              <Route path="/admin" element={<Admin />} />
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/team" element={<Team />} />

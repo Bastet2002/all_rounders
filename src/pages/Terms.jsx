@@ -41,23 +41,53 @@ const Terms = () => {
     },
     {
       title: t.useLicense,
-      content: [t.licenseContent]
+      content: [
+        t.licenseContent1,
+        t.licenseContent2,
+        t.licenseContent3,
+        t.licenseContent4,
+        t.licenseContent5,
+        t.licenseContent6,
+        t.licenseContent7,
+        t.licenseContent8,
+        t.licenseContent9,
+        t.licenseContent10
+      ]
     },
     {
       title: t.userAccounts,
-      content: [t.accountsContent]
+      content: [
+        t.accountsContent1,
+        t.accountsContent2,
+        t.accountsContent3,
+        t.accountsContent4,
+        t.accountsContent5,
+      ]
     },
     {
       title: t.buyingAndSelling,
-      content: [t.transactionsContent]
+      content: [
+        t.transactionsContent1,
+        t.transactionsContent2,
+        t.transactionsContent3,
+      ]
     },
     {
       title: t.prohibitedActivities,
-      content: [t.prohibitedContent]
+      content: [
+        t.prohibitedContent1,
+        t.prohibitedContent2
+      ]
     },
     {
       title: t.intellectualProperty,
-      content: [t.ipContent]
+      content: [
+        t.ipContent1,
+        t.ipContent2,
+        t.ipContent3,
+        t.ipContent4,
+        t.ipContent5,
+      ]
     },
     {
       title: t.disclaimerOfWarranties,
@@ -69,11 +99,28 @@ const Terms = () => {
     },
     {
       title: t.indemnification,
-      content: [t.indemnificationContent]
+      content: [
+        t.indemnificationContent1,
+        t.indemnificationContent2,
+        t.indemnificationContent3,
+        t.indemnificationContent4,
+      ]
     },
     {
       title: t.governingLaw,
       content: [t.lawContent]
+    },
+    {
+      title: t.changes,
+      content: [t.changesContent1, t.changesContent2]
+    },
+    {
+      title: t.miscellaneous,
+      content: [t.miscellaneousContent]
+    },
+    {
+      title: t.Tcontact,
+      content: [t.TcontactContent]
     }
   ];
 
@@ -89,6 +136,10 @@ const Terms = () => {
             {t.lastUpdated}: {new Date().toLocaleDateString()}
           </Typography>
         </Box>
+
+        <Typography variant="body1" paragraph sx={{ stroke: 'black',  fontStyle: 'italic',}}>
+            {t.terms}
+          </Typography>
 
         {sections.map((section, index) => (
           <Box key={index} sx={{ mb: 4 }}>
