@@ -16,6 +16,7 @@ import Careers from './pages/Careers';
 import AboutMeDetail from './pages/AboutMeDetail';
 import NewsDetail from './pages/NewsDetail';
 import Admin from './pages/Admin';
+import { Analytics } from "@vercel/analytics/react"
 
 const theme = createTheme({
   palette: {
@@ -55,6 +56,7 @@ function App() {
         </Router>
       </ThemeProvider>
       <CookieConsent />
+      <Analytics />
     </LanguageProvider>
     
   );
