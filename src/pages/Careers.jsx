@@ -347,7 +347,7 @@ const Careers = () => {
                       />
                     </IconBox>
                     <Typography variant="h6" component="h3" gutterBottom fontWeight={450} 
-                    sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '2rem' } }}>
+                    sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '1.3rem' } }}>
                       {t('whoHasUnderstanding')}
                     </Typography>
                   </RoleCard>
@@ -365,7 +365,7 @@ const Careers = () => {
                         sx={{ width: '55px', height: '55px', objectFit: 'contain' }}
                       />
                     </IconBox>
-                    <Typography variant="h6" component="h3" gutterBottom fontWeight={450} sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '2rem' } }}>
+                    <Typography variant="h6" component="h3" gutterBottom fontWeight={450} sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '1.3rem' } }}>
                       {t('whoHasCourage')}
                     </Typography>
                   </RoleCard>
@@ -383,7 +383,7 @@ const Careers = () => {
                         sx={{ width: '55px', height: '55px', objectFit: 'contain' }}
                       />
                     </IconBox>
-                    <Typography variant="h6" component="h3" gutterBottom fontWeight={450} sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '2rem' } }}>
+                    <Typography variant="h6" component="h3" gutterBottom fontWeight={450} sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '1.3rem' } }}>
                       {t('whoCanConnect')}
                     </Typography>
                   </RoleCard>
@@ -402,7 +402,7 @@ const Careers = () => {
                           sx={{ width: '55px', height: '55px', objectFit: 'contain' }}
                         />
                       </IconBox>
-                      <Typography variant="h6" component="h3" gutterBottom fontWeight={450} sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '2rem' } }}>
+                      <Typography variant="h6" component="h3" gutterBottom fontWeight={450} sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '1.3rem' } }}>
                         {t('whoCanShare')}
                       </Typography>
                     </RoleCard>
@@ -420,7 +420,7 @@ const Careers = () => {
                           sx={{ width: '55px', height: '55px', objectFit: 'contain' }}
                         />
                       </IconBox>
-                      <Typography variant="h6" component="h3" gutterBottom fontWeight={450} sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '2rem' } }}>
+                      <Typography variant="h6" component="h3" gutterBottom fontWeight={450} sx={{ fontSize: { xs: '1rem', sm: '1.8rem', md: '1.3rem' }, }}>
                         {t('whoAreIntelligent')}
                       </Typography>
                     </RoleCard>
@@ -524,7 +524,7 @@ const Careers = () => {
                 variant="h6" 
                 component="h3" 
                 fontWeight={600}
-                sx={{ fontFamily: 'Roboto',fontSize: { xs: '1rem', sm: '1.8rem', md: '2rem' }  }}
+                sx={{ fontFamily: 'Roboto',fontSize: { xs: '1rem', sm: '1.8rem', md: '1.3rem' }  }}
                 >
                 {benefit.title}
                 </Typography>
@@ -549,7 +549,7 @@ const Careers = () => {
             <Typography 
                 variant="h4" 
                 component="h2" 
-                sx={{ fontWeight: 700 ,fontSize: { xs: '1.5rem', sm: '1.8rem', md: '2rem' } }}
+                sx={{ fontWeight: 700 ,fontSize: { xs: '1.5rem', sm: '1.8rem', md: '2rem',fontFamily: 'Roboto', } }}
             >
                 {t('becomeRounder')}
             </Typography>
@@ -563,7 +563,8 @@ const Careers = () => {
                 mx: 'auto', 
                 mb: 2,
                 fontWeight: 500,
-                fontSize: { xs: '1rem', sm: '1.8rem', md: '1.5rem' } 
+                fontSize: { xs: '1rem', sm: '1.8rem', md: '1.4rem' } ,
+                fontFamily: 'Roboto',
             }}
             >
             {t('becomeRounderDesc')}
@@ -580,6 +581,7 @@ const Careers = () => {
                 padding: '12px 40px',
                 color:'white',
                 backgroundColor: '#000000',
+                fontFamily: 'Roboto',
                 
             }}
             >
@@ -608,7 +610,8 @@ const Careers = () => {
                 mx: 'auto', 
                 mb: 2,
                 fontWeight: 500,
-                fontSize: { xs: '1rem', sm: '1.8rem', md: '1.5rem' } 
+                fontFamily: 'Roboto',
+                fontSize: { xs: '1rem', sm: '1.8rem', md: '1.3rem' } 
             
             }}
             
@@ -624,7 +627,8 @@ const Careers = () => {
                 mx: 'auto', 
                 mb: 4,
                 fontWeight: 500,
-                fontSize: { xs: '1rem', sm: '1.8rem', md: '1.5rem' } 
+                fontSize: { xs: '1rem', sm: '1.8rem', md: '1.3rem' } ,
+                fontFamily: 'Roboto',
             
             }}
             >
@@ -639,7 +643,8 @@ const Careers = () => {
                 mx: 'auto', 
                 mb: 4,
                 fontWeight: 600,
-                fontSize: { xs: '1.2rem', sm: '1.8rem', md: '1.5rem' } 
+                fontSize: { xs: '1.2rem', sm: '1.8rem', md: '1.3rem' } ,
+                fontFamily: 'Roboto',
             
             }}
             >

@@ -580,7 +580,7 @@ const Home = () => {
             paddingTop: '56.25%', // 16:9 aspect ratio
           }}>
             <iframe
-              src="https://www.youtube.com/embed/place_holder" // Replace with your video URL
+              src="https://www.youtube.com/embed/PtvD49qNAkk" // Replace with your video URL
               title="ALLROUNDERS Story"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
