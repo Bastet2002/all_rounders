@@ -2,29 +2,75 @@
   "team": [
     {
       "id": "hyunji-kim",
-      "name": "Hayley",
-      "role": "CEO",
-      "funnyRole": "Mom",
+      "name":"Hayley",
+      "translatedName": {
+        "en": "Hayley",
+        "th": "เฮย์ลีย์"
+      },
+      "role": {
+        "en": "CEO",
+        "th": "ซีอีโอ"
+      },
+      "funnyRole":  {
+        "en": "Mom",
+        "th": "แม่"
+      },
       "roleIcon": "👩🏻‍💼",
       "image": "/images/team/hyun.png",
-      "bio": "Hayley transitioned from academia to business after realizing her renewable energy research lacked environmental impact. She joined a strategy consulting firm to gain business experience, while also launching an e-commerce distribution company, securing 30 deals a day from day one. After thorough research on Thai e-commerce, she recruited a strong local team, including 15 Thai interns. Now, she's focused on making ROUND8 a success, connecting South Korea and Thailand across industries, with plans to expand to ASEAN. Despite her busy schedule, her team often reminds her to at least apply lipstick before meetings.",
+      "bio": {
+        "en": "Hayley transitioned from academia to business after realizing her renewable energy research lacked environmental impact. She joined a strategy consulting firm to gain business experience, while also launching an e-commerce distribution company, securing 30 deals a day from day one. After thorough research on Thai e-commerce, she recruited a strong local team, including 15 Thai interns. Now, she's focused on making ROUND8 a success, connecting South Korea and Thailand across industries, with plans to expand to ASEAN. Despite her busy schedule, her team often reminds her to at least apply lipstick before meetings.",
+        "th": "เฮลีย์เปลี่ยนจากวงการวิชาการสู่ธุรกิจหลังจากตระหนักว่างานวิจัยพลังงานหมุนเวียนของเธอขาดผลกระทบต่อสิ่งแวดล้อม เธอเข้าร่วมบริษัทที่ปรึกษาด้านกลยุทธ์เพื่อเพิ่มประสบการณ์ทางธุรกิจ ในขณะเดียวกันก็เปิดตัวบริษัทจัดจำหน่ายอีคอมเมิร์ซ ทำข้อตกลงได้ 30 รายการต่อวันตั้งแต่วันแรก หลังจากวิจัยอีคอมเมิร์ซไทยอย่างละเอียด เธอได้รับสมัครทีมท้องถิ่นที่แข็งแกร่ง รวมถึงนักศึกษาฝึกงานชาวไทย 15 คน ตอนนี้เธอมุ่งเน้นที่จะทำให้ ROUND8 ประสบความสำเร็จ เชื่อมโยงเกาหลีใต้และไทยในหลากหลายอุตสาหกรรม โดยมีแผนที่จะขยายไปยังอาเซียน แม้จะมีตารางงานที่ยุ่ง ทีมของเธอมักจะเตือนให้เธออย่างน้อยทาลิปสติกก่อนการประชุม"
+      },
       "linkedin": "https://www.linkedin.com/in/hyunji-hayley-kim-0b87801b7/",
       "academic": [
-        "City, University of London, Bachelor in Engineering with management and entrepreneurship 2019",
-        "Seoul Nationl Unviersity, Master in Electrical and information engineering 2023",
-        "ALLROUNDERS Inc. Co-Founder & CEO 2024"
+        {
+          "en": "City, University of London, Bachelor in Engineering with management and entrepreneurship 2019",
+          "th": "City, University of London, ปริญญาตรีวิศวกรรมศาสตร์ด้านการจัดการและการเป็นผู้ประกอบการ 2019"
+        },
+        {
+          "en": "Seoul Nationl Unviersity, Master in Electrical and information engineering 2023",
+          "th": "มหาวิทยาลัยแห่งชาติโซล, ปริญญาโทวิศวกรรมไฟฟ้าและสารสนเทศ 2023"
+        },
+        {
+          "en": "ALLROUNDERS Inc. Co-Founder & CEO 2024",
+          "th": "ALLROUNDERS Inc. ผู้ร่วมก่อตั้งและซีอีโอ 2024"
+        }
       ],
-      "keywords": [
-        "humanity",
-        "networking master",
-        "planner",
-        "process oriented"
+      "keywords":[
+        {
+          "en": "humanity",
+          "th": "มนุษยธรรม"
+        },
+        {
+          "en": "networking master",
+          "th": "ผู้เชี่ยวชาญด้านเครือข่าย"
+        },
+        {
+          "en": "planner",
+          "th": "นักวางแผน"
+        },
+        {
+          "en": "process oriented",
+          "th": "มุ่งเน้นกระบวนการ"
+        }
       ],
-      "allroundersToYou": "A child I hope will make a positive impact on others",
-      "likes": [
-        "Listening to Rachel Yamagata and reading a book on a quiet beach",
-        "Driving alone",
-        "Traveling to visit friends around the world"
+      "allroundersToYou": {
+        "en": "A child I hope will make a positive impact on others",
+        "th": "เด็กที่ฉันหวังว่าจะสร้างผลกระทบเชิงบวกต่อผู้อื่น"
+      },
+      "likes":  [
+        {
+          "en": "Listening to Rachel Yamagata and reading a book on a quiet beach",
+          "th": "ฟังเพลงของ Rachel Yamagata และอ่านหนังสือบนชายหาดที่เงียบสงบ"
+        },
+        {
+          "en": "Driving alone",
+          "th": "ขับรถคนเดียว"
+        },
+        {
+          "en": "Traveling to visit friends around the world",
+          "th": "เดินทางไปเยี่ยมเพื่อนทั่วโลก"
+        }
       ],
       "icons": {
         "keywords": {
@@ -46,42 +92,116 @@
           "driving": "🚗",
           "traveling": "✈️"
         }
-      }
+      },
+      "isPreRounder": false
     },
     {
       "id": "kyungsuk-yang",
       "name": "Ben",
-      "role": "COO",
-      "funnyRole": "AI",
+      "translatedName": {
+        "en": "Ben",
+        "th": "เบน"
+      },
+      "role":{
+        "en": "COO",
+        "th": "ซีโอโอ"
+      },
+      "funnyRole": {
+        "en": "AI",
+        "th": "เอไอ"
+      },
       "roleIcon": "👨‍💼",
       "image": "/images/team/yang.png",
-      "bio": "Ben started his entrepreneurial journey in 2006, founding businesses in education, trade, e-commerce, social media, IT security, promotion, and the metaverse. He has extensive experience launching and managing companies in Singapore, Malaysia, Vietnam, and the Philippines. His ventures achieved over 3 billion won (2.2 million USD) in annual sales in sectors like education and IT security, and his e-commerce business in Vietnam reached 5 billion won (3.5 million USD) in its first year. As the PM of the Zmap app, he led it to 1 million downloads in Korea. Ben prefers to count on numbers than count on human being, but he's recently working on improving his understanding of people with limited knowledge.",
+      "bio": {
+        "en": "Ben started his entrepreneurial journey in 2006, founding businesses in education, trade, e-commerce, social media, IT security, promotion, and the metaverse. He has extensive experience launching and managing companies in Singapore, Malaysia, Vietnam, and the Philippines. His ventures achieved over 3 billion won (2.2 million USD) in annual sales in sectors like education and IT security, and his e-commerce business in Vietnam reached 5 billion won (3.5 million USD) in its first year. As the PM of the Zmap app, he led it to 1 million downloads in Korea. Ben prefers to count on numbers than count on human being, but he's recently working on improving his understanding of people with limited knowledge.",
+        "th": "เบนเริ่มต้นการเดินทางในฐานะผู้ประกอบการในปี 2006 ก่อตั้งธุรกิจในด้านการศึกษา การค้า อีคอมเมิร์ซ โซเชียลมีเดีย ความปลอดภัยทางไอที การส่งเสริมการขาย และเมตาเวิร์ส เขามีประสบการณ์อย่างกว้างขวางในการเปิดตัวและบริหารบริษัทในสิงคโปร์ มาเลเซีย เวียดนาม และฟิลิปปินส์ ธุรกิจของเขาสร้างยอดขายกว่า 3 พันล้านวอน (2.2 ล้านดอลลาร์สหรัฐ) ต่อปีในภาคส่วนเช่นการศึกษาและความปลอดภัยทางไอที และธุรกิจอีคอมเมิร์ซของเขาในเวียดนามมียอดขายถึง 5 พันล้านวอน (3.5 ล้านดอลลาร์สหรัฐ) ในปีแรก ในฐานะผู้จัดการโครงการของแอป Zmap เขานำพาให้มีผู้ดาวน์โหลด 1 ล้านครั้งในเกาหลี เบนชอบที่จะพึ่งพาตัวเลขมากกว่าพึ่งพามนุษย์ แต่เมื่อไม่นานมานี้เขากำลังพยายามปรับปรุงความเข้าใจเกี่ยวกับผู้คนที่มีความรู้จำกัด"
+      },
       "linkedin": "https://www.linkedin.com/in/yang-ben-790a7734a/",
       "academic": [
-        "KEIYES EDU CEO 2008",
-        "Diamond holdings (Phillippines) Director 2011",
-        "KOI Co-founder 2012",
-        "Soongsil University, Management / Finanace / Law 2015",
-        "DALM CEO 2014",
-        "apc Director 2020",
-        "apc purple Director 2022",
-        "Englishground COO 2021",
-        "CREVERSE COO 2022",
-        "CREVERSE(Singapore) CEO 2022",
-        "EG Cunsultancy(Malayisia) 2021 ",
-        "ALLROUNDERS Inc. Co-founder & COO 2024 "
+        {
+          "en": "KEIYES EDU CEO 2008",
+          "th": "KEIYES EDU ซีอีโอ 2008"
+        },
+        {
+          "en": "Diamond holdings (Phillippines) Director 2011",
+          "th": "Diamond holdings (ฟิลิปปินส์) ผู้อำนวยการ 2011"
+        },
+        {
+          "en": "KOI Co-founder 2012",
+          "th": "KOI ผู้ร่วมก่อตั้ง 2012"
+        },
+        {
+          "en": "Soongsil University, Management / Finanace / Law 2015",
+          "th": "มหาวิทยาลัยซุงซิล, การจัดการ / การเงิน / กฎหมาย 2015"
+        },
+        {
+          "en": "DALM CEO 2014",
+          "th": "DALM ซีอีโอ 2014"
+        },
+        {
+          "en": "apc Director 2020",
+          "th": "apc ผู้อำนวยการ 2020"
+        },
+        {
+          "en": "apc purple Director 2022",
+          "th": "apc purple ผู้อำนวยการ 2022"
+        },
+        {
+          "en": "Englishground COO 2021",
+          "th": "Englishground ซีโอโอ 2021"
+        },
+        {
+          "en": "CREVERSE COO 2022",
+          "th": "CREVERSE ซีโอโอ 2022"
+        },
+        {
+          "en": "CREVERSE(Singapore) CEO 2022",
+          "th": "CREVERSE(สิงคโปร์) ซีอีโอ 2022"
+        },
+        {
+          "en": "EG Cunsultancy(Malayisia) 2021",
+          "th": "EG Cunsultancy(มาเลเซีย) 2021"
+        },
+        {
+          "en": "ALLROUNDERS Inc. Co-founder & COO 2024",
+          "th": "ALLROUNDERS Inc. ผู้ร่วมก่อตั้งและซีโอโอ 2024"
+        }
       ],
       "keywords": [
-        "logic",
-        "emotionless",
-        "number-holic",
-        "result-oriented"
+        {
+          "en": "logic",
+          "th": "ตรรกะ"
+        },
+        {
+          "en": "emotionless",
+          "th": "ไร้อารมณ์"
+        },
+        {
+          "en": "number-holic",
+          "th": "คลั่งไคล้ตัวเลข"
+        },
+        {
+          "en": "result-oriented",
+          "th": "มุ่งเน้นผลลัพธ์"
+        }
       ],
-      "allroundersToYou": "The last game",
+      "allroundersToYou": {
+        "en": "The last game",
+        "th": "เกมสุดท้าย"
+      },
       "likes": [
-        "Making money while solving problems with a measure of personal progress",
-        "Traveling and discovering new things",
-        "Learning from books and gaining new perspectives on problem-solving"
+        {
+          "en": "Making money while solving problems with a measure of personal progress",
+          "th": "การหาเงินในขณะที่แก้ปัญหาพร้อมกับวัดความก้าวหน้าส่วนตัว"
+        },
+        {
+          "en": "Traveling and discovering new things",
+          "th": "การท่องเที่ยวและค้นพบสิ่งใหม่ๆ"
+        },
+        {
+          "en": "Learning from books and gaining new perspectives on problem-solving",
+          "th": "การเรียนรู้จากหนังสือและได้รับมุมมองใหม่ๆ ในการแก้ปัญหา"
+        }
       ],
       "icons": {
         "keywords": {
@@ -108,35 +228,87 @@
           "traveling": "🧳",
           "learning": "📖"
         }
-      }
+      },
+      "isPreRounder": false
     },
     {
       "id": "jet",
       "name": "Jet",
-      "role": "Planning Team",
-      "funnyRole": "Developer",
+      "translatedName": {
+        "en": "Jet",
+        "th": "เจ็ท"
+      },
+      "role": {
+        "en": "Planning Team",
+        "th": "ทีมวางแผน"
+      },
+      "funnyRole": {
+        "en": "Developer",
+        "th": "นักพัฒนา"
+      },
       "roleIcon": "🧑🏻‍💼",
       "image": "/images/team/jet.png",
-      "bio": "Apichet began his career in business development. As part of his role, he conducted feasibility analyses, contributing to successful investment projects in logistics and F&B, including the construction of cross-docks and barge vessels, as well as the acquisition of a master franchise agreement for Puradak Chicken, a Korean fried chicken brand currently operating four branches across Bangkok. His industry knowledge further expanded during his short stint as a management consultant, where he gained valuable experience in the education and IT services sectors. He consulted on an IT solution startup regarding the CoE framework and structure, which helped the company increase its projected revenue by 30% in the first year. Though he may not have been the brightest compared to others, his dedication and professionalism proves to be second to none.",
+      "bio": {"en": "Apichet began his career in business development. As part of his role, he conducted feasibility analyses, contributing to successful investment projects in logistics and F&B, including the construction of cross-docks and barge vessels, as well as the acquisition of a master franchise agreement for Puradak Chicken, a Korean fried chicken brand currently operating four branches across Bangkok. His industry knowledge further expanded during his short stint as a management consultant, where he gained valuable experience in the education and IT services sectors. He consulted on an IT solution startup regarding the CoE framework and structure, which helped the company increase its projected revenue by 30% in the first year. Though he may not have been the brightest compared to others, his dedication and professionalism proves to be second to none.",
+        "th": "อภิเชษฐ์เริ่มต้นอาชีพในการพัฒนาธุรกิจ ในฐานะส่วนหนึ่งของบทบาทของเขา เขาได้ทำการวิเคราะห์ความเป็นไปได้ ซึ่งมีส่วนช่วยให้โครงการลงทุนในด้านโลจิสติกส์และอาหารและเครื่องดื่มประสบความสำเร็จ รวมถึงการก่อสร้างคลังสินค้าข้ามฝั่งและเรือบาร์จ ตลอดจนการได้รับข้อตกลงแฟรนไชส์หลักสำหรับ Puradak Chicken แบรนด์ไก่ทอดเกาหลีที่ปัจจุบันมีสาขาสี่แห่งทั่วกรุงเทพฯ ความรู้ในอุตสาหกรรมของเขาขยายตัวเพิ่มขึ้นในช่วงที่เขาทำงานเป็นที่ปรึกษาด้านการจัดการ ซึ่งเขาได้รับประสบการณ์อันมีค่าในภาคการศึกษาและบริการด้านไอที เขาให้คำปรึกษาแก่สตาร์ทอัพด้านโซลูชันไอทีเกี่ยวกับกรอบและโครงสร้าง CoE ซึ่งช่วยให้บริษัทเพิ่มรายได้ที่คาดการณ์ไว้ขึ้น 30% ในปีแรก แม้ว่าเขาอาจไม่ได้เป็นคนที่ฉลาดที่สุดเมื่อเทียบกับคนอื่น แต่ความทุ่มเทและความเป็นมืออาชีพของเขาพิสูจน์ว่าไม่มีใครเทียบได้"
+      },
       "linkedin": "https://www.linkedin.com/in/apichet-chalermwutinan-697a97246/",
       "academic": [
-        "University of Reading, Economics and Finance 2022",
-        "Business Development, AGR Group Holding 2023",
-        "Bayes Business School, City, University of London, Management 2024",
-        "Bayes Management Consulting (United Kingdom) 2024",
-        "ALLROUNDERS Inc. founding member 2024"
+        {
+          "en": "University of Reading, Economics and Finance 2022",
+          "th": "มหาวิทยาลัยเรดดิ้ง, เศรษฐศาสตร์และการเงิน 2022"
+        },
+        {
+          "en": "Business Development, AGR Group Holding 2023",
+          "th": "การพัฒนาธุรกิจ, AGR Group Holding 2023"
+        },
+        {
+          "en": "Bayes Business School, City, University of London, Management 2024",
+          "th": "Bayes Business School, City, University of London, การจัดการ 2024"
+        },
+        {
+          "en": "Bayes Management Consulting (United Kingdom) 2024",
+          "th": "Bayes Management Consulting (สหราชอาณาจักร) 2024"
+        },
+        {
+          "en": "ALLROUNDERS Inc. founding member 2024",
+          "th": "ALLROUNDERS Inc. สมาชิกผู้ก่อตั้ง 2024"
+        }
       ],
       "keywords": [
-        "Obsessive Focus",
-        "Strategic Planning",
-        "Can-Do Mindset",
-        "Committed Professional"
+        {
+          "en": "Obsessive Focus",
+          "th": "มุ่งเน้นอย่างหมกมุ่น"
+        },
+        {
+          "en": "Strategic Planning",
+          "th": "การวางแผนเชิงกลยุทธ์"
+        },
+        {
+          "en": "Can-Do Mindset",
+          "th": "ทัศนคติที่ทำได้"
+        },
+        {
+          "en": "Committed Professional",
+          "th": "มืออาชีพที่ทุ่มเท"
+        }
       ],
-      "allroundersToYou": "Skills and experiences cultivation",
+      "allroundersToYou": {
+        "en": "Skills and experiences cultivation",
+        "th": "การเพาะบ่มทักษะและประสบการณ์"
+      },
       "likes": [
-        "Sport Enthusiast",
-        "Global Financial Markets",
-        "Exploring the world"
+        {
+          "en": "Sport Enthusiast",
+          "th": "ผู้หลงใหลในกีฬา"
+        },
+        {
+          "en": "Global Financial Markets",
+          "th": "ตลาดการเงินโลก"
+        },
+        {
+          "en": "Exploring the world",
+          "th": "การสำรวจโลก"
+        }
       ],
       "icons": {
         "keywords": {
@@ -156,33 +328,80 @@
           "Financial": "📈",
           "Exploring": "🌎"
         }
-      }
+      },
+      "isPreRounder": false
     },
     {
       "id": "p",
       "name": "P",
-      "role": "Business Team",
-      "funnyRole": "Mandatory Designer",
+      "translatedName": {
+        "en": "P",
+        "th": "พี"
+      },
+      "role": {
+        "en": "Business Team",
+        "th": "ทีมธุรกิจ"
+      },
+      "funnyRole": {
+        "en": "Mandatory Designer",
+        "th": "นักออกแบบภาคบังคับ"
+      },
       "roleIcon": "🧑🏻‍💼",
       "image": "/images/team/p.png",
-      "bio": "Pichaya's background is in Applied Chemistry. However, after realizing his passion for business and problem-solving, he decided to step away from the traditional science career path. Driven by adaptability and resourcefulness, Pichaya transitioned into business development and marketing role at ALLROUNDERS, leveraging his scientific knowledge to bring innovative solutions to the table. His ability to think unconventionally allows him to approach challenges with a fresh perspective, and he is now focused on contributing to growth at ALLROUNDERS, seeking opportunities to connect business sectors across different regions. While he might seem laid-back at times, when a task needs to be done, he tackles it efficiently and effectively.",
+      "bio": {
+        "en": "Pichaya's background is in Applied Chemistry. However, after realizing his passion for business and problem-solving, he decided to step away from the traditional science career path. Driven by adaptability and resourcefulness, Pichaya transitioned into business development and marketing role at ALLROUNDERS, leveraging his scientific knowledge to bring innovative solutions to the table. His ability to think unconventionally allows him to approach challenges with a fresh perspective, and he is now focused on contributing to growth at ALLROUNDERS, seeking opportunities to connect business sectors across different regions. While he might seem laid-back at times, when a task needs to be done, he tackles it efficiently and effectively.",
+        "th": "พื้นฐานของพิชญะอยู่ในเคมีประยุกต์ อย่างไรก็ตาม หลังจากตระหนักถึงความหลงใหลในธุรกิจและการแก้ปัญหา เขาตัดสินใจก้าวออกจากเส้นทางอาชีพวิทยาศาสตร์แบบดั้งเดิม ด้วยแรงผลักดันจากความสามารถในการปรับตัวและความมีไหวพริบ พิชญะได้เปลี่ยนไปสู่บทบาทการพัฒนาธุรกิจและการตลาดที่ ALLROUNDERS โดยใช้ความรู้ทางวิทยาศาสตร์ของเขาเพื่อนำเสนอโซลูชันที่เป็นนวัตกรรม ความสามารถในการคิดนอกกรอบช่วยให้เขาเข้าถึงความท้าทายด้วยมุมมองใหม่ และตอนนี้เขามุ่งเน้นที่จะมีส่วนร่วมในการเติบโตที่ ALLROUNDERS โดยมองหาโอกาสในการเชื่อมโยงภาคธุรกิจในภูมิภาคต่างๆ แม้ว่าบางครั้งเขาอาจดูสบายๆ แต่เมื่อมีงานที่ต้องทำ เขาจัดการได้อย่างมีประสิทธิภาพและประสิทธิผล"
+      },
       "linkedin": "https://www.linkedin.com/in/pichaya-saidoung-4b2626300/",
       "academic": [
-        "Hotel Manager 2016",
-        "Chulalongkorn University, BSc Applied Chemistry 2024",
-        "ALLROUNDERS Inc. founding member 2024"
+        {
+          "en": "Hotel Manager 2016",
+          "th": "ผู้จัดการโรงแรม 2016"
+        },
+        {
+          "en": "Chulalongkorn University, BSc Applied Chemistry 2024",
+          "th": "จุฬาลงกรณ์มหาวิทยาลัย, วท.บ. เคมีประยุกต์ 2024"
+        },
+        {
+          "en": "ALLROUNDERS Inc. founding member 2024",
+          "th": "ALLROUNDERS Inc. สมาชิกผู้ก่อตั้ง 2024"
+        }
       ],
       "keywords": [
-        "Adaptability",
-        "Creative problem-solving",
-        "Unconventional",
-        "Resourcefulness"
+        {
+          "en": "Adaptability",
+          "th": "ความสามารถในการปรับตัว"
+        },
+        {
+          "en": "Creative problem-solving",
+          "th": "การแก้ปัญหาอย่างสร้างสรรค์"
+        },
+        {
+          "en": "Unconventional",
+          "th": "ไม่เป็นไปตามแบบแผน"
+        },
+        {
+          "en": "Resourcefulness",
+          "th": "ความมีไหวพริบ"
+        }
       ],
-      "allroundersToYou": "First job & Hardest job",
+      "allroundersToYou":  {
+        "en": "First job & Hardest job",
+        "th": "งานแรก & งานที่ยากที่สุด"
+      },
       "likes": [
-        "Learning from others stories and perspectives",
-        "Solving problems",
-        "Relaxing in a quite place with my dogs"
+        {
+          "en": "Learning from others stories and perspectives",
+          "th": "เรียนรู้จากเรื่องราวและมุมมองของผู้อื่น"
+        },
+        {
+          "en": "Solving problems",
+          "th": "การแก้ปัญหา"
+        },
+        {
+          "en": "Relaxing in a quite place with my dogs",
+          "th": "พักผ่อนในสถานที่เงียบสงบกับสุนัขของฉัน"
+        }
       ],
       "icons": {
         "keywords": {
@@ -201,33 +420,83 @@
           "Solving": "🔍",
           "Relaxing": "🐕"
         }
-      }
+      },
+      "isPreRounder": false
     },
     {
       "id": "big",
       "name": "Big",
-      "role": "Rider",
-      "funnyRole": "Body Language Expert",
+      "translatedName": {
+        "en": "Big",
+        "th": "บิ๊ก"
+      },
+      "role": {
+        "en": "Rider",
+        "th": "ไรเดอร์"
+      },
+      "funnyRole": {
+        "en": "Body Language Expert",
+        "th": "ผู้เชี่ยวชาญภาษากาย"
+      },
       "roleIcon": "🛵",
       "image": "/images/team/big.png",
-      "bio": "Despite Anucha's modest academic background, his professional career speaks for itself. He began as a junior featherweight boxer, representing his home district and winning 4 out of 7 matches before an injury ended his boxing career. Transitioning to the automotive industry, he specialized in engine performance and driver safety for racing cars, working with brands like Mitsubishi, Nissan, and Honda. His team competed nationwide in events such as Eco, Super Turbo, and Super Compact races. Notably, they secured 16th place in a 25-hour endurance race and achieved multiple top-three finishes with the renowned Honda City.",
+      "bio": {
+        "en": "Despite Anucha's modest academic background, his professional career speaks for itself. He began as a junior featherweight boxer, representing his home district and winning 4 out of 7 matches before an injury ended his boxing career. Transitioning to the automotive industry, he specialized in engine performance and driver safety for racing cars, working with brands like Mitsubishi, Nissan, and Honda. His team competed nationwide in events such as Eco, Super Turbo, and Super Compact races. Notably, they secured 16th place in a 25-hour endurance race and achieved multiple top-three finishes with the renowned Honda City.",
+        "th": "แม้ว่าอนุชาจะมีพื้นฐานทางการศึกษาที่ไม่โดดเด่น แต่อาชีพของเขาก็พูดแทนตัวเองได้ เขาเริ่มต้นเป็นนักมวยรุ่นเฟเธอร์เวทจูเนียร์ เป็นตัวแทนของเขตบ้านเกิดและชนะ 4 จาก 7 แมตช์ก่อนที่อาการบาดเจ็บจะยุติอาชีพมวยของเขา เมื่อเปลี่ยนไปสู่อุตสาหกรรมยานยนต์ เขาเชี่ยวชาญด้านประสิทธิภาพของเครื่องยนต์และความปลอดภัยของผู้ขับขี่สำหรับรถแข่ง ทำงานกับแบรนด์อย่าง มิตซูบิชิ นิสสัน และฮอนด้า ทีมของเขาแข่งขันทั่วประเทศในกิจกรรมต่างๆ เช่น การแข่งขัน Eco, Super Turbo และ Super Compact โดยเฉพาะอย่างยิ่ง พวกเขาได้อันดับที่ 16 ในการแข่งขันความอดทน 25 ชั่วโมงและได้รับตำแหน่งสามอันดับแรกหลายครั้งกับฮอนด้าซิตี้ที่มีชื่อเสียง"
+      },
       "academic": [
-        "Muay Thai Boxer 2018",
-        "Automotive Mechanic 2023",
-        "Freelance rider 2024",
-        "ALLROUNDERS Inc. inhouse rider 2025"
+        {
+          "en": "Muay Thai Boxer 2018",
+          "th": "นักมวยไทย 2018"
+        },
+        {
+          "en": "Automotive Mechanic 2023",
+          "th": "ช่างยนต์ 2023"
+        },
+        {
+          "en": "Freelance rider 2024",
+          "th": "ไรเดอร์อิสระ 2024"
+        },
+        {
+          "en": "ALLROUNDERS Inc. inhouse rider 2025",
+          "th": "ALLROUNDERS Inc. ไรเดอร์ประจำบริษัท 2025"
+        }
       ],
       "keywords": [
-        "Respectful",
-        "Determined",
-        "Conceptualizer",
-        "Go-getter"
+        {
+          "en": "Respectful",
+          "th": "เคารพผู้อื่น"
+        },
+        {
+          "en": "Determined",
+          "th": "มุ่งมั่น"
+        },
+        {
+          "en": "Conceptualizer",
+          "th": "นักสร้างแนวคิด"
+        },
+        {
+          "en": "Go-getter",
+          "th": "คนที่มุ่งมั่นสู่เป้าหมาย"
+        }
       ],
-      "allroundersToYou": "Welcoming place to help inexperience newbies to grow",
+      "allroundersToYou": {
+        "en": "Welcoming place to help inexperience newbies to grow",
+        "th": "สถานที่ที่เปิดกว้างช่วยให้คนใหม่ที่ไม่มีประสบการณ์เติบโต"
+      },
       "likes": [
-        "Automotive Racing",
-        "Boxing & exercise",
-        "Hardware Enthusiast"
+        {
+          "en": "Automotive Racing",
+          "th": "การแข่งรถยนต์"
+        },
+        {
+          "en": "Boxing & exercise",
+          "th": "มวยและการออกกำลังกาย"
+        },
+        {
+          "en": "Hardware Enthusiast",
+          "th": "ผู้หลงใหลในฮาร์ดแวร์"
+        }
       ],
       "icons": {
         "keywords": {
@@ -248,33 +517,77 @@
           "Boxing": "🥊",
           "Hardware": "💻"
         }
-      }
+      },
+      "isPreRounder": false
     },
    
     {
       "id": "emily",
       "name": "Emily",
-      "role": "Marketing Intern",
-      "funnyRole": "The newbie",
+      "translatedName": {
+        "en": "Emily",
+        "th": "เอมิลี่"
+      },
+      "role": {
+        "en": "Marketing Intern",
+        "th": "นักศึกษาฝึกงานด้านการตลาด"
+      },
+      "funnyRole": {
+        "en": "The newbie",
+        "th": "มือใหม่"
+      },
       "roleIcon": "🙋🏻‍♀️",
       "image": "/images/team/emily.png",
-      "bio": "Emily's background is in Biomedical Science, but she is currently exploring digital marketing, a field beyond her expertise. She enjoys stepping out of her comfort zone, embracing new opportunities, and continuously learning and developing new skills. With an open mind about her career path, she's excited to see where life takes her.",
+      "bio": {
+        "en": "Emily's background is in Biomedical Science, but she is currently exploring digital marketing, a field beyond her expertise. She enjoys stepping out of her comfort zone, embracing new opportunities, and continuously learning and developing new skills. With an open mind about her career path, she's excited to see where life takes her.",
+        "th": "พื้นฐานของเอมิลี่อยู่ในวิทยาศาสตร์ชีวการแพทย์ แต่ปัจจุบันเธอกำลังสำรวจการตลาดดิจิทัล ซึ่งเป็นสาขาที่นอกเหนือจากความเชี่ยวชาญของเธอ เธอชอบก้าวออกจากพื้นที่ปลอดภัย ยอมรับโอกาสใหม่ๆ และเรียนรู้และพัฒนาทักษะใหม่ๆ อย่างต่อเนื่อง ด้วยความคิดที่เปิดกว้างเกี่ยวกับเส้นทางอาชีพของเธอ เธอตื่นเต้นที่จะได้เห็นว่าชีวิตจะพาเธอไปที่ไหน"
+      },
       "linkedin": "https://www.linkedin.com/in/emily-impens-36b859282/",
       "academic": [
-        "Mahidol University International College, Biomedical Sciences 2025",
-        "ALLROUNDERS Inc. Marketing Intern 2024"
+        {
+          "en": "Mahidol University International College, Biomedical Sciences 2025",
+          "th": "วิทยาลัยนานาชาติ มหาวิทยาลัยมหิดล, วิทยาศาสตร์ชีวการแพทย์ 2025"
+        },
+        {
+          "en": "ALLROUNDERS Inc. Marketing Intern 2024",
+          "th": "ALLROUNDERS Inc. นักศึกษาฝึกงานด้านการตลาด 2024"
+        }
       ],
       "keywords": [
-        "Empathetic",
-        "Mindful",
-        "Nature-lover",
-        "Inquisitive"
+        {
+          "en": "Empathetic",
+          "th": "เข้าอกเข้าใจ"
+        },
+        {
+          "en": "Mindful",
+          "th": "มีสติ"
+        },
+        {
+          "en": "Nature-lover",
+          "th": "รักธรรมชาติ"
+        },
+        {
+          "en": "Inquisitive",
+          "th": "ช่างสงสัย"
+        }
       ],
-      "allroundersToYou": "A transitioning point in life",
+      "allroundersToYou": {
+        "en": "A transitioning point in life",
+        "th": "จุดเปลี่ยนในชีวิต"
+      },
       "likes": [
-        "Being surrounded by nature",
-        "Reading and diving into a world of literature",
-        "A nice warm home-cooked meal"
+        {
+          "en": "Being surrounded by nature",
+          "th": "การอยู่ท่ามกลางธรรมชาติ"
+        },
+        {
+          "en": "Reading and diving into a world of literature",
+          "th": "การอ่านและดำดิ่งสู่โลกวรรณกรรม"
+        },
+        {
+          "en": "A nice warm home-cooked meal",
+          "th": "อาหารบ้านอุ่นๆ ที่ทำเอง"
+        }
       ],
       "icons": {
         "keywords": {
@@ -291,33 +604,80 @@
           "Reading": "📚",
           "meal": "🍲"
         }
-      }
+      },
+      "isPreRounder": true
     },
     {
       "id": "nichole",
       "name": "Nichole",
-      "role": "IT Intern",
-      "funnyRole": "Web Designer",
+      "translatedName": {
+        "en": "Nichole",
+        "th": "นิโคล"
+      },
+      "role": {
+        "en": "IT Intern",
+        "th": "นักศึกษาฝึกงานไอที"
+      },
+      "funnyRole": {
+        "en": "Web Designer",
+        "th": "นักออกแบบเว็บไซต์"
+      },
       "roleIcon": "💻",
       "image": "/images/team/nichole.png",
-      "bio": "Nann Wutt Yee Win, or Nichole, is a curious tech explorer who's always open to new ideas, both in and out of the tech world. She loves learning, whether it's picking up a new coding language, diving into cybersecurity, understanding different viewpoints, or finding creative solutions to everyday challenges. With an adaptable mindset, Nann is always up for trying new things and growing through experiences. Whether she's diving into a new project or collaborating with a team, she approaches everything with an open mind and a passion to learn and improve!",
+      "bio": {
+        "en": "Nann Wutt Yee Win, or Nichole, is a curious tech explorer who's always open to new ideas, both in and out of the tech world. She loves learning, whether it's picking up a new coding language, diving into cybersecurity, understanding different viewpoints, or finding creative solutions to everyday challenges. With an adaptable mindset, Nann is always up for trying new things and growing through experiences. Whether she's diving into a new project or collaborating with a team, she approaches everything with an open mind and a passion to learn and improve!",
+        "th": "นันน์ วุฒิยี วิน หรือนิโคล เป็นนักสำรวจเทคโนโลยีที่มีความอยากรู้อยากเห็นและเปิดรับแนวคิดใหม่ๆ เสมอ ทั้งในและนอกโลกเทคโนโลยี เธอชอบการเรียนรู้ ไม่ว่าจะเป็นการเรียนภาษาโค้ดใหม่ การศึกษาด้านความปลอดภัยทางไซเบอร์ การทำความเข้าใจมุมมองที่แตกต่าง หรือการค้นหาวิธีแก้ปัญหาอย่างสร้างสรรค์ในชีวิตประจำวัน ด้วยทัศนคติที่ปรับตัวได้ นันน์พร้อมเสมอที่จะลองสิ่งใหม่ๆ และเติบโตผ่านประสบการณ์ ไม่ว่าเธอจะกำลังทำโปรเจกต์ใหม่หรือทำงานร่วมกับทีม เธอเข้าหาทุกอย่างด้วยใจที่เปิดกว้างและความหลงใหลในการเรียนรู้และพัฒนา!"
+      },
       "linkedin": "https://www.linkedin.com/in/nann-wutt-yee-win/",
       "academic": [
-        "Singapore Institute of Management, Information Technology 2022",
-        "University of Wollongong Australia, Computer Science(Cyber Security) 2024",
-        "ALLROUNDERS Inc. IT Intern 2024"
+        {
+          "en": "Singapore Institute of Management, Information Technology 2022",
+          "th": "สถาบันการจัดการสิงคโปร์, เทคโนโลยีสารสนเทศ 2022"
+        },
+        {
+          "en": "University of Wollongong Australia, Computer Science(Cyber Security) 2024",
+          "th": "มหาวิทยาลัยวูลลองกอง ออสเตรเลีย, วิทยาการคอมพิวเตอร์(ความปลอดภัยทางไซเบอร์) 2024"
+        },
+        {
+          "en": "ALLROUNDERS Inc. IT Intern 2024",
+          "th": "ALLROUNDERS Inc. นักศึกษาฝึกงานไอที 2024"
+        }
       ],
       "keywords": [
-        "Curious",
-        "Tech Explorer",
-        "Open-minded",
-        "Adaptable"
+        {
+          "en": "Curious",
+          "th": "ช่างสงสัย"
+        },
+        {
+          "en": "Tech Explorer",
+          "th": "นักสำรวจเทคโนโลยี"
+        },
+        {
+          "en": "Open-minded",
+          "th": "เปิดกว้าง"
+        },
+        {
+          "en": "Adaptable",
+          "th": "ปรับตัวได้"
+        }
       ],
-      "allroundersToYou": "A first step into the real world",
+      "allroundersToYou":{
+        "en": "A first step into the real world",
+        "th": "ก้าวแรกสู่โลกแห่งความเป็นจริง"
+      },
       "likes": [
-        "Wandering new places",
-        "Chilling with cats",
-        "Spending time with loved ones"
+        {
+          "en": "Wandering new places",
+          "th": "การเดินทางไปยังสถานที่ใหม่ๆ"
+        },
+        {
+          "en": "Chilling with cats",
+          "th": "การพักผ่อนกับแมว"
+        },
+        {
+          "en": "Spending time with loved ones",
+          "th": "การใช้เวลากับคนที่รัก"
+        }
       ],
       "icons": {
         "keywords": {
@@ -336,7 +696,8 @@
           "cats": "🐱",
           "loved ones": "❤️"
         }
-      }
+      },
+      "isPreRounder": true
     }
   ]
 }

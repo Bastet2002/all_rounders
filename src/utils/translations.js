@@ -21,7 +21,7 @@ export const translations = {
     
     // Banner content
     round8: 'ROUND8',
-    round8Description: 'Say goodbye to all inconvenieces and shop secondhand with us!',
+    round8Description: 'Say goodbye to all inconvenieces and shop second hand with us!',
     ourServices: 'Our Services',
     thailandExpansion: 'Thailand & SEA expansion',
     expansionDescription: 'Expanding from Thailand to Southeast Asia, we aim to unlock potential and elevate our global presence.',
@@ -332,7 +332,30 @@ export const translations = {
     TcontactContent: "If you have any other concerns regarding our Terms and Conditions, please feel free to contact us via the following contact details: OFFICE: 39F, BHIRAJ TOWER, 689 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok, Thailand 10110 OFFICE: 201, Jungjeong-ro 86, Seogwipo-si, Jeju-do, South Korea, 63595 EMAIL: round8@allrounders.io",
     
     termsDisclaimer: "These Terms of Service are subject to change. Please check back regularly for updates.",
+    
+    //footer
+    menu:"Menu",
+    followUs:"Follow Us",
+    address:"Address: BHIRAJ TOWER, 689 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110",
+    privacyPolicyF: "Privacy Policy",
+    termsAndConditions: "Terms & Conditions",
+    cookiePreferences: "Cookie Preferences",
 
+
+    allIs:"AllROUNDERS is",
+    backToTeam:"Back To Team",
+    keywords: "Keywords",
+    background: "background",
+    likes: "likes",
+    about: "About",
+    present:"Present",
+
+    readMore: "Read More",
+    "meet": "Meet",
+    "our": "Our",
+    "ceo": "CEO",
+    "team": "Team",
+    "interview": "Interview"
     
   },
   th: {
@@ -679,6 +702,31 @@ export const translations = {
   // ... existing code ...
   
   skillDevelopment: "การพัฒนาทักษะอย่างรวดเร็วในหลากหลายด้าน",
+
+  //footer
+  menu: "เมนู",
+  followUs:"ติดตามเรา",
+  address:"ที่อยู่: อาคารภิรัช ทาวเวอร์, 689 ถนนสุขุมวิท, คลองตันเหนือ, วัฒนา, กรุงเทพฯ 10110",
+  privacyPolicyF: "นโยบายความเป็นส่วนตัว",
+  termsAndConditions: "ข้อกำหนดและเงื่อนไข",
+  cookiePreferences: "การตั้งค่าคุกกี้",
+
+
+  allIs:"ALLROUNDERS คือ",
+  backToTeam:"กลับไปทีม",
+  keywords: "คำสำคัญ",
+  background: "ประวัติ",
+  likes: "ชอบ",
+  about: "เกี่ยวกับ",
+  present: "ตอนนี้",
+  readMore: "อ่านเพิ่มเติม",
+
+  meet: "พบ",
+  our: "กับ",
+  ceo: "CEO",
+  team: "ทีม",
+  interview: "สัมภาษณ์"
+
   
   }
 };

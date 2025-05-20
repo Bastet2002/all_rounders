@@ -6,6 +6,12 @@ import PeopleIcon from '@mui/icons-material/People';
 import SchoolIcon from '@mui/icons-material/School';
 import {motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+// Import teamData
+import teamData from '../data/teamData.json';
+// Import useLanguage hook
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../utils/translations';
+
 
 // Add this import at the top
 import { keyframes } from '@mui/material/styles';
@@ -204,6 +210,9 @@ const Team = () => {
   const navigate = useNavigate();
   // State to track hover state for each team member
   const [hoveredRoles, setHoveredRoles] = useState({});
+  const { language } = useLanguage();
+  const currentLanguage = language || 'en';
+  const t = key => translations[language][key] || key;
 
   // Function to handle role hover
   const handleRoleHover = (memberId, isHovered) => {
@@ -215,77 +224,34 @@ const Team = () => {
   const handleTeamMemberClick = (memberId) => {
     navigate(`/team/${memberId}`);
   };
-  // Updated team members data with more detailed bios and funny roles
-  const coreTeam = [
-    {
-      id: 'hyunji-kim',  // Changed from 'hyun-kim' to match the actual ID used in the component
-      name: 'Hayley',
-      role: 'CEO',
-      funnyRole: 'Mom',
-      roleIcon: '👩🏻‍💼',
-      image: '/images/team/hyun.png',
-      bio: "Hayley transitioned from academia to business after realizing her renewable energy research lacked environmental impact. She joined a strategy consulting firm to gain business experience, while also launching an e-commerce distribution company, securing 30 deals a day from day one. After thorough research on Thai e-commerce, she recruited a strong ....",
-    },
-    {
-      id: 'kyungsuk-yang',
-      name: 'Ben',
-      role: 'COO',
-      funnyRole: 'AI',
-      roleIcon: '👨‍💼',
-      image: '/images/team/yang.png',
-      bio: "Ben started his entrepreneurial journey in 2006, founding businesses in education, trade, e-commerce, social media, IT security, promotion, and the metaverse. He has extensive experience ....",
-    },
-    {
-      id: 'jet',
-      name: 'Jet',
-      role: 'Planning Team',
-      funnyRole: 'Developer',
-      roleIcon: '🧑🏻‍💼',
-      image: '/images/team/jet.png',
-      bio: "Apichet began his career in business development. As part of his role, he conducted feasibility analyses, contributing to successful investment projects in logistics and F&B, including the construction....",
-    },
-    {
-        id: 'p',
-        name: 'P',
-        role: 'Business Team',
-        funnyRole: 'Mandatory Designer',
-        roleIcon: '🧑🏻‍💼',
-        image: '/images/team/p.png',
-        bio: "Pichaya's background is in Applied Chemistry. However, after realizing his passion for business and problem-solving, he decided to step away from the traditional science career path. Driven by adaptability and resourcefulness....",
-      },
-      {
-        id: 'big',
-        name: 'Big',
-        role: 'Rider',
-        funnyRole: 'Body Language Expert',
-        roleIcon: '🛵',
-        image: '/images/team/big.png',
-        bio: "Despite Anucha’s modest academic background, his professional career speaks for itself. He began as a junior featherweight boxer, representing his home district and winning 4 out of....",
-      },
-  ];
 
+  // Get translated content
+  const getTranslatedContent = (content) => {
+    if (!content) return '';
+    
+    // If content is an object with language keys
+    if (typeof content === 'object' && content[currentLanguage]) {
+      return content[currentLanguage];
+    }
+    
+    // If it's just a string
+    return content;
+  };
 
-  const preRounders = [
-    {
-      id: 'emily',
-      name: 'Emily',
-      role: 'Marketing Intern',
-      funnyRole: 'The newbie',
-      roleIcon: '🙋🏻‍♀️',
-      image: '/images/team/emily.png',
-      bio: "Emily's background is in Biomedical Science, but she is currently exploring digital marketing, a field beyond her expertise. She enjoys stepping out of her comfort zone, embracing new opportunities.... ",
-    },
-    {
-      id: 'nichole',
-      name: 'Nichole',
-      role: 'IT Intern',
-      funnyRole: 'Web Designer',
-      roleIcon: '💻',
-      image: '/images/team/nichole.png',
-      bio: "Nann Wutt Yee Win, or Nichole, is a curious tech explorer who’s always open to new ideas, both in and out of the tech world. She loves learning, whether it’s picking up a new coding....",
-    },
-  ];
+  // Get translated name
+  const getTranslatedName = (member) => {
+    if (member.translatedName && member.translatedName[currentLanguage]) {
+      return member.translatedName[currentLanguage];
+    }
+    return member.name;
+  };
 
+  
+  // Filter team members by role type
+  const coreTeam = teamData.team.filter(member => !member.isPreRounder);
+  const preRounders = teamData.team.filter(member => member.isPreRounder);
+  
+  
   return (
     <PageContainer>
       <Container 
@@ -333,7 +299,7 @@ const Team = () => {
               gap: '8px',
               flexWrap: { xs: 'wrap', sm: 'nowrap' }
             }}>
-              {["Meet", "Our", "CEO"].map((word, i) => (
+              {[t('meet'), t('our'), t('ceo')].map((word, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -405,7 +371,7 @@ const Team = () => {
               }}>
                 <Box sx={{mb: 1 }}>
                   <Typography variant="h6" fontWeight={600} sx={{ fontSize: '1.25rem' }}>
-                    Hayley
+                    {getTranslatedName(coreTeam[0])}
                   </Typography>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Typography 
@@ -420,14 +386,16 @@ const Team = () => {
                       onMouseEnter={() => handleRoleHover('hyunji-kim', true)}
                       onMouseLeave={() => handleRoleHover('hyunji-kim', false)}
                     >
-                      {hoveredRoles['hyunji-kim'] ? coreTeam[0].funnyRole : coreTeam[0].role}
+                      {hoveredRoles['hyunji-kim'] 
+                              ? getTranslatedContent(coreTeam[0].funnyRole) 
+                              : getTranslatedContent(coreTeam[0].role)}
                     </Typography>
                     <Typography sx={{ ml: 0.5 }}>👩🏻‍💼</Typography>
                   </Box>
                 </Box>
                 
                 <Typography variant="body2" color="white" paragraph sx={{ fontSize: '1rem' }}>
-                  {coreTeam[0].bio}
+                  {getTranslatedContent(coreTeam[0].bio).substring(0, 282)}...
                 </Typography>
                 
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -437,7 +405,7 @@ const Team = () => {
                     variant="contained"
                     size="small"
                   >
-                    Read More
+                     {t('readMore')}
                   </ReadMoreButton>
                 </Box>
               </Box>
@@ -463,7 +431,7 @@ const Team = () => {
               gap: '8px',
               flexWrap: { xs: 'wrap', sm: 'nowrap' }
             }}>
-              {["Team", "Interview"].map((word, i) => (
+              {[t('team'), t('interview')].map((word, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -524,7 +492,7 @@ const Team = () => {
               gap: '8px',
               flexWrap: { xs: 'wrap', sm: 'nowrap' }
             }}>
-              {["Meet", "Our", "Team"].map((word, i) => (
+              {[t('meet'), t('our'), t('team')].map((word, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -586,7 +554,7 @@ const Team = () => {
                   <TeamInfo>
                     <TeamNameRole>
                       <Typography variant="h6" fontWeight={600} sx={{ fontSize: '1.25rem',color:'white' }}>
-                        {member.name}
+                        {getTranslatedName(member)}
                       </Typography>
                       
                       <Box sx={{ display: 'flex', alignItems: 'center',color:'black' }}>
@@ -602,7 +570,9 @@ const Team = () => {
                           onMouseEnter={() => handleRoleHover(member.id, true)}
                           onMouseLeave={() => handleRoleHover(member.id, false)}
                         >
-                          {hoveredRoles[member.id] ? member.funnyRole : member.role}
+                          {hoveredRoles[member.id] 
+                              ? getTranslatedContent(member.funnyRole) 
+                              : getTranslatedContent(member.role)}
                         </Typography>
                         {member.roleIcon && (
                           <Typography sx={{ ml: 0.5 }}>{member.roleIcon}</Typography>
@@ -615,7 +585,7 @@ const Team = () => {
                       color="white" 
                       sx={{ mb: 2, fontSize: '1rem' }}
                     >
-                      {member.bio}
+                      {getTranslatedContent(member.bio).substring(0, 150)}...
                     </Typography>
                     
                     <Box sx={{ display: 'flex', justifyContent: 'center', mt: 'auto' }}>
@@ -625,7 +595,7 @@ const Team = () => {
                         variant="contained"
                         size="small"
                       >
-                        Read More
+                        {t('readMore')}
                       </ReadMoreButton>
                     </Box>
                   </TeamInfo>
@@ -756,7 +726,7 @@ const Team = () => {
                   <TeamInfo>
                     <TeamNameRole>
                       <Typography variant="h6" fontWeight={600} sx={{ fontSize: '1.25rem',color:'white' }}>
-                        {member.name}
+                        {getTranslatedName(member)}
                       </Typography>
                       
                       <Box sx={{ display: 'flex', alignItems: 'center' ,color:'#000'}}>
@@ -773,7 +743,9 @@ const Team = () => {
                           onMouseEnter={() => handleRoleHover(member.id, true)}
                           onMouseLeave={() => handleRoleHover(member.id, false)}
                         >
-                          {hoveredRoles[member.id] ? member.funnyRole : member.role}
+                          {hoveredRoles[member.id] 
+                              ? getTranslatedContent(member.funnyRole) 
+                              : getTranslatedContent(member.role)}
                         </Typography>
                         {member.roleIcon && (
                           <Typography sx={{ ml: 0.5 }}>{member.roleIcon}</Typography>
@@ -786,7 +758,7 @@ const Team = () => {
                       color="text.secondary" 
                       sx={{ mb: 2, fontSize: '1rem' ,color:'white'}}
                     >
-                      {member.bio}
+                      {getTranslatedContent(member.bio).substring(0, 150)}...
                     </Typography>
                     
                     <Box sx={{ display: 'flex', justifyContent: 'center', mt: 'auto' }}>
@@ -796,7 +768,7 @@ const Team = () => {
                         variant="contained"
                         size="small"
                       >
-                        Read More
+                       {t('readMore')}
                       </ReadMoreButton>
                     </Box>
                   </TeamInfo>

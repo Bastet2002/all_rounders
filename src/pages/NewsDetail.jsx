@@ -74,7 +74,7 @@ const NewsDetail = () => {
           variant="body1" 
           paragraph 
           key={index}
-          sx={{ fontSize: '1.1rem', lineHeight: 1.7, mb: 3 , maxWidth: '1200px'}}
+          sx={{ fontSize:{ xs: '0.9rem', sm: '1rem', md: '1.1rem' }, lineHeight: 1.7, mb: 3 , maxWidth: '1200px', mx: 'auto'}}
         >
           {paragraph}
         </Typography>
@@ -84,7 +84,7 @@ const NewsDetail = () => {
       <Typography 
         variant="body1" 
         paragraph
-        sx={{ fontSize: '1.1rem', lineHeight: 1.7, mb: 3 ,maxWidth: '1200px', mx: 'auto'}}
+        sx={{ fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' }, lineHeight: 1.7, mb: 3 ,maxWidth: '1200px', mx: 'auto'}}
       >
         {content}
       </Typography>

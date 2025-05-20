@@ -313,7 +313,7 @@ const Home = () => {
   return (
     <Box>
       {/* Banner Section */}
-      <Box>
+      <Box id="hero">
       <BannerSection>
         <AnimatePresence mode="wait">
           {bannerData.map((banner, index) => (

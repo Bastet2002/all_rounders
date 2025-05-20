@@ -42,7 +42,7 @@ const Footer = () => {
               expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
               sx={{ px: 1 }}
             >
-              <Typography variant="h6">MENU</Typography>
+              <Typography variant="h6">{t.menu}</Typography>
             </AccordionSummary>
             <AccordionDetails sx={{ px: 1, pt: 0 }}>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -71,7 +71,7 @@ const Footer = () => {
               expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
               sx={{ px: 1 }}
             >
-              <Typography variant="h6">FOLLOW US</Typography>
+              <Typography variant="h6">{t.followUs}</Typography>
             </AccordionSummary>
             <AccordionDetails sx={{ px: 1, pt: 0 }}>
               <Typography variant="subtitle1" sx={{ mt: 1, mb: 1 }}>
@@ -254,7 +254,7 @@ const Footer = () => {
               expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
               sx={{ px: 1 }}
             >
-              <Typography variant="h6">CONTACT US</Typography>
+              <Typography variant="h6">{t.contactUs}</Typography>
             </AccordionSummary>
             <AccordionDetails sx={{ px: 1, pt: 0 }}>
               <Typography variant="body2" paragraph>
@@ -264,7 +264,7 @@ const Footer = () => {
                 Email: round8@allrounders.io 
               </Typography>
               <Typography variant="body2">
-                Address: BHIRAJ TOWER, 689 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110
+                {t.address}
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -282,7 +282,7 @@ const Footer = () => {
           
           <Grid item xs={12} sm={3}>
             <Typography variant="h6" gutterBottom>
-              MENU
+              {t.menu}
             </Typography>
             <Link component={RouterLink} to="/" color="inherit" display="block" sx={{ mb: 1 }}>
               {t.home}
@@ -309,7 +309,7 @@ const Footer = () => {
           
           <Grid item xs={12} sm={3}>
             <Typography variant="h6" gutterBottom>
-              Follow Us 
+              {t.followUs} 
             </Typography>
             
             {/* ALLROUNDERS Inc section */}
@@ -496,7 +496,7 @@ const Footer = () => {
 
           <Grid item xs={12} sm={3}>
             <Typography variant="h6" gutterBottom>
-              CONTACT US
+              {t.contactUs}
             </Typography>
             <Typography variant="body2" paragraph>
               Mon-Fri: 9am - 6pm 
@@ -505,7 +505,7 @@ const Footer = () => {
               Email: round8@allrounders.io 
             </Typography>
             <Typography variant="body2">
-              Address: BHIRAJ TOWER, 689 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110
+              {t.address}
             </Typography>
           </Grid>
         </Grid>
@@ -522,10 +522,10 @@ const Footer = () => {
         
         <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 2, mb: 2 }}>
           <Link component={RouterLink} to="/privacy-policy" color="inherit">
-            Privacy Policy
+            {t.privacyPolicyF}
           </Link>
           <Link component={RouterLink} to="/terms" color="inherit">
-            Terms & Conditions
+            {t.termsAndConditions}
           </Link>
           <Link 
             href="#" 
@@ -538,7 +538,7 @@ const Footer = () => {
               window.location.reload();
             }}
           >
-            Cookie Preferences
+            {t.cookiePreferences}
           </Link>
         </Box>
         

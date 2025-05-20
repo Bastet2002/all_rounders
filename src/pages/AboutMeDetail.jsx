@@ -5,6 +5,8 @@ import { styled } from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import teamData from '../data/teamData.json';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../utils/translations';
 
 
 
@@ -120,7 +122,9 @@ const AboutMeDetail = () => {
   const [loading, setLoading] = useState(true);
   // Add state for role hover
   const [isRoleHovered, setIsRoleHovered] = useState(false);
-
+  const { language } = useLanguage();
+  const t = key => translations[language][key] || key;
+  const currentLanguage = language || 'en';
   useEffect(() => {
     // Find the team member with the matching ID
     const foundMember = teamData.team.find(m => m.id === id);
@@ -146,7 +150,7 @@ const AboutMeDetail = () => {
           startIcon={<ArrowBackIcon />}
           variant="outlined"
         >
-          Back to Team
+          {t('backToTeam')}
         </BackButton>
       </Container>
     );
@@ -154,75 +158,133 @@ const AboutMeDetail = () => {
 
   // Extract first name for display
   const firstName = member.name.split(' ')[0];
-  
-  // Get year from academic entries
-  const getYearFromAcademic = (academicEntry) => {
-    const yearMatch = academicEntry.match(/\d{4}/);
-    return yearMatch ? yearMatch[0] : '';
+  const getTranslatedContent = (content) => {
+    if (!content) return '';
+    
+    // If content is an object with language keys
+    if (typeof content === 'object' && content[currentLanguage]) {
+      return content[currentLanguage];
+    }
+    
+    // If it's just a string
+    return content;
   };
 
+  // Get translated name or use default name
+  const getTranslatedName = () => {
+    if (member.translatedName && member.translatedName[currentLanguage]) {
+      return member.translatedName[currentLanguage];
+    }
+    return member.name;
+  };
+
+  // Get first name based on current language
+  const getTranslatedFirstName = () => {
+    const fullName = getTranslatedName();
+    return fullName.split(' ')[0];
+  };
+
+  const getYearFromAcademic = (academicEntry) => {
+    // Handle both string and object formats
+    const entry = typeof academicEntry === 'object' ? 
+      academicEntry[currentLanguage] : academicEntry;
+      
+    const yearMatch = entry.match(/\d{4}/);
+    return yearMatch ? yearMatch[0] : '';
+  };
+  
   // Format year display (show ALLROUNDERS entry as "Present")
   const formatYearDisplay = (entry) => {
+    // Handle both string and object formats
+    const entryText = typeof entry === 'object' ? 
+      entry[currentLanguage] : entry;
+      
     // Check if this is an ALLROUNDERS entry
-    if (entry.includes('ALLROUNDERS Inc.')) {
-      return 'Present';
+    if (entryText.includes('ALLROUNDERS Inc.')) {
+      return currentLanguage === 'th' ? 'ปัจจุบัน' : 'Present';
     }
     return getYearFromAcademic(entry);
   };
-
+  
   // Get icon for academic entry
   const getAcademicIcon = (academicEntry) => {
     if (!member.icons || !member.icons.academic) return '';
     
+    // Handle both string and object formats
+    const entryText = typeof academicEntry === 'object' ? 
+      academicEntry[currentLanguage] : academicEntry;
+      
     // If it's an ALLROUNDERS entry, use the "Present" icon
-    if (academicEntry.includes('ALLROUNDERS Inc.')) {
+    if (entryText.includes('ALLROUNDERS Inc.')) {
       return member.icons.academic['Present'] || '👑';
     }
     
     const year = getYearFromAcademic(academicEntry);
     return member.icons.academic[year] || '📚';
   };
-
+  
   // Get icon for keyword
   const getKeywordIcon = (keyword) => {
     if (!member.icons || !member.icons.keywords) return '🔑';
-    return member.icons.keywords[keyword] || '🔑';
+    
+    // Handle both string and object formats
+    const keywordText = typeof keyword === 'object' ? 
+      keyword.en : keyword; // Use English for icon lookup
+      
+    return member.icons.keywords[keywordText] || '🔑';
   };
-
+  
   // Get icon for like
   const getLikeIcon = (like) => {
     if (!member.icons || !member.icons.likes) return '❤️';
     
+    // Handle both string and object formats
+    const likeText = typeof like === 'object' ? 
+      like.en : like; // Use English for icon lookup
+    
     // Try to match the like with the keys in the likes icons
     const matchingKey = Object.keys(member.icons.likes).find(key => 
-      like.toLowerCase().includes(key.toLowerCase())
+      likeText.toLowerCase().includes(key.toLowerCase())
     );
     
     return matchingKey ? member.icons.likes[matchingKey] : '❤️';
   };
-
+  
   // Sort academic entries by year in descending order (most recent first)
-  // Sort academic entries with ALLROUNDERS entries always at the top
   const sortedAcademic = [...(member.academic || [])].sort((a, b) => {
     // Always put ALLROUNDERS entries at the top
-    if (a.includes('ALLROUNDERS Inc.') && !b.includes('ALLROUNDERS Inc.')) {
+    const aText = typeof a === 'object' ? a[currentLanguage] : a;
+    const bText = typeof b === 'object' ? b[currentLanguage] : b;
+    
+    if (aText.includes('ALLROUNDERS Inc.') && !bText.includes('ALLROUNDERS Inc.')) {
       return -1;
     }
-    if (!a.includes('ALLROUNDERS Inc.') && b.includes('ALLROUNDERS Inc.')) {
+    if (!aText.includes('ALLROUNDERS Inc.') && bText.includes('ALLROUNDERS Inc.')) {
       return 1;
     }
     
     // For other entries, sort by year in descending order
-    const yearA = a.match(/\d{4}/)?.[0] || '0000';
-    const yearB = b.match(/\d{4}/)?.[0] || '0000';
+    const yearA = aText.match(/\d{4}/)?.[0] || '0000';
+    const yearB = bText.match(/\d{4}/)?.[0] || '0000';
     return parseInt(yearB) - parseInt(yearA);
   });
-
+  
   // Ensure 2024 entry exists if needed
-  const has2024Entry = sortedAcademic.some(entry => entry.includes('2024'));
+  const has2024Entry = sortedAcademic.some(entry => {
+    const entryText = typeof entry === 'object' ? 
+      entry[currentLanguage] : entry;
+    return entryText.includes('2024');
+  });
+  
   if (!has2024Entry && member.role) {
-    sortedAcademic.unshift(`ALLROUNDERS Inc. ${member.role}, 2024 - Present`);
+    const roleText = getTranslatedContent(member.role);
+    const newEntry = {
+      en: `ALLROUNDERS Inc. ${typeof member.role === 'object' ? member.role.en : member.role}, 2024 - Present`,
+      th: `ALLROUNDERS Inc. ${typeof member.role === 'object' ? member.role.th : member.role}, 2024 - ปัจจุบัน`
+    };
+    sortedAcademic.unshift(newEntry);
   }
+  
 
  
 
@@ -236,11 +298,11 @@ const AboutMeDetail = () => {
           variant="outlined"
           sx={{ fontSize: '1rem' }}
         >
-          Back to Team
+          {t('backToTeam')}
         </BackButton>
 
         <ProfileHeader>
-          <ProfileAvatar src={member.image} alt={member.name} />
+          <ProfileAvatar src={member.image} alt={getTranslatedName()} />
           <ProfileInfo>
             <Box sx={{ 
               display: 'flex', 
@@ -254,7 +316,7 @@ const AboutMeDetail = () => {
                 fontSize: { xs: '1.5rem', sm: '2rem' },
                 mb: { xs: 1, sm: 0 }
               }}>
-                {member.name} 
+                {getTranslatedName()} 
               </Typography>
               {member.linkedin && (
                 <Button
@@ -294,7 +356,9 @@ const AboutMeDetail = () => {
               onMouseEnter={() => setIsRoleHovered(true)}
               onMouseLeave={() => setIsRoleHovered(false)}
             >
-              {isRoleHovered && member.funnyRole ? member.funnyRole : member.role} {member.roleIcon}
+              {isRoleHovered && member.funnyRole ? 
+                getTranslatedContent(member.funnyRole) : 
+                getTranslatedContent(member.role)} {member.roleIcon}
             </Typography>
             
             <Box sx={{ 
@@ -309,17 +373,17 @@ const AboutMeDetail = () => {
                 fontSize: '1.1rem',
                 mb: { xs: 0.5, sm: 0 }
               }}>
-                ALLROUNDERS is
+                {t("allIs")}
               </Typography>
               <Typography variant="body1" fontWeight={600} sx={{ 
                 fontStyle: 'italic', 
                 fontSize: '1.1rem',
                 mb: { xs: 0.5, sm: 0 }
               }}>
-                "{member.allroundersToYou}"
+                "{getTranslatedContent(member.allroundersToYou)}"
               </Typography>
               <Typography variant="body1" sx={{ fontSize: '1.1rem' }}>
-                &nbsp;to {firstName} ✨.
+                &nbsp;to {getTranslatedFirstName()} ✨.
               </Typography>
             </Box>
           </ProfileInfo>
@@ -328,19 +392,21 @@ const AboutMeDetail = () => {
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <SectionTitle variant="h5">
-              {firstName}'s Keywords
+              {getTranslatedFirstName()}'s {t('keywords')}
             </SectionTitle>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', mb: 4 }}>
               {member.keywords.map((keyword, index) => (
                 <KeywordChip key={index}>
                   <span className="emoji">{getKeywordIcon(keyword)}</span>
-                  <Typography variant="body2" sx={{ fontSize: '1rem' }}>{keyword}</Typography>
+                  <Typography variant="body2" sx={{ fontSize: '1rem' }}>
+                    {getTranslatedContent(keyword)}
+                  </Typography>
                 </KeywordChip>
               ))}
             </Box>
 
             <SectionTitle variant="h5">
-              {firstName}'s background
+              {getTranslatedFirstName()}'s {t('background')}
             </SectionTitle>
             <Box sx={{ mb: 4 }}>
               {sortedAcademic.map((item, index) => {
@@ -352,7 +418,9 @@ const AboutMeDetail = () => {
                         {getAcademicIcon(item)}
                       </Typography>
                       <Typography variant="body2" sx={{ fontSize: '1rem' }}>
-                        {item.replace(/\d{4}(-\d{4})?/g, '').trim()}
+                        {typeof item === 'object' ? 
+                          item[currentLanguage].replace(/\d{4}(-\d{4})?/g, '').trim() : 
+                          item.replace(/\d{4}(-\d{4})?/g, '').trim()}
                       </Typography>
                     </TimelineContent>
                   </TimelineItem>
@@ -363,7 +431,7 @@ const AboutMeDetail = () => {
 
           <Grid item xs={12} md={6}>
             <SectionTitle variant="h5">
-              {firstName} likes ❤️
+              {getTranslatedFirstName()} {t('likes')} ❤️
             </SectionTitle>
             <Box sx={{ mb: 4 }}>
               {member.likes.map((like, index) => (
@@ -372,20 +440,23 @@ const AboutMeDetail = () => {
                     {getLikeIcon(like)}
                   </Typography>
                   <Typography variant="body2" sx={{ fontSize: '1rem' }}>
-                    {like}
+                    {getTranslatedContent(like)}
                   </Typography>
                 </LikeItem>
               ))}
             </Box>
 
             <SectionTitle variant="h5">
-              About {firstName} ✨
+              {t('about')} {getTranslatedFirstName()} ✨
             </SectionTitle>
-            <Typography variant="body1" paragraph sx={{ fontSize: '1rem',textAlign: 'justify',  // Aligns text on both left and right edges
-    maxWidth: '800px',     
-    lineHeight: 1.6,       
-    whiteSpace: 'pre-line' }}>
-              {member.bio}
+            <Typography variant="body1" paragraph sx={{ 
+              fontSize: '1rem',
+              textAlign: 'justify',
+              maxWidth: '800px',     
+              lineHeight: 1.6,       
+              whiteSpace: 'pre-line' 
+            }}>
+              {getTranslatedContent(member.bio)}
             </Typography>
           </Grid>
         </Grid>

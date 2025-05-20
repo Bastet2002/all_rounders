@@ -674,11 +674,13 @@ const TeamWorkCard = styled(Box)(({ theme }) => ({
   backgroundColor: '#f5f5f5',
   borderRadius: '8px',
   padding: theme.spacing(3),
-  height: '100%',
+  height: '280px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  justifyContent: 'space-between',
   textAlign: 'center',
-  boxShadow: '0px 2px 4px rgba(0,0,0,0.05)',
+  boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.47)',
+  overflow:"hidden",
 }));
 
