@@ -5,7 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import RecentNewsSection from '../components/RecentNewsSection';
-//import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../utils/translations';
 import { Link as RouterLink } from 'react-router-dom';
 import { useAdmin } from '../contexts/AdminContext';
 
@@ -197,42 +198,48 @@ const HoverOverlay = styled(Box)(({ theme }) => ({
 
 
 // Banner data with links
-const bannerData = [
-  {
-    id: 1,
-    //title: 'Welcome to ALLROUNDERS Inc',
-    description: 'We bring together all-rounded talents, creating a team where strengths shine and weaknesses are supported.',
-    image: '/images/home/banner1.png',
-    link: '/about', // Link to about page
-  },
-  {
-    id: 2,
-    //title: 'ROUND8',
-    description: 'Say goodbye to all inconvenieces and shop secondhand with us!',
-    //image: '/images/home/banner2.png',
-    video: '/images/home/ui4.mp4', 
-    link: '/service', // Link to services page
-    //isRound8: true, 
-  },
-  {
-    id: 3,
-    //title: 'Thailand & SEA expansion',
-    description: 'Expanding from Thailand to Southeast Asia, we aim to unlock potential and elevate our global presence.',
-    image: '/images/home/banner4.png',
-    link: '/about', // Link to about page
-  },
-  {
-    id: 4,
-    //title: 'Partnership & Collaboration',
-    description: 'At ALLROUNDERS, we create meaningful change through collaboration and partnerships.',
-    image: '/images/home/banner3.png',
-    link: "https://tally.so/r/3EAWj4" , // Link to contact page
-  },
-];
+
 
 const Home = () => {
   const [activeBanner, setActiveBanner] = useState(0);
   const [showSwipeIndicator, setShowSwipeIndicator] = useState(true);
+
+  const { language } = useLanguage();
+  const t = key => translations[language][key] || key;
+
+
+  const bannerData = [
+    {
+      id: 1,
+      //title: 'Welcome to ALLROUNDERS Inc',
+      description: t('description'),
+      image: '/images/home/banner1.png',
+      link: '/about', // Link to about page
+    },
+    {
+      id: 2,
+      //title: 'ROUND8',
+      description: t('round8Description'),
+      //image: '/images/home/banner2.png',
+      video: '/images/home/ui4.mp4', 
+      link: '/service', // Link to services page
+      //isRound8: true, 
+    },
+    {
+      id: 3,
+      //title: 'Thailand & SEA expansion',
+      description: t('expansionDescription'),
+      image: '/images/home/banner4.png',
+      link: '/about', // Link to about page
+    },
+    {
+      id: 4,
+      //title: 'Partnership & Collaboration',
+      description: t('partnershipDescription'),
+      image: '/images/home/banner3.png',
+      link: "https://tally.so/r/3EAWj4" , // Link to contact page
+    },
+  ];
 
   // Hide swipe indicator after a few seconds
   useEffect(() => {
@@ -557,10 +564,10 @@ const Home = () => {
       <Box sx={{ py: { xs: 3, sm: 8 }, backgroundColor: '#fff' }}>
         <Container>
           <SectionTitle variant="h3" component="h2">
-            The Story Behind ALLROUNDERS
+           {t('story')}
           </SectionTitle>
           
-          {/* Add video container */}
+          {/* Replace the video container with an iframe */}
           <Box sx={{ 
             width: '100%', 
             maxWidth: '1200px', 
@@ -569,20 +576,23 @@ const Home = () => {
             borderRadius: '12px',
             overflow: 'hidden',
             boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+            position: 'relative',
+            paddingTop: '56.25%', // 16:9 aspect ratio
           }}>
-            <video
-              loop
-              playsInline
-              controls={true}
+            <iframe
+              src="https://www.youtube.com/embed/place_holder" // Replace with your video URL
+              title="ALLROUNDERS Story"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
               style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
                 width: '100%',
-                height: 'auto',
-                display: 'block',
+                height: '100%',
               }}
-            >
-              
-              Your browser does not support the video tag.
-            </video>
+            />
           </Box>
           
       

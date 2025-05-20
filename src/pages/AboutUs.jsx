@@ -631,9 +631,7 @@ const AboutUs = () => {
                   }}
                 >Q3</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- Accumulated 500+ pre-registers 
-- Expanded local partnerships in Thailand (20+ partners) 
-- MVP version 1 development (Shopify, in-house)" />
+                  <ExpandableTimelineContent content= {t('timeline2024Q3')}  />
                 </Box>
               </Box>
             </Box>
@@ -657,11 +655,7 @@ const AboutUs = () => {
                   }}
                 >Q4</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- MVP version 2 development (wordpress, outsource)
-- Setup of Bangkok office
-- Selected as an incubation company by Jeju creative economy innovation center
-- Appointed as a representative of the Korean business delegation by the Thai Embassy
-- Mobile UI/UX design completion" />
+                  <ExpandableTimelineContent content= {t('timeline2024Q4')}  />
                 </Box>
               </Box>
             </Box>
@@ -696,13 +690,7 @@ const AboutUs = () => {
                   sx={{ flexShrink: 0 }}
                 >Q1</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- MVP version 2 operations
-- Secured 40+ influencers for promotional support
-- Secured and trained local riders (1 full-time, 40+ part-timers)
-- Partnerships with K-beauty companies (3)
-- Selected as a KOSME global business centere Bangkok tenanat company
-- Negotiating partnerships with major Thai companies/universities
-- MVP version 3 development (Bubble, in-house)" />
+                  <ExpandableTimelineContent content= {t('timeline2025Q1')}  />
                 </Box>
               </Box>
             </Box>
@@ -722,7 +710,7 @@ const AboutUs = () => {
                   sx={{ flexShrink: 0 }}
                 >Q2</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- Beta service launch (Targeting 3,000 Users)" />
+                  <ExpandableTimelineContent content= {t('timeline2025Q2')} />
                 </Box>
               </Box>
             </Box>
@@ -742,7 +730,7 @@ const AboutUs = () => {
                   sx={{ flexShrink: 0 }}
                 >Q3</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- Secure VC investment hello" />
+                  <ExpandableTimelineContent content= {t('timeline2025Q3')} />
                 </Box>
               </Box>
             </Box>
@@ -761,8 +749,7 @@ const AboutUs = () => {
                   sx={{ flexShrink: 0 }}
                 >Q4</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- Official service launch (Targeting 20,000 Users) 
-- Preparition for international expansion" />
+                  <ExpandableTimelineContent content={t('timeline2025Q4')} />
                 </Box>
               </Box>
             </Box>
@@ -822,9 +809,7 @@ const AboutUs = () => {
                   }}
                 >Q1</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- Establishment of ALLROUNDERS Inc
-- Product planning
-- Start social media management" />
+                  <ExpandableTimelineContent content= {t('timeline2024Q1')} />
                 </Box>
               </Box>
             </Grid>
@@ -850,13 +835,7 @@ const AboutUs = () => {
                   sx={{ flexShrink: 0 }}
                 >Q1</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- MVP version 2 operations
-- Secured 40+ influencers for promotional support
-- Secured and trained local riders (1 full-time, 40+ part-timers)
-- Partnerships with K-beauty companies (3)
-- Selected as a KOSME global business centere Bangkok tenanat company
-- Negotiating partnerships with major Thai companies/universities
-- MVP version 3 development (Bubble, in-house)" />
+                  <ExpandableTimelineContent content= {t('timeline2025Q1')} />
                 </Box>
               </Box>
             </Grid>
@@ -890,9 +869,7 @@ const AboutUs = () => {
                   }}
                 >Q2</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- Operated ROUND8 pre-registration page 
-- Selected as an incubation company by Jeju startup bay
-- Start operating local interns (10+ interns)" />
+                  <ExpandableTimelineContent content= {t('timeline2024Q2')}/>
                 </Box>
               </Box>
             </Grid>
@@ -918,7 +895,7 @@ const AboutUs = () => {
                   sx={{ flexShrink: 0 }}
                 >Q2</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- Beta service launch (Targeting 3,000 Users)" />
+                  <ExpandableTimelineContent content= {t('timeline2025Q2')}/>
                 </Box>
               </Box>
             </Grid>
@@ -952,9 +929,7 @@ const AboutUs = () => {
                   }}
                 >Q3</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- Accumulated 500+ pre-registers 
-- Expanded local partnerships in Thailand (20+ partners) 
-- MVP version 1 development (Shopify, in-house)" />
+                  <ExpandableTimelineContent content= {t('timeline2024Q3')} />
                 </Box>
               </Box>
             </Grid>
@@ -980,7 +955,7 @@ const AboutUs = () => {
                   sx={{ flexShrink: 0 }}
                 >Q3</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- Secure VC investment" />
+                  <ExpandableTimelineContent content= {t('timeline2025Q3')} />
                 </Box>
               </Box>
             </Grid>
@@ -1013,11 +988,7 @@ const AboutUs = () => {
                   }}
                 >Q4</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- MVP version 2 development (wordpress, outsource)
-- Setup of Bangkok office
-- Selected as an incubation company by Jeju creative economy innovation center
-- Appointed as a representative of the Korean business delegation by the Thai Embassy
-- Mobile UI/UX design completion" />
+                  <ExpandableTimelineContent content= {t('timeline2024Q4')} />
                 </Box>
               </Box>
             </Grid>
@@ -1042,8 +1013,7 @@ const AboutUs = () => {
                   sx={{ flexShrink: 0 }}
                 >Q4</TimelineMarker>
                 <Box sx={{ ml: 2, flex: 1 }}>
-                  <ExpandableTimelineContent content="- Official service launch (Targeting 20,000 Users) 
-- Preparition for international expansion" />
+                  <ExpandableTimelineContent content={t('timeline2025Q4')}/>
                 </Box>
               </Box>
             </Grid>

@@ -37,16 +37,24 @@ const Admin = () => {
     setActiveTab(newValue);
   };
 
-  const handleSaveContent = () => {
-    // In a real app, this would send data to a server
-    // For now, we'll just store in localStorage for demo purposes
-    localStorage.setItem('adminWelcomeMessage', welcomeMessage);
-    localStorage.setItem('adminHeroImageUrl', heroImageUrl);
-    
-    // Show success message
-    setSaveSuccess(true);
-    setTimeout(() => setSaveSuccess(false), 3000);
-  };
+  const [homeHeroTitle, setHomeHeroTitle] = useState('');
+const [homeHeroSubtitle, setHomeHeroSubtitle] = useState('');
+const [homeAboutText, setHomeAboutText] = useState('');
+
+
+
+
+
+// Add a new function to save home page content
+const handleSaveHomeContent = () => {
+  localStorage.setItem('homeHeroTitle', homeHeroTitle);
+  localStorage.setItem('homeHeroSubtitle', homeHeroSubtitle);
+  localStorage.setItem('homeAboutText', homeAboutText);
+  
+  // Show success message
+  setSaveSuccess(true);
+  setTimeout(() => setSaveSuccess(false), 3000);
+};
 
   if (!authenticated) {
     return (
@@ -111,6 +119,8 @@ const Admin = () => {
           <Tabs value={activeTab} onChange={handleTabChange} aria-label="admin tabs">
             <Tab label="Careers Form" />
             <Tab label="Contact Form" />
+            <Tab label="Analytics" />
+            
           </Tabs>
         </Box>
         
@@ -160,6 +170,28 @@ const Admin = () => {
           </Box>
         )}
         
+        {/* Analytics Tab */}
+        {activeTab === 2 && (
+          <Box sx={{ py: 3 }}>
+            <Typography variant="h6" gutterBottom>
+              Website Analytics
+            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
+              <Typography variant="body1" gutterBottom>
+                View detailed website analytics on Vercel dashboard
+              </Typography>
+              <Button 
+                variant="contained" 
+                color="primary"
+                href="https://vercel.com/nicholes-projects-f7918f39/allroundersinc/analytics" 
+                target="_blank"
+                sx={{ mt: 2 }}
+              >
+                Open Analytics
+              </Button>
+            </Box>
+          </Box>
+        )}
         
       </Paper>
     </Container>

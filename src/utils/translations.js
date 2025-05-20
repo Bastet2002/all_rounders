@@ -11,7 +11,7 @@ export const translations = {
     
     // Home Page
     welcome: 'Welcome to ALLROUNDERS Inc',
-    description: 'We create innovative digital solutions, including ROUND8, a trusted platform for second-hand trading.',
+    description: 'We bring together all-rounded talents, creating a team where strengths shine and weaknesses are supported.',
     exploreMore: 'Explore More',
     swipeToExplore: 'Swipe to explore',
     allroundersJourney: 'ALLROUNDERS JOURNEY',
@@ -21,12 +21,14 @@ export const translations = {
     
     // Banner content
     round8: 'ROUND8',
-    round8Description: 'We offer the safest, and most convenient secondhand trading platform in SEA.',
+    round8Description: 'Say goodbye to all inconvenieces and shop secondhand with us!',
     ourServices: 'Our Services',
     thailandExpansion: 'Thailand & SEA expansion',
     expansionDescription: 'Expanding from Thailand to Southeast Asia, we aim to unlock potential and elevate our global presence.',
     partnership: 'Partnership & Collaboration',
     partnershipDescription: 'At ALLROUNDERS, we create meaningful change through collaboration and partnerships.',
+
+    story: 'The Story Behind ALLROUNDERS',
     
     // News items
     newsTitle1: 'ALLROUNDERS Expands Global Reach',
@@ -88,12 +90,19 @@ export const translations = {
     oneRoundToAnother: 'One Round to Another',
     deliveringValue: 'Delivering real value to those who need it most.',
     explore: 'Explore',
+    howitworks: 'How ROUND8 works?',
     marketplace: 'Marketplace',
+    marketplaceD:"See something you like or have something to sell? Connect with users and trade directly, hassle-free! Our marketplace brings buyers and sellers together in a secure environment.",
     payment: 'Payment (ESCROW)',
+    paymentD:"Protected payments with escrow system. Holding funds for buyers and sellers until transaction is complete. This ensures both parties are protected throughout the entire process.",
     delivery: 'Delivery',
+    deliveryD:"Choose when and where you want to pick up or drop off your items with our scheduled deliveries. Our flexible delivery system ensures your items arrive safely and on time.",
     inspection: 'Inspection',
+    inspectionD:"Secure transactions with exterior inspection. Protecting buyers and ensuring quality, fraud-free products. Our inspection process verifies that what you see is what you get.",
     productReview: 'Product Review',
+    productReviewD:"Drop a review to support fellow Rounders and keep it real! Help others make informed decisions. Our review system builds trust and transparency in our community.",
     ourCommunity: 'Our Community',
+    ourCommunityD:"Come join us and be a part of our community! Connect with like-minded individuals and grow together. Our community is built on trust, respect, and shared interests.",
     letsCollaborate: 'Let\'s Collaborate!',
     inquiry: 'If you have any inquiry, feel free to contact us!',
     connectWithUs: 'Connect With Us',
@@ -338,7 +347,7 @@ export const translations = {
     
     // Home Page
     welcome: 'ยินดีต้อนรับสู่ ALLROUNDERS Inc',
-    description: 'เราสร้างโซลูชันดิจิทัลที่เป็นนวัตกรรม รวมถึง ROUND8 แพลตฟอร์มที่เชื่อถือความสามารถรอบด้านเข้าด้วยกัน',
+    description: 'เรารวบรวมผู้มีความสามารถรอบด้าน มาร่วมสร้างทีมที่ทุกจุดแข็งเปล่งประกาย และทุกจุดอ่อนได้รับการสนับสนุน',
     exploreMore: 'สำรวจเพิ่มเติม',
     swipeToExplore: 'ปัดเพื่อสำรวจ',
     allroundersJourney: 'เส้นทางของ ALLROUNDERS',
@@ -348,12 +357,14 @@ export const translations = {
     
     // Banner content
     round8: 'ROUND8',
-    round8Description: 'เราให้บริการแพลตฟอร์มการซื้อขายมือสองที่ปลอดภัยและสะดวกที่สุดใน SEA',
+    round8Description: 'บอกลาความไม่สะดวกทั้งหมด และช้อปสินค้ามือสองกับเรา!',
     ourServices: 'บริการของเรา',
     thailandExpansion: 'การขยายตัวในไทยและเอเชียตะวันออกเฉียงใต้',
-    expansionDescription: 'ขยายจากประเทศไทยสู่เอเชียตะวันออกเฉียงใต้ เรามุ่งมั่นที่จะปลดล็อกศักยภาพและยกระดับการมีอยู่ทั่วโลกของเรา',
+    expansionDescription: 'การขยายตัวในประเทศไทยและเอเชียตะวันออกเฉียงใต้',
     partnership: 'พันธมิตรและความร่วมมือ',
-    partnershipDescription: 'ที่ ALLROUNDERS เราสร้างการเปลี่ยนแปลงที่มีความหมายผ่านความร่วมมือและพันธมิตร',
+    partnershipDescription: 'ที่ ALLROUNDERS เราสร้างการเปลี่ยนแปลงที่มีความหมายผ่านการร่วมมือและเป็นพันธมิตร',
+
+    story: 'เรื่องราวเบื้องหลัง ALLROUNDERS',
     
     // News items
     newsTitle1: 'ALLROUNDERS ขยายการเข้าถึงทั่วโลก',
@@ -400,7 +411,7 @@ export const translations = {
     timeline2025Q1: '- การดำเนินการ MVP เวอร์ชัน 2 \n- จัดหาและฝึกอบรมผู้ขับขี่ท้องถิ่น (1 คนเต็มเวลา, 40+ คนพาร์ทไทม์)\n- จัดหาผู้มีอิทธิพล 40+ คนสำหรับการสนับสนุนการโปรโมท\n- พันธมิตรกับบริษัท K-beauty (3 แห่ง)\n- ได้รับเลือกเป็นบริษัทผู้เช่าศูนย์ธุรกิจระดับโลก KOSME กรุงเทพฯ\n- เจรจาความร่วมมือกับบริษัท/มหาวิทยาลัยไทยรายใหญ่\n- การพัฒนา MVP เวอร์ชัน 3 (Bubble, in-house)',
     timeline2025Q2: '- เปิดตัวบริการเบต้า (เป้าหมาย 3,000 ผู้ช้มมากกก)',
     timeline2025Q3: '- ได้รับการลงทุนจาก VC',
-    timeline2025Q4: '- เปิดตัวบริการอย่างเป็นทางการ (เป้าหมาย 20,000 ผู้ช้มมากกก)',
+    timeline2025Q4: '- เปิดตัวบริการอย่างเป็นทางการ (เป้าหมาย 20,000 ผู้ใช้) \n- เตรียมการสำหรับการขยายตัวระหว่างประเทศ',
     
     // Team Page
     meetOurTeam: 'พบกับทีมของเรา',
@@ -415,14 +426,25 @@ export const translations = {
     oneRoundToAnother: 'จากวงหนึ่งสู่อีกวงหนึ่ง',
     deliveringValue: 'ส่งมอบคุณค่าที่แท้จริงให้กับผู้ที่ต้องการมากที่สุด',
     explore: 'สำรวจ',
+    howitworks:'วิธีใช้ ROUND8?',
     marketplace: 'ตลาดซื้อขาย',
+    marketplaceD:"เห็นสิ่งที่คุณชอบหรือมีบางอย่างที่อยากจะขาย? เชื่อมต่อกับผู้ใช้และซื้อขายโดยตรงโดยไม่มีปัญหา! ตลาดของเราเชื่อมโยงผู้ซื้อและผู้ขายเข้าด้วยกันในสภาพแวดล้อมที่ปลอดภัย",
+    paymentD:"การชำระเงินที่ปลอดภัยด้วยระบบ ESCROW ยึดเงินไว้สำหรับผู้ซื้อและผู้ขายจนกว่าธุรกรรมจะเสร็จสิ้น วิธีนี้ช่วยให้มั่นใจว่าทั้งสองฝ่ายจะได้รับการคุ้มครองตลอดกระบวนการทั้งหมด",
+    
+    deliveryD:"เลือกเวลาและสถานที่ที่คุณต้องการรับหรือส่งสินค้าด้วยระบบการจัดส่งตามกำหนดเวลาของเรา ระบบการจัดส่งของเราช่วยให้มั่นใจได้ว่าสินค้าของคุณจะมาถึงอย่างปลอดภัยและตรงเวลา",
+    
+    inspectionD:"การทำธุรกรรมที่ปลอดภัยด้วยการตรวจสอบจากภายนอก สามารถปกป้องผู้ซื้อและรับรองคุณภาพสินค้าที่ปราศจากการฉ้อโกง กระบวนการตรวจสอบของเราจะตรวจสอบว่าสิ่งที่คุณเห็นคือสิ่งที่คุณได้รับ",
+  
+    productReviewD:"เขียนรีวิวเพื่อสนับสนุนเพื่อน Rounders และแสดงความคิดเห็นอย่างจริงใจ! การเขียนรีวิวสินค้าจะช่วยให้ผู้อื่นตัดสินใจได้อย่างรอบรู้ ระบบการรีวิวของเราสามารถสร้างความไว้วางใจและความโปร่งใสในชุมชนของเรา ",
+    
+    ourCommunityD:"มาร่วมมือกับเราและเป็นส่วนหนึ่งของชุมชนของเรา! เชื่อมต่อกับบุคคลที่มีความคิดเหมือนกันและเติบโตไปด้วยกัน ชุมชนของเราสร้างขึ้นจากความไว้วางใจ ความเคารพ และความสนใจร่วมกัน ",
     payment: 'การชำระเงิน (ESCROW)',
     delivery: 'การจัดส่ง',
     inspection: 'การตรวจสอบ',
     productReview: 'รีวิวสินค้า',
     ourCommunity: 'ชุมชนของเรา',
-    letsCollaborate: 'มาร่วมมือกัน!',
-    inquiry: 'หากคุณมีข้อสงสัยใดๆ โปรดติดต่อเรา!',
+    letsCollaborate: 'ร่วมงานกับเรา!',
+    inquiry: 'ติดต่อเรา',
     connectWithUs: 'ติดต่อเรา',
     
     // Contact form

@@ -104,6 +104,33 @@ const Footer = () => {
                     sx={{ width: '24px', height: '24px' }} 
                   />
                 </Button>
+                {/* You Tube */}
+                <Button
+                  variant="contained"
+                  href="https://www.youtube.com/@ALLROUNDERSINC"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ 
+                    minWidth: 'unset',
+                    width: '40px',
+                    height: '40px',
+                    padding: '8px',
+                    backgroundColor: 'black',
+                    color: 'white',
+                    borderColor: '#0077B5',
+                    '&:hover': {
+                      backgroundColor: 'rgba(255, 255, 255, 0.78)',
+                      borderColor: '#006699',
+                    }
+                  }}
+                >
+                  <Box 
+                    component="img" 
+                    src="/images/youtube.png" 
+                    alt="LinkedIn" 
+                    sx={{ width: '24px', height: '24px' }} 
+                  />
+                </Button>
               </Box>
               
               <Typography variant="subtitle1" sx={{ mt: 1, mb: 1 }}>
@@ -314,6 +341,33 @@ const Footer = () => {
                   src="/images/linkedin.png" 
                   alt="LinkedIn" 
                   sx={{ width: '24px', height: '24px' }} 
+                />
+              </Button>
+
+              <Button
+                variant="contained"
+                href="https://www.youtube.com/@ALLROUNDERSINC"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ 
+                  minWidth: 'unset',
+                  width: '40px',
+                  height: '40px',
+                  padding: '8px',
+                  backgroundColor: 'black',
+                  color: 'white',
+                  borderColor: '#0077B5',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.78)',
+                    borderColor: '#006699',
+                  }
+                }}
+              >
+                <Box 
+                  component="img" 
+                  src="/images/youtube.png" 
+                  alt="LinkedIn" 
+                  sx={{ width: '27px', height: '29px' }} 
                 />
               </Button>
             </Box>

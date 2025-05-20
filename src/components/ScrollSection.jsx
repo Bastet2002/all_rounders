@@ -6,6 +6,8 @@ import { Box, Typography, Grid, IconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../utils/translations';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -271,6 +273,9 @@ const ScrollSection = ({ sections, title }) => {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
+  const { language } = useLanguage();
+  const t = key => translations[language][key] || key;
+
   // Function to navigate to previous section
   const goToPrev = () => {
     if (currentIndex > 0) {
@@ -473,7 +478,7 @@ const ScrollSection = ({ sections, title }) => {
       
       <SectionContainer ref={containerRef}>
         <HandwrittenTitle>
-          <Typography variant="h2" fontWeight={800}>How ROUND8 Works?</Typography>
+          <Typography variant="h2" fontWeight={800}>{t("howitworks")}</Typography>
         </HandwrittenTitle>
         
         <HorizontalWrapper 

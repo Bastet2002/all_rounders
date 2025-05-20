@@ -6,6 +6,8 @@ import { styled } from '@mui/material/styles';
 import ScrollSection from '../components/ScrollSection';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { keyframes } from '@mui/material/styles';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../utils/translations';
 
 
 // Register ScrollTrigger plugin
@@ -215,45 +217,48 @@ const ShimmerText = styled(Typography)(({ theme }) => ({
 
 const Services = () => {
   // Service panel data with animations and icons
+
+  const { language } = useLanguage();
+  const t = key => translations[language][key] || key;
   const servicePanels = [
     {
-      title: "Marketplace",
-      description: "See something you like or have something to sell? Connect with users and trade directly, hassle-free! Our marketplace brings buyers and sellers together in a secure environment.",
+      title: t("marketplace"),
+      description: t("marketplaceD"),
       image: "/images/services/maketPlace.png",
       animation: "/images/services/marketplace-animation.gif",
       //icon: "/images/services/marketplace-icon.png"
     },
     {
-      title: "Payment (ESCROW)",
-      description: "Protected payments with escrow system. Holding funds for buyers and sellers until transaction is complete. This ensures both parties are protected throughout the entire process.",
+      title:  t("payment"),
+      description: t("paymentD"),
       image: "/images/services/inception.png",
       animation: "/images/services/payment-animation.gif",
       //icon: "/images/services/payment-icon.png"
     },
     {
-      title: "Delivery",
-      description: "Choose when and where you want to pick up or drop off your items with our scheduled deliveries. Our flexible delivery system ensures your items arrive safely and on time.",
+      title:  t("delivery"),
+      description: t("deliveryD"),
       image: "/images/services/delivery.png",
       animation: "/images/services/cycle3.gif",
       //icon: "/images/services/delivery-icon.png"
     },
     {
-      title: "Inspection",
-      description: "Secure transactions with exterior inspection. Protecting buyers and ensuring quality, fraud-free products. Our inspection process verifies that what you see is what you get.",
+      title:  t("inspection"),
+      description: t("inspectionD"),
       image: "/images/services/payment.png",
       animation: "/images/services/inception-animation.gif",
       //icon: "/images/services/inception-icon.png"
     },
     {
-      title: "Product Review",
-      description: "Drop a review to support fellow Rounders and keep it real! Help others make informed decisions. Our review system builds trust and transparency in our community.",
+      title:  t("productReview"),
+      description: t("productReviewD"),
       image: "/images/services/review.png",
       animation: "/images/services/review-animation.gif",
       //icon: "/images/services/review-icon.png"
     },
     {
-      title: "Our Community",
-      description: "Come join us and be a part of our community! Connect with like-minded individuals and grow together. Our community is built on trust, respect, and shared interests.",
+      title:  t("ourCommunity"),
+      description: t("ourCommunityD"),
       image: "/images/services/delivery.png",
       animation: "/images/services/community-animation.gif",
       //icon: "/images/services/community-icon.png"
@@ -435,7 +440,7 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
                   fontSize: { xs: '1.2rem', sm: '2.125rem' }
                 }}
               >
-                Delivering real value to those who need it most.
+                {t("deliveringValue")}
               </Typography>
             </motion.div>
           </Box>
@@ -455,7 +460,7 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
               target="_blank"
               rel="noopener noreferrer">
               <Box component="img" src="/images/services/round8.png" alt="Round8 Logo" sx={{ width: 24, height: 24, mr: 1 }} />
-              Explore
+              {t("explore")}
             </ActionButton>
           </motion.div>
         </HeroCard>
@@ -508,10 +513,10 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
         >
           <ConnectCard>
             <Typography variant="h3" fontWeight={700} sx={{ mb: 2, color: 'black' ,fontSize: { xs: '1.8rem', sm: '2.8rem' }}} >
-              Let's Collaborate!
+              {t("letsCollaborate")}
             </Typography>
             <Typography variant="h6" color="black" sx={{ mb: 4 , fontSize: { xs: '1.2rem', sm: '1.4rem' }}}>
-              If you have any inquiry, feel free to contact us!
+            {t("inquiry")}
             </Typography>
             <ActionButton 
               variant="contained" 
@@ -522,7 +527,7 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
               rel="noopener noreferrer"
             >
               <Box component="img" src="/images/services/round8.png" alt="Round8 Logo" sx={{ width: 24, height: 24, mr: 1 }} />
-              Connect With Us
+              {t("connectWithUs")}
             </ActionButton>
           </ConnectCard>
         </motion.div>
