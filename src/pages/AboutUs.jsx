@@ -73,17 +73,17 @@ const SectionContainer = styled(Box)(({ theme }) => ({
 }));
 
 const HeroSection = styled(Box)(({ theme }) => ({
-    backgroundImage: 'url(/images/building.png)',
+    backgroundImage: 'url(/images/notes1.png)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     fontFamily: 'Roboto, sans-serif',
     padding: theme.spacing(12, 0), // Reduce for mobile
-    minHeight: '70vh',
+    minHeight: '100vh',
     position: 'relative',
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(22, 0),
-      minHeight: '70vh',
+      minHeight: '98vh',
     },
     '&::before': {
       content: '""',
@@ -103,10 +103,10 @@ const HeroSection = styled(Box)(({ theme }) => ({
     color: 'black',
     padding: theme.spacing(3),
     borderRadius: theme.spacing(1),
-    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    backgroundColor: 'rgba(255, 255, 255, 0.89)',
     backdropFilter: 'blur(5px)',
     fontFamily: 'Roboto, sans-serif', 
-    maxWidth: '1200px',
+    maxWidth: '800px',
     margin: '0 auto',
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(2),
@@ -228,6 +228,22 @@ const AboutUs = () => {
             transition={{ duration: 0.8 }}
           >
             <HeroContent>
+
+               {/* Added logo above the title */}
+               <Box sx={{ 
+                display: 'flex', 
+                justifyContent: 'center', 
+                mb: 3 
+              }}>
+                <img 
+                  src="/images/logoCircle.png" 
+                  alt="ALLROUNDERS Logo" 
+                  style={{ 
+                    height: '50px', 
+                    marginBottom: '0' 
+                  }} 
+                />
+              </Box>
               <Typography 
                 variant="h3" 
                 component="h1" 
@@ -423,7 +439,7 @@ const AboutUs = () => {
                             ease: "easeInOut" 
                         }}
                         >
-                        <img src="/images/tech.png" alt="Market" width="90" height="90" />
+                        <img src="/images/tech1.png" alt="Market" width="120" height="120" />
                         <Box sx={{ mt: 3 }}></Box>
                         </motion.div>
                             <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>

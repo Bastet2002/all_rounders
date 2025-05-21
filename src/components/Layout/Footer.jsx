@@ -25,7 +25,7 @@ const Footer = () => {
       return (
         <>
           <Box sx={{ mb: 3, display: 'flex', justifyContent: 'center' }}>
-            <img src="/images/logo.png" alt="ALLROUNDERS" style={{ height: '120px', width: 'auto' }} />
+            <a href = "/"><img src="/images/logo.png" alt="ALLROUNDERS" style={{ height: '120px', width: 'auto' }} /></a>
           </Box>
           
           <Accordion 
@@ -52,7 +52,7 @@ const Footer = () => {
                 <Link component={RouterLink} to="/service" color="inherit">{t.ourService}</Link>
                 <Link component={RouterLink} to="/news" color="inherit">{t.news}</Link>
                 <Link component={RouterLink} to="/careers" color="inherit">{t.careers}</Link>
-                <Link component={RouterLink} to="/contact" color="inherit">{t.contactUs}</Link>
+                <Link component={RouterLink} to="https://tally.so/r/3EAWj4" color="inherit">{t.contactUs}</Link>
               </Box>
             </AccordionDetails>
           </Accordion>
@@ -276,7 +276,7 @@ const Footer = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={3}>
             <Box sx={{ mb: 2 }}>
-              <img src="/images/logo.png" alt="ALLROUNDERS" style={{ height: '170px', width: 'auto' }} />
+              <a href = "/"><img src="/images/logo.png" alt="ALLROUNDERS" style={{ height: '170px', width: 'auto' }} /></a>
             </Box>
           </Grid>
           
@@ -302,7 +302,7 @@ const Footer = () => {
             <Link component={RouterLink} to="/careers" color="inherit" display="block" sx={{ mb: 1 }}>
               {t.careers}
             </Link>
-            <Link component={RouterLink} to="/contact" color="inherit" display="block">
+            <Link component={RouterLink} to="https://tally.so/r/3EAWj4" color="inherit" display="block">
               {t.contactUs}
             </Link>
           </Grid>
