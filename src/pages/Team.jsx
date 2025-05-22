@@ -463,26 +463,36 @@ const Team = () => {
               ))}
             </motion.div>
           </Box>
-            <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.3 }}
-                style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-              >
-                <VideoContainer>
-                  <PlayButton>
-                    <motion.div
-                      whileHover={{ scale: 1.2 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Box sx={{ width: 0, height: 0, borderTop: '15px solid transparent', borderBottom: '15px solid transparent', borderLeft: '25px solid #333', ml: 1 }} />
-                    </motion.div>
-                  </PlayButton>
-                </VideoContainer>
-              </motion.div>
-            </Box>
           </motion.div>
         </Container>
+        {/* Replace the video container with an iframe */}
+        <Box sx={{ 
+              width: '100%', 
+              maxWidth: '1200px', 
+              margin: '0 auto',
+              mb: 4,
+              borderRadius: '12px',
+              overflow: 'hidden',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+              position: 'relative',
+              paddingTop: { xs: '56.25%', sm: '56.25%' }, // Standard 16:9 aspect ratio
+              mx: 'auto', // Center the video
+            }}>
+              <iframe
+                src="https://www.youtube.com/embed/HcnscqB4edQ" // Replace with your video URL
+                title="ALLROUNDERS Story"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                }}
+              />
+            </Box>
       </SectionContainer>
           {/* Animated "meet our team" text */}
           <Box sx={{ mb: 2, height: { xs: '2rem', sm: '2rem' } }}>

@@ -25,7 +25,7 @@ const Admin = () => {
 
   const handleLogin = () => {
     // Simple password check - in a real app, this would be handled securely on a server
-    if (password === 'allrounders2023') { // Change this to your desired password
+    if (password === 'allrounders2025') { // Change this to your desired password
       setAuthenticated(true);
       setError('');
     } else {
