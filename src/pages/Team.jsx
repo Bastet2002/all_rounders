@@ -467,16 +467,17 @@ const Team = () => {
         </Container>
         {/* Replace the video container with an iframe */}
         <Box sx={{ 
-              width: '100%', 
+              width: { xs: '280px', sm: '100%' }, 
+              height: { xs: '210px', sm: '500px' }, 
               maxWidth: '1200px', 
-              margin: '0 auto',
+          
               mb: 4,
               borderRadius: '12px',
               overflow: 'hidden',
               boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
               position: 'relative',
-              paddingTop: { xs: '56.25%', sm: '56.25%' }, // Standard 16:9 aspect ratio
-              mx: 'auto', // Center the video
+              display: 'flex',
+              mx: { xs: 'auto', sm: 'auto' }, 
             }}>
               <iframe
                 src="https://www.youtube.com/embed/HcnscqB4edQ" // Replace with your video URL
