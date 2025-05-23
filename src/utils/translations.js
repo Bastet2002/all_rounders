@@ -26,7 +26,7 @@ export const translations = {
     thailandExpansion: 'Thailand & SEA expansion',
     expansionDescription: 'Expanding from Thailand to Southeast Asia, we aim to unlock potential and elevate our global presence.',
     partnership: 'Partnership & Collaboration',
-    partnershipDescription: 'At ALLROUNDERS, we create meaningful change through collaboration and partnerships.',
+    partnershipDescription: 'We create meaningful change through collaboration and partnerships.',
 
     story: 'The Story Behind ALLROUNDERS',
     
@@ -127,8 +127,8 @@ export const translations = {
 
     // Careers page
     workWithUs: "Work with Us?",
-    workWithUsDesc: "ALLROUNDERS Inc. is a company built on the idea of bringing all-rounders together .",
-    workWithUsDesc2: "Since no one can be perfect on their own, we aim to create a near-perfect company filled with people who can highlight each other's strengths and complement each other's weaknesses. ",
+    workWithUsDesc: "ALLROUNDERS Inc. is a company built on the idea of bringing all-rounders together",
+    workWithUsDesc2: "Since no one can be perfect on their own, we aim to create a near-perfect company filled with people who can highlight each other's strengths and complement each other's weaknesses",
     learnMore: "Learn More",
     
     lookingForPeople: "We are looking for People...",
@@ -336,7 +336,7 @@ export const translations = {
     //footer
     menu:"Menu",
     followUs:"Follow Us",
-    address:"Address: BHIRAJ TOWER, 689 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110",
+    address:"Address: 39th floor, BHIRAJ TOWER, 689 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110",
     privacyPolicyF: "Privacy Policy",
     termsAndConditions: "Terms & Conditions",
     cookiePreferences: "Cookie Preferences",
@@ -385,7 +385,7 @@ export const translations = {
     thailandExpansion: 'การขยายตัวในไทยและเอเชียตะวันออกเฉียงใต้',
     expansionDescription: 'การขยายตัวในประเทศไทยและเอเชียตะวันออกเฉียงใต้',
     partnership: 'พันธมิตรและความร่วมมือ',
-    partnershipDescription: 'ที่ ALLROUNDERS เราสร้างการเปลี่ยนแปลงที่มีความหมายผ่านการร่วมมือและเป็นพันธมิตร',
+    partnershipDescription: 'เราสร้างการเปลี่ยนแปลงที่มีความหมายผ่านการร่วมมือและเป็นพันธมิตร',
 
     story: 'เรื่องราวเบื้องหลัง ALLROUNDERS',
     
@@ -706,7 +706,7 @@ export const translations = {
   //footer
   menu: "เมนู",
   followUs:"ติดตามเรา",
-  address:"ที่อยู่: อาคารภิรัช ทาวเวอร์, 689 ถนนสุขุมวิท, คลองตันเหนือ, วัฒนา, กรุงเทพฯ 10110",
+  address:"ที่อยู่: ชั้น 39, อาคารภิรัช ทาวเวอร์, 689 ถนนสุขุมวิท, คลองตันเหนือ, วัฒนา, กรุงเทพฯ 10110",
   privacyPolicyF: "นโยบายความเป็นส่วนตัว",
   termsAndConditions: "ข้อกำหนดและเงื่อนไข",
   cookiePreferences: "การตั้งค่าคุกกี้",

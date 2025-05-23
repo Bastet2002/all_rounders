@@ -410,6 +410,84 @@ const AboutUs = () => {
                 viewport={{ once: true, amount: 0.2 }}
               >
                 <Grid container spacing={4}>
+
+                <Grid item xs={12} md={4}>
+                    <motion.div  
+                      variants={{
+                        hidden: { opacity: 0, y: 80 }, // Increased y offset
+                        visible: { 
+                          opacity: 1, 
+                          y: 0,
+                          transition: { duration: 0.8 } // Increased duration
+                        }
+                      }}
+                      style={{ height: '100%' }}
+                      whileHover={{ 
+                        y: -15,
+                        boxShadow: "0px 15px 25px rgba(0, 0, 0, 0.2)",
+                        transition: { duration: 0.5 } // Added transition duration for hover
+                      }}
+                    >
+                      <MissionCard elevation={4}>
+                      <motion.div
+                        animate={{ 
+                            y: [0, -10, 0] 
+                        }}
+                        transition={{ 
+                            duration: 1.2, 
+                            repeat: Infinity, 
+                            repeatType: "loop", 
+                            ease: "easeInOut" 
+                        }}
+                        >
+                        <img src="/images/market.png" alt="Market" width="95" height="95" />
+                        <Box sx={{ mt: 3 }}></Box>
+                        </motion.div>
+                            <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
+                            {t('missionCard2Title')}
+                            </Typography>
+                        </MissionCard>
+                        </motion.div>
+                  </Grid>
+
+                <Grid item xs={12} md={4}>
+                    <motion.div  
+                      variants={{
+                        hidden: { opacity: 0, y: 80 }, // Increased y offset
+                        visible: { 
+                          opacity: 1, 
+                          y: 0,
+                          transition: { duration: 0.8 } // Increased duration
+                        }
+                      }}
+                      style={{ height: '100%' }}
+                      whileHover={{ 
+                        y: -15,
+                        boxShadow: "0px 15px 25px rgba(0, 0, 0, 0.2)",
+                        transition: { duration: 0.5 } // Added transition duration for hover
+                      }}
+                    >
+                      <MissionCard elevation={4}>
+                      <motion.div
+                        animate={{ 
+                            y: [0, -10, 0] 
+                        }}
+                        transition={{ 
+                            duration: 1.2, 
+                            repeat: Infinity, 
+                            repeatType: "loop", 
+                            ease: "easeInOut" 
+                        }}
+                        >
+                        <img src="/images/asia.png" alt="Market" width="80" height="80" />
+                        <Box sx={{ mt: 3 }}></Box>
+                        </motion.div>
+                            <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
+                            {t('missionCard3Title')}
+                            </Typography>
+                        </MissionCard>
+                        </motion.div>
+                  </Grid>
                 <Grid item xs={12} md={4}>
                     <motion.div  
                       variants={{
@@ -449,83 +527,9 @@ const AboutUs = () => {
                         </motion.div>
                   </Grid>
                   
-                  <Grid item xs={12} md={4}>
-                    <motion.div  
-                      variants={{
-                        hidden: { opacity: 0, y: 80 }, // Increased y offset
-                        visible: { 
-                          opacity: 1, 
-                          y: 0,
-                          transition: { duration: 0.8 } // Increased duration
-                        }
-                      }}
-                      style={{ height: '100%' }}
-                      whileHover={{ 
-                        y: -15,
-                        boxShadow: "0px 15px 25px rgba(0, 0, 0, 0.2)",
-                        transition: { duration: 0.5 } // Added transition duration for hover
-                      }}
-                    >
-                      <MissionCard elevation={4}>
-                      <motion.div
-                        animate={{ 
-                            y: [0, -10, 0] 
-                        }}
-                        transition={{ 
-                            duration: 1.2, 
-                            repeat: Infinity, 
-                            repeatType: "loop", 
-                            ease: "easeInOut" 
-                        }}
-                        >
-                        <img src="/images/market.png" alt="Market" width="95" height="95" />
-                        <Box sx={{ mt: 3 }}></Box>
-                        </motion.div>
-                            <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
-                            {t('missionCard2Title')}
-                            </Typography>
-                        </MissionCard>
-                        </motion.div>
-                  </Grid>
                   
-                  <Grid item xs={12} md={4}>
-                    <motion.div  
-                      variants={{
-                        hidden: { opacity: 0, y: 80 }, // Increased y offset
-                        visible: { 
-                          opacity: 1, 
-                          y: 0,
-                          transition: { duration: 0.8 } // Increased duration
-                        }
-                      }}
-                      style={{ height: '100%' }}
-                      whileHover={{ 
-                        y: -15,
-                        boxShadow: "0px 15px 25px rgba(0, 0, 0, 0.2)",
-                        transition: { duration: 0.5 } // Added transition duration for hover
-                      }}
-                    >
-                      <MissionCard elevation={4}>
-                      <motion.div
-                        animate={{ 
-                            y: [0, -10, 0] 
-                        }}
-                        transition={{ 
-                            duration: 1.2, 
-                            repeat: Infinity, 
-                            repeatType: "loop", 
-                            ease: "easeInOut" 
-                        }}
-                        >
-                        <img src="/images/asia.png" alt="Market" width="80" height="80" />
-                        <Box sx={{ mt: 3 }}></Box>
-                        </motion.div>
-                            <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
-                            {t('missionCard3Title')}
-                            </Typography>
-                        </MissionCard>
-                        </motion.div>
-                  </Grid>
+                  
+                  
                 </Grid>
               </motion.div>
             </Box>
@@ -573,7 +577,8 @@ const AboutUs = () => {
               color: '#fff', 
               p: 2,
               pb:1,
-              borderBottom: '1px solid #444'
+              borderBottom: '1px solid #444',
+             
             }}>
               <Typography variant="h5" align="center" gutterBottom sx={{ fontWeight: 600 }}>
                 2024
@@ -586,7 +591,8 @@ const AboutUs = () => {
               color: '#fff', 
               p: 2,
               pb:1,
-              borderBottom: '1px solid #444'
+              borderBottom: '1px solid #444',
+               minHeight: '180px'
             }}>
               <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                 <TimelineMarker 
@@ -610,7 +616,8 @@ const AboutUs = () => {
               color: '#fff', 
               p: 2,
               pb:1,
-              borderBottom: '1px solid #444'
+              borderBottom: '1px solid #444',
+               minHeight: '180px'
             }}>
               <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                 <TimelineMarker 
@@ -634,7 +641,8 @@ const AboutUs = () => {
               color: '#fff', 
               p: 2,
               pb:1,
-              borderBottom: '1px solid #444'
+              borderBottom: '1px solid #444',
+              minHeight: '180px'
             }}>
               <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                 <TimelineMarker 
@@ -658,7 +666,8 @@ const AboutUs = () => {
               color: '#fff', 
               p: 2,
               pb:1,
-              borderBottom: '1px solid #444'
+              borderBottom: '1px solid #444',
+              minHeight: '180px'
             }}>
               <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                 <TimelineMarker 
@@ -697,7 +706,8 @@ const AboutUs = () => {
               color: '#000', 
               p: 2,
               pb:1,
-              borderBottom: '1px solid #ddd'
+              borderBottom: '1px solid #ddd',
+              minHeight: '180px'
             }}>
               <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                 <TimelineMarker 
@@ -717,7 +727,8 @@ const AboutUs = () => {
               color: '#000', 
               p: 2,
               pb:1,
-              borderBottom: '1px solid #ddd'
+              borderBottom: '1px solid #ddd',
+              minHeight: '180px'
             }}>
               <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                 <TimelineMarker 
@@ -737,7 +748,8 @@ const AboutUs = () => {
               color: '#000', 
               p: 2,
               pb:1,
-              borderBottom: '1px solid #ddd'
+              borderBottom: '1px solid #ddd',
+              minHeight: '180px'
             }}>
               <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                 <TimelineMarker 
@@ -757,6 +769,7 @@ const AboutUs = () => {
               color: '#000', 
               p: 2,
               pb:1,
+              minHeight: '180px'
             }}>
               <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                 <TimelineMarker 

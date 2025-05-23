@@ -8,7 +8,7 @@ import RecentNewsSection from '../components/RecentNewsSection';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
 import { Link as RouterLink } from 'react-router-dom';
-
+import '@fontsource/lacquer';
 
 
 
@@ -418,7 +418,7 @@ const Home = () => {
 {banner.video && !banner.isRound8 && (
   <Box sx={{ 
     width: { xs: '90%', sm: '80%' }, // Full width to match image banners
-    height: { xs: '90%', sm: '85%' }, // Full height to match image banners
+    height: { xs: '90%', sm: '75%' }, // Full height to match image banners
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -481,8 +481,9 @@ const Home = () => {
                                 maxWidth: '800px',
                                 margin: '0 auto',
                                 textShadow: '1px 1px 2px rgba(0,0,0,0.7)',
-                                fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' }, // Added font size
-                                fontWeight: 500, // Added font weight
+                                fontFamily: "Lacquer",
+                                fontSize: { xs: '1rem', sm: '1.2rem', md: '1.8rem' }, // Added font size
+                                fontWeight: 300, // Added font weight
                                 
                               }}
                             >

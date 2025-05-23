@@ -5,6 +5,8 @@
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
+    "@fontsource/knewave": "^5.2.5",
+    "@fontsource/lacquer": "^5.2.5",
     "@fullpage/react-fullpage": "^0.1.48",
     "@mui/icons-material": "^5.15.3",
     "@mui/material": "^5.15.3",
