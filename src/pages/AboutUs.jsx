@@ -8,6 +8,7 @@ import { useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import Button from '@mui/material/Button';
+import '@fontsource/knewave';
 
 // Styled components
 const ExpandableTimelineContent = ({ content }) => {
@@ -69,21 +70,21 @@ const ExpandableTimelineContent = ({ content }) => {
 const SectionContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(6, 0),
   backgroundColor: ({ bgColor }) => bgColor || 'transparent',
-  fontFamily: 'Roboto, sans-serif', 
+  
 }));
 
 const HeroSection = styled(Box)(({ theme }) => ({
-    backgroundImage: 'url(/images/notes1.png)',
+    backgroundColor:'black',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    fontFamily: 'Roboto, sans-serif',
-    padding: theme.spacing(12, 0), // Reduce for mobile
-    minHeight: '100vh',
+    fontFamily: 'Knewave',
+    padding: theme.spacing(2, 0), // Reduce for mobile
+    minHeight: '30vh',
     position: 'relative',
     [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(22, 0),
-      minHeight: '98vh',
+      padding: theme.spacing(5, 0),
+      minHeight: '91vh',
     },
     '&::before': {
       content: '""',
@@ -97,16 +98,15 @@ const HeroSection = styled(Box)(({ theme }) => ({
   }));
   
   const HeroContent = styled(Box)(({ theme }) => ({
-    position: 'relative',
-    zIndex: 2,
-    justifyContent: 'center',
-    color: 'black',
+    
+    
+    color: 'white',
     padding: theme.spacing(3),
     borderRadius: theme.spacing(1),
-    backgroundColor: 'rgba(255, 255, 255, 0.89)',
-    backdropFilter: 'blur(5px)',
-    fontFamily: 'Roboto, sans-serif', 
-    maxWidth: '800px',
+    backgroundColor: 'rgba(6, 5, 5, 0)',
+   
+    fontFamily: 'Knewave', 
+    maxWidth: '1000px',
     margin: '0 auto',
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(2),
@@ -239,8 +239,9 @@ const AboutUs = () => {
                   src="/images/logoCircle.png" 
                   alt="ALLROUNDERS Logo" 
                   style={{ 
-                    height: '50px', 
-                    marginBottom: '0' 
+                    height: '130px', 
+                    marginBottom: '0' ,
+                    fontFamily: 'Knewave',
                   }} 
                 />
               </Box>
@@ -250,13 +251,14 @@ const AboutUs = () => {
                 align="center" 
                 gutterBottom
                 sx={{ 
-                  fontWeight: 600,
+                  fontWeight: 100,
                   textShadow: '0 2px 4px rgba(0,0,0,0.5)',
                   fontSize: {
                     xs: '1.6rem', // small screens
                     sm: '2.2rem', // medium screens and up
-                    md: '2.5rem'  // large screens
-                  }
+                    md: '2.7rem'  // large screens
+                  },
+                  fontFamily: 'Knewave, cursive',
                 }}
               >
                  {t('aboutUsTitle')}
@@ -268,8 +270,9 @@ const AboutUs = () => {
                 sx={{ fontSize: {
                     xs: '1rem',
                     sm: '1.1rem',
-                    md: '1.2rem'
-                  } }}
+                    md: '1.8rem'
+                  },fontFamily: 'Knewave, cursive',
+                 }}
               >
                 {t('aboutUsDescription1')}
               </Typography>
@@ -280,8 +283,8 @@ const AboutUs = () => {
                 sx={{ fontSize: {
                     xs: '1rem',
                     sm: '1.1rem',
-                    md: '1.2rem'
-                  } }}
+                    md: '1.8rem'
+                  },fontFamily: 'Knewave, cursive', }}
               >
                 {t('aboutUsDescription2')}
               </Typography>
@@ -440,7 +443,7 @@ const AboutUs = () => {
                             ease: "easeInOut" 
                         }}
                         >
-                        <img src="/images/market.png" alt="Market" width="95" height="95" />
+                        <img src="/images/round8_logo.png" alt="Market" width="125" height="125" />
                         <Box sx={{ mt: 3 }}></Box>
                         </motion.div>
                             <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
@@ -479,7 +482,7 @@ const AboutUs = () => {
                             ease: "easeInOut" 
                         }}
                         >
-                        <img src="/images/asia.png" alt="Market" width="80" height="80" />
+                        <img src="/images/asia1.png" alt="Market" width="150" height="150" />
                         <Box sx={{ mt: 3 }}></Box>
                         </motion.div>
                             <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
@@ -517,7 +520,7 @@ const AboutUs = () => {
                             ease: "easeInOut" 
                         }}
                         >
-                        <img src="/images/tech1.png" alt="Market" width="120" height="120" />
+                        <img src="/images/partner.png" alt="Market" width="130" height="90.5" />
                         <Box sx={{ mt: 3 }}></Box>
                         </motion.div>
                             <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>

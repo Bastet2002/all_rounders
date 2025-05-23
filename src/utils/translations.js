@@ -45,12 +45,12 @@ export const translations = {
     
     // About Us Page
     aboutUsTitle: 'About ALLROUNDERS Inc',
-    aboutUsDescription1: 'ALLROUNDERS Inc. developed ROUND8, a global second-hand trading platform that ensures a safe and alternative experience with both its delivery and inspection systems.',
-    aboutUsDescription2: 'By fostering a community that values economic consumption and resource recycling, ROUND8 introduces a new approach to second-hand trading. Starting in Thailand, the platform is set to expand across ASEAN, aiming to become a leading force in the region.',
+    aboutUsDescription1: 'We proudly present ROUND8! A global second-hand platform offering free listings and quality products at great prices, supported by trusted delivery and inspection systems.',
+    aboutUsDescription2: 'Starting in Thailand, we’re expanding to five major ASEAN countries. We also welcome partnership and collaboration opportunities with anyone who shares our vision.',
     ourMissions: 'Our Missions',
     missionStatement: 'To provide a secure and innovative platform that brings new value to people in need',
-    missionCard1Title: 'Integrate advanced technology while prioritizing Thai markets',
-    missionCard2Title: 'Start with ROUND8 and scale with market demand',
+    missionCard1Title: 'Provide consultancy services to support foreign companies to do business in Thailand',
+    missionCard2Title: "Become Thailand’s most used second-hand platform,",
     missionCard3Title: 'Expand operations across Southeast Asia',
     teamInterview: 'Team Interview',
     ourJourney: 'Our Journey',
