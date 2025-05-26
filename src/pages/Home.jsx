@@ -43,7 +43,7 @@ const BannerSection = styled(Box)(({ theme }) => ({
   height: '91vh',
   overflow: 'hidden',
   [theme.breakpoints.down('sm')]: {
-    height: '90vh',
+    height: '40vh',
 
   },
 }));
@@ -85,6 +85,13 @@ const WelcomeBanner = styled(Box)(({ theme }) => ({
     background: 'linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(0,0,0,0) 100%)',
     zIndex: 1,
   },
+   [theme.breakpoints.down('sm')]: {
+    height: '40vh', // Slightly shorter on mobile
+    marginTop: '0', 
+    marginBottom: '1.5rem',
+    
+  },
+  
 }));
 
 const WelcomeContent = styled(Box)(({ theme }) => ({
@@ -100,70 +107,195 @@ const WelcomeContent = styled(Box)(({ theme }) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
   },
+  
 }));
 
 // Tab section styling
 const TabSection = styled(Box)(({ theme }) => ({
-  backgroundColor: '#fff',
-  padding: theme.spacing(6, 0),
-  minHeight: '90vh', // Make it almost full screen
+  background: 'linear-gradient(135deg, #f0fbff 0%, #e6f7fb 100%)',
+  padding: theme.spacing(8, 0),
+  minHeight: '90vh',
   display: 'flex',
   flexDirection: 'column',
+  position: 'relative',
+  overflow: 'hidden',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: '-50%',
+    left: '-50%',
+    width: '200%',
+    height: '200%',
+    background: 'radial-circle(circle, rgba(0, 190, 230, 0.03) 0%, transparent 70%)',
+    animation: 'rotate 20s linear infinite',
+  },
+  '@keyframes rotate': {
+    '0%': {
+      transform: 'rotate(0deg)',
+    },
+    '100%': {
+      transform: 'rotate(360deg)',
+    },
+  },
   [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(4, 0),
+    padding: theme.spacing(6, 0),
     minHeight: '80vh',
   },
 }));
 
+
 const StyledTabs = styled(Tabs)(({ theme }) => ({
-  marginBottom: theme.spacing(4),
+  marginBottom: theme.spacing(6),
+  position: 'relative',
+  zIndex: 1,
+  '& .MuiTabs-root': {
+    background: 'rgba(255, 255, 255, 0.25)',
+    backdropFilter: 'blur(10px)',
+    
+    border: '1px solid rgba(255, 255, 255, 0.18)',
+  },
   '& .MuiTabs-indicator': {
-    backgroundColor: '#000',
-    height: 3,
+    background: 'linear-gradient(90deg, #00BEE6, #0097B2)',
+    height: 4,
+   
+    boxShadow: '0 2px 10px rgba(0, 190, 230, 0.3)',
+  },
+  '& .MuiTabs-flexContainer': {
+    background: 'rgba(255, 255, 255, 0.9)',
+    backdropFilter: 'blur(20px)',
+  
+    padding: '8px',
+    border: '1px solid rgba(255, 255, 255, 0.2)',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
   },
   '& .MuiTab-root': {
     textTransform: 'none',
-    fontWeight: 600,
-    fontSize: '1.1rem',
-    color: '#666',
+    fontWeight: 700,
+    fontSize: '1.2rem',
+    color: '#64748b',
+   
+    margin: '0 4px',
+    minHeight: '60px',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    position: 'relative',
+    overflow: 'hidden',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: '-100%',
+      width: '100%',
+      height: '100%',
+      background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent)',
+      transition: 'left 0.5s',
+    },
+    '&:hover': {
+      background: 'rgba(0, 190, 230, 0.1)',
+      color: '#00BEE6',
+      transform: 'translateY(-2px)',
+      '&::before': {
+        left: '100%',
+      },
+    },
     '&.Mui-selected': {
-      color: '#000',
+      background: 'linear-gradient(135deg, #00BEE6, #0097B2)',
+      color: 'white',
+      transform: 'translateY(-2px)',
+      boxShadow: '0 8px 25px rgba(0, 190, 230, 0.4)',
+      '&:hover': {
+        background: 'linear-gradient(135deg, #00A8CC, #007A9A)',
+        color: 'white',
+      },
+    },
+  },
+  [theme.breakpoints.down('md')]: {
+    '& .MuiTab-root': {
+      fontSize: '1rem',
+      minHeight: '50px',
     },
   },
 }));
 
-// Update TabContent to take more vertical space
 const TabContent = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  gap: theme.spacing(6),
-  flex: 1, // Take available space
+  gap: theme.spacing(8),
+  flex: 1,
   height: '100%',
+  background: 'rgba(255, 255, 255, 0.8)',
+  backdropFilter: 'blur(20px)',
+  
+  padding: theme.spacing(4),
+  border: '1px solid rgba(255, 255, 255, 0.2)',
+  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+  position: 'relative',
+  zIndex: 1,
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    
+    
+    background: 'linear-gradient(135deg, rgba(0, 190, 230, 0.3), rgba(0, 151, 178, 0.3))',
+    WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+    WebkitMaskComposite: 'exclude',
+    maskComposite: 'exclude',
+  },
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     gap: theme.spacing(4),
+    padding: theme.spacing(3),
   },
 }));
 
 // Update TabImage to have a fixed height
 const TabImage = styled(Box)(({ theme }) => ({
   flex: 2.3,
-  borderRadius: theme.spacing(2),
+  borderRadius: '16px',
   overflow: 'hidden',
-  boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-  height: '60vh', // Fixed height for the image
+  height: '60vh',
+  position: 'relative',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'linear-gradient(135deg, rgba(102, 126, 234, 0), rgba(91, 44, 138, 0.1))',
+    opacity: 0,
+    transition: 'opacity 0.3s ease',
+    zIndex: 1,
+    
+  },
+  '&:hover': {
+    transform: 'scale(1.02) translateY(-4px)',
+    boxShadow: '0 25px 50px rgba(0, 0, 0, 0)',
+    '&::before': {
+      opacity: 1,
+    },
+  },
   '& img': {
     width: '100%',
     height: '100%',
-    objectFit: 'contain',
+    objectFit: 'cover',
     display: 'block',
+    transition: 'transform 0.4s ease',
   },
   '& video': {
     width: '100%',
     height: '100%',
     objectFit: 'contain',
     display: 'block',
+    
+  },
+  '&:hover img': {
+    transform: 'scale(1.05)',
   },
   [theme.breakpoints.down('md')]: {
     height: '40vh',
@@ -172,8 +304,81 @@ const TabImage = styled(Box)(({ theme }) => ({
 
 const TabTextContent = styled(Box)(({ theme }) => ({
   flex: 0.8,
+  '& .tab-title': {
+    background: 'linear-gradient(135deg, #2d3748 0%, #4a5568 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    fontWeight: 800,
+    fontSize: '2.8rem',
+    lineHeight: 1.2,
+    marginBottom: '1.5rem',
+    position: 'relative',
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      bottom: '-8px',
+      left: 0,
+      width: '50px',
+      height: '3px',
+      background: 'linear-gradient(90deg,rgb(102, 175, 234),rgb(75, 113, 162))',
+      
+    },
+  },
+  '& .tab-description': {
+    fontSize: '1.3rem',
+    color: '#64748b',
+    lineHeight: 1.8,
+    marginBottom: '2rem',
+    fontWeight: 400,
+  },
+  '& .learn-more-btn': {
+    background: 'linear-gradient(135deg,rgb(232, 234, 102) 0%,rgb(204, 113, 64) 100%)',
+    color: 'white',
+    border: 'none',
+    borderRadius: '12px',
+    padding: '16px 32px',
+    fontSize: '1.1rem',
+    fontWeight: 600,
+    cursor: 'pointer',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    textDecoration: 'none',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '8px',
+    boxShadow: '0 8px 25px rgba(102, 126, 234, 0.3)',
+    position: 'relative',
+    overflow: 'hidden',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: '-100%',
+      width: '100%',
+      height: '100%',
+      background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)',
+      transition: 'left 0.5s',
+    },
+    '&:hover': {
+      transform: 'translateY(-3px)',
+      boxShadow: '0 15px 35px rgba(102, 126, 234, 0.4)',
+      '&::before': {
+        left: '100%',
+      },
+    },
+  },
   [theme.breakpoints.down('md')]: {
     textAlign: 'center',
+    '& .tab-title': {
+      fontSize: '2.2rem',
+      '&::after': {
+        left: '50%',
+        transform: 'translateX(-50%)',
+      },
+    },
+    '& .tab-description': {
+      fontSize: '1.1rem',
+    },
   },
 }));
 
@@ -181,21 +386,14 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
   position: 'relative',
   marginBottom: theme.spacing(6),
   textAlign: 'center',
-  fontWeight: 700,
-  '&::after': {
-    content: '""',
-    position: 'absolute',
-    bottom: '-16px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    width: '60px',
-    height: '3px',
-    backgroundColor: theme.palette.primary.main,
-  },
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '1.8rem',
-    marginBottom: theme.spacing(4),
-  },
+  fontWeight: 800,
+  background: 'linear-gradient(135deg,rgb(27, 31, 32) 0%,rgb(11, 12, 12) 100%)',
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  backgroundClip: 'text',
+  fontSize: '3.5rem',
+  letterSpacing: '-0.02em',
+  
 }));
 
 const FloatingElement = styled(Box)(({ theme }) => ({
@@ -220,7 +418,7 @@ const Home = () => {
       //title: 'Welcome to ALLROUNDERS Inc',
       //description: t('description'),
       image: '/images/home/banner1.png',
-      mobileImage: '/images/home/banner1_mobile.jpg',
+      mobileImage: '/images/home/banner1_mobile2.jpg',
       link: '/about', // Link to about page
     },
     {
@@ -346,7 +544,7 @@ const Home = () => {
                 display: { xs: 'none', md: 'block' }
               }}
             />
-            <HandwrittenOverlay>
+            {/* <HandwrittenOverlay>
             <AnimatedText
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -371,7 +569,7 @@ const Home = () => {
             >
               ALLROUNDERS
             </AnimatedText>
-          </HandwrittenOverlay>
+          </HandwrittenOverlay> */}
             <WelcomeContent>
               <motion.div
                 initial="hidden"
@@ -420,12 +618,13 @@ const Home = () => {
         </RouterLink>
       </BannerSection>
 
-      <Box sx={{ pt: 6, pb: 3 }}></Box>
-      <SectionTitle variant="h3" component="h2">
-            What We Do?
-          </SectionTitle>
+     
+      
       {/* Tab Section for other banners */}
       <TabSection>
+      <SectionTitle variant="h3" component="h2" sx={{fontSize : { xs: '2rem', md: '3rem' }}}>
+        {t('whatWeDo')}
+      </SectionTitle>
       <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', height: '100%', flex: 1 }}>
           <StyledTabs 
             value={activeTab} 
@@ -496,14 +695,17 @@ const Home = () => {
                         to={bannerData[index].link}
                         size="large"
                         sx={{
-                          borderColor: '#000',
-                          color: '#000',
-                          borderRadius: '4px',
+                          borderColor: '#00BEE6',
+                          backgroundColor :"#000",
+                          color: '#00BEE6',
+                          borderRadius: '8px',
                           padding: '10px 24px',
                           fontWeight: 600,
                           '&:hover': {
-                            borderColor: '#000',
-                            backgroundColor: 'rgba(0,0,0,0.04)',
+                            borderColor: '#0097B2',
+                            backgroundColor: 'rgba(0, 190, 230, 0.08)',
+                            color: '#0097B2',
+                            transform: 'translateY(-2px)',
                           }
                         }}
                       >
@@ -523,7 +725,7 @@ const Home = () => {
       {/* ALLROUNDERS Journey Section */}
       <Box sx={{ py: { xs: 3, sm: 8 }, backgroundColor: '#fff' }}>
         <Container>
-          <SectionTitle variant="h3" component="h2">
+          <SectionTitle variant="h3" component="h2"  sx={{fontSize: { xs: '1.7rem', sm: '3.5rem', md: '3rem' },}}>
            {t('story')}
           </SectionTitle>
           

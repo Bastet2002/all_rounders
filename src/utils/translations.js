@@ -29,6 +29,7 @@ export const translations = {
     partnershipDescription: 'We create meaningful change through collaboration and partnerships.',
 
     story: 'The Story Behind ALLROUNDERS',
+    whatWeDo: 'What We Do', 
     
     // News items
     newsTitle1: 'ALLROUNDERS Expands Global Reach',
@@ -388,6 +389,7 @@ export const translations = {
     partnershipDescription: 'เราสร้างการเปลี่ยนแปลงที่มีความหมายผ่านการร่วมมือและเป็นพันธมิตร',
 
     story: 'เรื่องราวเบื้องหลัง ALLROUNDERS',
+    whatWeDo : 'เราทำอะไร',
     
     // News items
     newsTitle1: 'ALLROUNDERS ขยายการเข้าถึงทั่วโลก',
