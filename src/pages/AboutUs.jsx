@@ -8,7 +8,6 @@ import { useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import Button from '@mui/material/Button';
-import '@fontsource/knewave';
 
 // Styled components
 const ExpandableTimelineContent = ({ content }) => {
@@ -70,21 +69,21 @@ const ExpandableTimelineContent = ({ content }) => {
 const SectionContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(6, 0),
   backgroundColor: ({ bgColor }) => bgColor || 'transparent',
-  
+  fontFamily: 'Roboto, sans-serif', 
 }));
 
 const HeroSection = styled(Box)(({ theme }) => ({
-    backgroundColor:'black',
+    backgroundImage: 'url(/images/team.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    fontFamily: 'Knewave',
-    padding: theme.spacing(2, 0), // Reduce for mobile
-    minHeight: '30vh',
+    fontFamily: 'Roboto, sans-serif',
+    padding: theme.spacing(12, 0), // Reduce for mobile
+    minHeight: '100vh',
     position: 'relative',
     [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(5, 0),
-      minHeight: '91vh',
+      padding: theme.spacing(22, 0),
+      minHeight: '98vh',
     },
     '&::before': {
       content: '""',
@@ -98,15 +97,16 @@ const HeroSection = styled(Box)(({ theme }) => ({
   }));
   
   const HeroContent = styled(Box)(({ theme }) => ({
-    
-    
-    color: 'white',
+    position: 'relative',
+    zIndex: 2,
+    justifyContent: 'center',
+    color: 'black',
     padding: theme.spacing(3),
     borderRadius: theme.spacing(1),
-    backgroundColor: 'rgba(6, 5, 5, 0)',
-   
-    fontFamily: 'Knewave', 
-    maxWidth: '1000px',
+    backgroundColor: 'rgba(255, 255, 255, 0.58)',
+    backdropFilter: 'blur(5px)',
+    fontFamily: 'Roboto, sans-serif', 
+    maxWidth: '800px',
     margin: '0 auto',
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(2),
@@ -239,9 +239,8 @@ const AboutUs = () => {
                   src="/images/logoCircle.png" 
                   alt="ALLROUNDERS Logo" 
                   style={{ 
-                    height: '130px', 
-                    marginBottom: '0' ,
-                    fontFamily: 'Knewave',
+                    height: '50px', 
+                    marginBottom: '0' 
                   }} 
                 />
               </Box>
@@ -251,14 +250,13 @@ const AboutUs = () => {
                 align="center" 
                 gutterBottom
                 sx={{ 
-                  fontWeight: 100,
+                  fontWeight: 600,
                   textShadow: '0 2px 4px rgba(0,0,0,0.5)',
                   fontSize: {
                     xs: '1.6rem', // small screens
                     sm: '2.2rem', // medium screens and up
-                    md: '2.7rem'  // large screens
-                  },
-                  fontFamily: 'Knewave, cursive',
+                    md: '2.5rem'  // large screens
+                  }
                 }}
               >
                  {t('aboutUsTitle')}
@@ -270,9 +268,8 @@ const AboutUs = () => {
                 sx={{ fontSize: {
                     xs: '1rem',
                     sm: '1.1rem',
-                    md: '1.8rem'
-                  },fontFamily: 'Knewave, cursive',
-                 }}
+                    md: '1.2rem'
+                  } }}
               >
                 {t('aboutUsDescription1')}
               </Typography>
@@ -283,8 +280,8 @@ const AboutUs = () => {
                 sx={{ fontSize: {
                     xs: '1rem',
                     sm: '1.1rem',
-                    md: '1.8rem'
-                  },fontFamily: 'Knewave, cursive', }}
+                    md: '1.2rem'
+                  } }}
               >
                 {t('aboutUsDescription2')}
               </Typography>

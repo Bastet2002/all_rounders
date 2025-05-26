@@ -342,7 +342,7 @@ export const translations = {
     cookiePreferences: "Cookie Preferences",
 
 
-    allIs:"AllROUNDERS is",
+    allIs:"ALLROUNDERS is",
     backToTeam:"Back To Team",
     keywords: "Keywords",
     background: "background",
