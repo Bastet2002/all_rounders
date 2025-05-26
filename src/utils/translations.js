@@ -368,6 +368,8 @@ export const translations = {
     news: 'ข่าวสาร',
     careers: 'ร่วมงานกับเรา',
     contactUs: 'ติดต่อเรา',
+
+    exploreMore: 'สำรวจเพิ่มเติม',
     
     // Home Page
     welcome: 'ยินดีต้อนรับสู่ ALLROUNDERS Inc',
