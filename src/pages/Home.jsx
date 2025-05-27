@@ -255,8 +255,9 @@ const Home = () => {
       link: '/about', // Link to about page
       imageStyle: { // Custom style for banner 3
         objectFit: 'contain',
-        maxHeight: '80%',
+        maxHeight: '100%',
         width: 'auto',
+        height: '100%',
         margin: '0 auto'
       }
     },
