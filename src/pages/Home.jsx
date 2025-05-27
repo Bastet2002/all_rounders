@@ -253,6 +253,12 @@ const Home = () => {
       description: t('expansionDescription'),
       image: '/images/home/banner4.png',
       link: '/about', // Link to about page
+      imageStyle: { // Custom style for banner 3
+        objectFit: 'contain',
+        maxHeight: '80%',
+        width: 'auto',
+        margin: '0 auto'
+      }
     },
     {
       id: 4,
@@ -478,7 +484,7 @@ const Home = () => {
                             Your browser does not support the video tag.
                           </video>
                         ) : (
-                          <img src={bannerData[index].image} alt={bannerData[index].title} />
+                          <img src={bannerData[index].image} alt={bannerData[index].title} style={bannerData[index].imageStyle || {}} />
                         )}
                       </TabImage>
                     <TabTextContent>

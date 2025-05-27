@@ -16,7 +16,8 @@ import Careers from './pages/Careers';
 import AboutMeDetail from './pages/AboutMeDetail';
 import NewsDetail from './pages/NewsDetail';
 import Admin from './pages/Admin';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import DataMigration from './components/admin/DataMigration';
 
 const theme = createTheme({
   palette: {
@@ -51,6 +52,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<Terms />} />
+              <Route path="/admin/data-migration" element={<DataMigration />} />
             </Routes>
           </Layout>
         </Router>
