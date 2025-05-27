@@ -529,7 +529,7 @@ const Home = () => {
                           }
                         }}
                       >
-                        {t('exploreMore')}
+                        {t('learnMore')}
                       </Button>
                     </TabTextContent>
                   </TabContent>
