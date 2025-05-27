@@ -254,7 +254,7 @@ const Home = () => {
       image: '/images/home/banner4.png',
       link: '/about', // Link to about page
       imageStyle: { // Custom style for banner 3
-        objectFit: 'cover',
+        objectFit: 'contain',
         maxHeight: '100%',
         width: 'auto',
         margin: '0 auto'
