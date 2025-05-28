@@ -1,0 +1,110 @@
+{
+    "team": [
+      {
+        "id": "ada",
+        "name": "Ada",
+        "translatedName": {
+          "en": "Ada",
+          "th": "เอดา"
+        },
+        "role": {
+          "en": "Senior Marketing Manager",
+          "th": "ผู้จัดการอาวุโสฝ่ายการตลาด"
+        },
+        "funnyRole": {
+          "en": "Senior Marketing Manager ",
+          "th": "ผู้จัดการอาวุโสฝ่ายการตลาด"
+        },
+        "roleIcon": "💻",
+        "image": "/images/team/ada.jpg",
+        "bio": {
+          "en": "Ada brings an advertising and marketing background spanning various industries, enabling her to see and bridge opportunities that transcend traditional boundaries. She believes there’s no fixed formula for business success, it's about crafting your own. That’s why she joined ALLROUNDERS.Her passion lies in building businesses that generate not only economic wealth but also contribute to people's betterment. Currently, she's determined to make ROUND8 the go-to place for those who value secondhand items and mindful living.",
+          "th": "Ada มีพื้นฐานในด้านการโฆษณาและการตลาดจากหลากหลายอุตสาหกรรม ทำให้เธอมองเห็นและเชื่อมโยงโอกาสที่ก้าวข้ามขอบเขตแบบเดิม ๆ ได้ เธอเชื่อว่าไม่มีสูตรสำเร็จตายตัวในการทำธุรกิจ ทุกอย่างขึ้นอยู่กับการสร้างแนวทางของตัวเอง นั่นจึงเป็นเหตุผลที่เธอเข้าร่วมกับ ALLROUNDERS Ada มีความหลงใหลในการสร้างธุรกิจที่ไม่เพียงแค่สร้างผลกำไรทางเศรษฐกิจ แต่ยังสร้างคุณค่าเพื่อการพัฒนาชีวิตผู้คน ขณะนี้เธอมุ่งมั่นที่จะทำให้ ROUND8 กลายเป็นจุดหมายปลายทางของผู้ที่ให้คุณค่ากับของมือสองและการใช้ชีวิตอย่างมีสติ"
+        },
+        "linkedin": "https://www.linkedin.com/in/aoroorchuthathipmw",
+        "academic": [
+          {
+            "en": "Silpakorn University, B.A. in Communication Arts 2016",
+            "th": "มหาวิทยาลัยศิลปากร, ปริญญาตรีสาขานิเทศศาสตร์ 2016"
+          },
+          {
+            "en": "TBWA|Thailand, Account Executive & Strategic Planner 2020",
+            "th": "TBWA|Thailand, Account Executive & Strategic Planner 2020"
+          },
+          {
+            "en": "United Overseas Bank Thailand, Sales Acquisition Manager 2021",
+            "th": "Sales Acquisition Manager, ธนาคารยูโอบี (ประเทศไทย) 2021"
+          },
+          {
+            "en": "University of Strathclyde, MSc in Entrepreneurship, Innovation & Technology 2023",
+            "th": "University of Strathclyde, ปริญญาโทด้าน Entrepreneurship, Innovation & Technology 2023"
+          },
+          
+          {
+            "en": "ALLROUNDERS Inc. Senior Marketing Manager 2024",
+            "th": "ALLROUNDERS Inc. ผู้จัดการอาวุโสฝ่ายการตลาด 2024"
+          }
+        ],
+        "keywords": [
+          {
+            "en": "Empathy",
+            "th": "ความเข้าอกเข้าใจ"
+          },
+          {
+            "en": "Appreciation",
+            "th": "การเห็นคุณค่า"
+          },
+          {
+            "en": "Resilient",
+            "th": "ความยืดหยุ่น"
+          },
+          {
+            "en": "Design-thinking solution",
+            "th": "การแก้ปัญหาด้วยแนวคิดแบบนักออกแบบ"
+          }
+        ],
+        "allroundersToYou":{
+          "en": "A good combination to make  a big dream tangible",
+          "th": "การผสมผสานที่ลงตัวเพื่อทำให้ความฝันอันยิ่งใหญ่จับต้องได้"
+        },
+        "likes": [
+          {
+            "en": "Hiking to connect herself and nature",
+            "th": "การเดินป่าเพื่อเชื่อมโยงตัวเองกับธรรมชาติ"
+          },
+          {
+            "en": "Spending quality time for deep conversation & new perspectives",
+            "th": "ใช้เวลาคุณภาพกับบทสนทนาเชิงลึกและมุมมองใหม่ ๆ"
+          },
+          {
+            "en": "Enjoying handcraft / DIY creations",
+            "th": "สนุกกับงานฝีมือ / งาน DIY"
+          }
+        ],
+        "icons": {
+          "keywords": {
+            "Empathy": "💡",
+            "Appreciation": "🙏",
+            "Resilient": "💪",
+            "Design-thinking solution": "🎨 "
+          },
+          "academic": {
+            "2016": "🎓",
+            "2020": "📣 ",
+            "2021": "🏦 ",
+            "2023": "🎓 ",
+            "2024": "🔒",
+            "Present": "👑"
+          },
+          "likes": {
+            "hiking": "🥾",
+            "quality time": "🗣️",
+            "DIY": "🧵"
+          }
+        },
+        "isPreRounder": true
+      }
+      
+      
+    ]
+  }
