@@ -16,7 +16,7 @@ import { Helmet } from "react-helmet";
   <title>ALLROUNDERS | Tech Solutions & Mindful Living</title>
   <meta name="description" content="We unite all-rounded talents, where strengths shine and weaknesses are supported " />
   <meta name="keywords" content="ALLROUNDERS, tech startup, secondhand, sustainable, ROUND8, mindful living, 올라운더스 주식회사, allrounders" />
-  <meta property="og:title" content="ALLROUNDERS Inc." />
+  <meta property="og:title" content="ALLROUNDERS | 올라운더스 주식회사" />
   <meta property="og:description" content="From one round to another—ALLROUNDERS brings innovation and sustainability together." />
   <meta property="og:url" content="https://www.allrounders.io" />
 </Helmet>
