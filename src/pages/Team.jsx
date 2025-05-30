@@ -693,11 +693,11 @@ const Team = () => {
               animate="visible"
               variants={textVariants}
             >
-              <Typography variant="h5" fontWeight={700} sx={{ fontSize: {
+              {/* <Typography variant="h5" fontWeight={700} sx={{ fontSize: {
                 xs: '1.2rem',
                 sm: '1.4rem',
                 md: '1.5em'
-              }}}>PRE-ROUNDERS</Typography>
+              }}}>PRE-ROUNDERS</Typography> */}
             </motion.div>
             <motion.div
               initial="hidden"
@@ -705,9 +705,9 @@ const Team = () => {
               variants={textVariants}
               transition={{ delay: 0.2 }}
             >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+              {/* <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                 <SchoolIcon fontSize="small"/>
-              </Box>
+              </Box> */}
             </motion.div>
           </SectionTitle>
           
