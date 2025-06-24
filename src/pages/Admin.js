@@ -144,8 +144,6 @@ const handleSaveHomeContent = () => {
               >
                 Manage Career Form Responses
               </Button>
-
-             
             </Box>
           </Box>
         )}

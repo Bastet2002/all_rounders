@@ -7,7 +7,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyABaVaARvQv4dixn_o13LCAMP4WCJPH5uM",
   authDomain: "allallrounders-a0e20.firebaseapp.com",
   projectId: "llallrounders-a0e20",
-  storageBucket: "allallrounders-a0e20.firebasestorage.app",
+  storageBucket: "allallrounders-a0e20.appspot.com",
   messagingSenderId: "Y876707686778",
   appId: "1:876707686778:web:cb0f238ead7d9b227ecec3",
   measurementId: "G-PML3NXKREV"
