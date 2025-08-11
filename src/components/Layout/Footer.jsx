@@ -78,6 +78,92 @@ const Footer = () => {
                 ALLROUNDERS Inc
               </Typography>
               <Box sx={{ display: 'flex', mb: 2 }}>
+
+                {/* Instagram */}
+                <Button
+                  variant="contained"
+                  href="https://www.instagram.com/allrounders.io/profilecard/?igsh=YnU5cG8waWwyODdq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ 
+                    minWidth: 'unset',
+                    width: '40px',
+                    height: '40px',
+                    padding: '8px',
+                    backgroundColor: 'black',
+                    color: '#E1306C',
+                    borderColor: '#E1306C',
+                    mr: 1,
+                    '&:hover': {
+                      backgroundColor: 'rgba(255, 255, 255, 0.78)',
+                      color: 'white',
+                    }
+                  }}
+                >
+                  <Box 
+                    component="img" 
+                    src="/images/instagram.png" 
+                    alt="Instagram" 
+                    sx={{ width: '24px', height: '24px' }} 
+                  />
+                </Button>
+
+                {/* Facebook */}
+                <Button
+                  variant="contained"
+                  href="https://www.facebook.com/share/14GnacyM5HY/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ 
+                    minWidth: 'unset',
+                    width: '40px',
+                    height: '40px',
+                    padding: '8px',
+                    backgroundColor: 'black',
+                    color: '#1877F2',
+                    borderColor: '#1877F2',
+                    mr: 1,
+                    '&:hover': {
+                      backgroundColor: 'rgba(255, 255, 255, 0.78)',
+                      color: 'white',
+                    }
+                  }}
+                >
+                  <Box 
+                    component="img" 
+                    src="/images/facebook.png" 
+                    alt="Facebook" 
+                    sx={{ width: '23px', height: '23px' }} 
+                  />
+                </Button>
+
+                <Button
+                  variant="contained"
+                  href="https://www.tiktok.com/@allrounders.io?_t=ZS-8ymfVpcwrJo&_r=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ 
+                    minWidth: 'unset',
+                    width: '40px',
+                    height: '40px',
+                    padding: '8px',
+                    backgroundColor: 'black',
+                    color: '#1877F2',
+                    borderColor: '#1877F2',
+                    mr: 1,
+                    '&:hover': {
+                      backgroundColor: 'rgba(255, 255, 255, 0.78)',
+                      color: 'white',
+                    }
+                  }}
+                >
+                  <Box 
+                    component="img" 
+                    src="/images/tiktok.png" 
+                    alt="Tiktok" 
+                    sx={{ width: '24px', height: '24px' }} 
+                  />
+                </Button>
                 <Button
                   variant="contained"
                   href="https://www.linkedin.com/company/allrounders-inc/posts/"
@@ -141,7 +227,7 @@ const Footer = () => {
                 {/* Instagram */}
                 <Button
                   variant="contained"
-                  href="https://www.instagram.com/round8_official/"
+                  href="https://www.instagram.com/round8.official/"
                   target="_blank"
                   rel="noopener noreferrer"
                   sx={{ 
@@ -166,7 +252,7 @@ const Footer = () => {
                 {/* Facebook */}
                 <Button
                   variant="contained"
-                  href="https://www.facebook.com/profile.php?id=61556947506273"
+                  href="https://www.facebook.com/share/16nEan3U1h/?mibextid=wwXIfr"
                   target="_blank"
                   rel="noopener noreferrer"
                   sx={{ 
@@ -191,7 +277,7 @@ const Footer = () => {
                 {/* Tiktok */}
                 <Button
                   variant="contained"
-                  href="https://www.tiktok.com/@round8_official"
+                  href="https://www.tiktok.com/@round8.official"
                   target="_blank"
                   rel="noopener noreferrer"
                   sx={{ 
@@ -317,6 +403,93 @@ const Footer = () => {
               ALLROUNDERS Inc
             </Typography>
             <Box sx={{ display: 'flex', mb: 3 }}>
+              {/* Instagram */}
+              <Button
+                variant="contained"
+                href="https://www.instagram.com/allrounders.io/profilecard/?igsh=YnU5cG8waWwyODdq"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ 
+                  minWidth: 'unset',
+                  width: '40px',
+                  height: '40px',
+                  padding: '8px',
+                  backgroundColor: 'black',
+                  color: '#E1306C',
+                  borderColor: '#E1306C',
+                  mr: 1,
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.78)',
+                    color: 'white',
+                  }
+                }}
+              >
+                <Box 
+                  component="img" 
+                  src="/images/instagram.png" 
+                  alt="Instagram" 
+                  sx={{ width: '24px', height: '24px' }} 
+                />
+              </Button>
+
+              {/* Facebook */}
+              <Button
+                variant="contained"
+                href="https://www.facebook.com/share/14GnacyM5HY/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ 
+                  minWidth: 'unset',
+                  width: '40px',
+                  height: '40px',
+                  padding: '8px',
+                  backgroundColor: 'black',
+                  color: '#1877F2',
+                  borderColor: '#1877F2',
+                  mr: 1,
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.78)',
+                    color: 'white',
+                  }
+                }}
+              >
+                <Box 
+                  component="img" 
+                  src="/images/facebook.png" 
+                  alt="Facebook" 
+                  sx={{ width: '23px', height: '23px' }} 
+                />
+              </Button>
+
+              <Button
+                variant="contained"
+                href="https://www.tiktok.com/@allrounders.io?_t=ZS-8ymfVpcwrJo&_r=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ 
+                  minWidth: 'unset',
+                  width: '40px',
+                  height: '40px',
+                  padding: '8px',
+                  backgroundColor: 'black',
+                  color: '#1877F2',
+                  borderColor: '#1877F2',
+                  mr: 1,
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.78)',
+                    color: 'white',
+                  }
+                }}
+              >
+                <Box 
+                  component="img" 
+                  src="/images/tiktok.png" 
+                  alt="Tiktok" 
+                  sx={{ width: '24px', height: '24px' }} 
+                />
+              </Button>
+
+
               <Button
                 variant="contained"
                 href="https://www.linkedin.com/company/allrounders-inc/posts/"
@@ -370,6 +543,7 @@ const Footer = () => {
                   sx={{ width: '27px', height: '29px' }} 
                 />
               </Button>
+
             </Box>
             
             {/* ROUND8 section */}
@@ -380,7 +554,7 @@ const Footer = () => {
               {/* Instagram */}
               <Button
                 variant="contained"
-                href="https://www.instagram.com/round8_official/"
+                href="https://www.instagram.com/round8.official/"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{ 
@@ -409,7 +583,7 @@ const Footer = () => {
               {/* Facebook */}
               <Button
                 variant="contained"
-                href="https://www.facebook.com/profile.php?id=61556947506273"
+                href="https://www.facebook.com/ROUND8.official?mibextid=wwXIfr&rdid=dR4NAeICQ8INd2ZH&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16nEan3U1h%2F%3Fmibextid%3DwwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{ 
@@ -438,7 +612,7 @@ const Footer = () => {
               {/* Tiktok */}
               <Button
                 variant="contained"
-                href="https://www.tiktok.com/@round8_official"
+                href="https://www.tiktok.com/@round8.official"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{ 
